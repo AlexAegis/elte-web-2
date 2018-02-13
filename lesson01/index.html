@@ -5,10 +5,101 @@
         <title>Lesson 1</title>
     </head>
     <body>
+        <!-- This is a multiline html/xml comment -->
         <script type="text/javascript">
-            document.writeln("Hello World");
+            // This is a javascript command
+            /* 
+            Multiline javascript comment
+            */
+            /*
+            document.writeln("<h1>Hello World</h1>");
             console.log("Hello console!");
-        </script>
-        
+            alert("Hello Alert!");
+            var nev = prompt("Enter your name:");
+            alert("Welcome, " + nev);
+            */
+            // Simple factorial
+            /*
+            var n = prompt("n: ");
+            var fact = 1;
+            for(var i = 1; i <= n; i++) {
+                fact *= i;
+            }
+            console.log(n + "! = " + fact);
+            */
+            /*
+            var n = prompt("n: ");
+            function factorial(n) {
+                var fact = 1;
+                for(var i = 1; i <= n; i++) {
+                fact *= i;
+                }
+                return fact;
+            }
+            console.log("factorial(" + n + "): " + factorial(n));
+            */
+            /*
+            var n = prompt("n: ");
+            var table = "<table>";
+            for(var i = 1; i <= n; i++) {
+                table += "<tr style=\"border: 1px solid black;\">";
+                for(var j = 1; j <= n; j++) {
+                    table += "<td>" + i * j + "</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.writeln(table);
+            */
+            
+            var array = [1, 2, 3, 4];
+            console.log("array[1]:" + array[1]);
+            function searchFirstEvenNumberIn(array) {
+                var result = null;
+                console.log("array.length: " + array.length);
+                for(var i = 1; i < array.length && result === null; i++) {
+                    if(array[i] % 2 === 0) {
+                        result = array[i];
+                    }
+                }
+                return result;
+            }
+
+            function searchFirstEvenNumberInWhile(array) {
+                var result = null;
+                var i = 0;
+                while(result === null && i < array.length) {
+                    if(array[i] % 2 === 0) {
+                        result = array[i];
+                    }
+                    i++;
+                }
+                return {
+                    isthere: i < array.length,
+                    index: i,
+                    result: result
+                };
+            }
+
+            console.log("searchFirstEvenNumberIn(array): " + searchFirstEvenNumberIn(array));
+            console.log("searchFirstEvenNumberInWhile(array): " + searchFirstEvenNumberInWhile(array).result);
+            
+
+            function getAllEvenFromArray(array) {
+                var result = [];
+                for(var i = 1; i < array.length; i++) {
+                    if(array[i] % 2 === 0) {
+                        result.push(array[i]);
+                    }
+                }
+                return {
+                    result: result,
+                    originalLenght: array.length,
+                    numberOfResults: result.length
+                };
+            }
+
+            console.log("getAllEvenFromArray(array): " + getAllEvenFromArray(array).result);
+        </script>        
     </body>
 </html>
