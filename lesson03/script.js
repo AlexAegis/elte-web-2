@@ -6,6 +6,7 @@ function $(id) {
 
 function init() {
 	$('par').addEventListener('click', parClick, false);
+	$('autoComplete').addEventListener('keyup', autoComplete, false);
 }
 
 // A paragrafusra kattintáskor írd ki a konzolra:
@@ -28,4 +29,26 @@ function parClick(e) {
 	if(e.target.tagName  == 'A' && e.target.innerHTML == 'libero') {
 		e.preventDefault();
 	}
+}
+
+var movies = [
+	{
+		title: 'Hobbit',
+		year: 2012
+	},
+	{
+		title: 'A nagy ho-ho-ho-horgász',
+		year: 1990
+	},
+	{
+		title: 'A három testőr',
+		year: 2000
+	}
+]
+
+function autoComplete(e) {
+	var result = "";
+	movies.filter(movie => movie.title.includes($('autoComplete').value))
+		.forEach(movie => result = result + "<li>" + movie.title + "</li>");
+	$('autoList').innerHTML = result
 }
