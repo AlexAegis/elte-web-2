@@ -47,8 +47,7 @@ var movies = [
 ]
 
 function autoComplete(e) {
-	var result = "";
-	movies.filter(movie => $('autoComplete').value != "" && movie.title.includes($('autoComplete').value))
-		.forEach(movie => result = result + "<li>" + movie.title + "</li>");
-	$('autoList').innerHTML = result
+	$('autoList').innerHTML = movies.filter(movie => $('autoComplete').value != "" && movie.title.includes($('autoComplete').value))
+		.map(movie => "<li>" + movie.title + "</li>")
+		.join("");
 }
