@@ -1,5 +1,5 @@
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #a3a3a3;
     border-collapse: collapse;
     height: 50px;
     width: 50px;
@@ -7,4 +7,28 @@ table, th, td {
     align-content: center;
     vertical-align: middle;
 
+}
+
+.leftBorder {
+    border-left: 2px solid #2a2a2a !important;
+}
+
+.rightBorder {
+    border-right: 2px solid #2a2a2a !important;
+}
+
+.topBorder {
+    border-top: 2px solid #2a2a2a !important;
+}
+
+.bottomBorder {
+    border-bottom: 2px solid #2a2a2a !important;
+}
+
+.filledPlayer1 {
+    background-color: rgba(201, 48, 44, 0.29);
+}
+
+.filledPlayer2 {
+    background-color: rgba(27, 141, 187, 0.29);
 }
