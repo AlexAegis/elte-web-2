@@ -26,9 +26,11 @@ function init() {
     }
 
     let winFieldVal = $('winField').value
-    if(winFieldVal !== undefined && winFieldVal !== "" && winFieldVal <= size) {
+    console.log('winfldval' + winFieldVal + ' size ' + size)
+    if(winFieldVal !== undefined && winFieldVal !== "" && parseInt(winFieldVal) <= size) {
         toWin = winFieldVal
     } else {
+        console.log('ELZ ÁG')
         toWin = 3
         $('winField').value = toWin
     }
