@@ -1,0 +1,54 @@
+.paragraphStyle {
+    color: white;
+    background-color: brown;
+    border: 1px solid orange;
+}
+
+.totalCountdown {
+    width: 400px;
+    height: 40px;
+    background-color: red
+}
+
+.progressCountdown {
+    width: 0px;
+    height: 40px;
+    background-color: greenyellow
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+     
+  #clock {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 20px auto 0 auto;
+    background: url(images/clockface.png);
+    list-style: none;
+  }
+     
+  #sec, #min, #hour {
+    position: absolute;
+    width: 9px;
+    height: 180px;
+    top: 0px;
+    left: 85px;
+  }
+     
+  #sec {
+    background: url(images/sechand.png);
+    z-index: 3;
+  }
+        
+  #min {
+    background: url(images/minhand.png);
+    z-index: 2;
+  }
+        
+  #hour {
+    background: url(images/hourhand.png);
+    z-index: 1;
+  }
