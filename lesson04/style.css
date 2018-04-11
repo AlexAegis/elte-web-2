@@ -1,0 +1,14 @@
+.error {
+    color: red;
+}
+
+table, th, td {
+    border: 1px solid #a3a3a3;
+    border-collapse: collapse;
+    height: 50px;
+    width: 50px;
+    table-layout: fixed;
+    align-content: center;
+    vertical-align: middle;
+
+}
