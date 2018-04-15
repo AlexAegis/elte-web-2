@@ -7,7 +7,7 @@ let step = 0
 
 // you need ((size * size) / 2) many icons to fill a square
 // these 18 icons will fit for a sqrt(18 * 2) = 6 size table
-let icons = [
+let allIcons = [
 	'blind',
 	'bowling-ball',
 	'car',
@@ -27,25 +27,51 @@ let icons = [
 	'umbrella',
 	'heart'
 ]
+let game
+let icons = []
 // icon for the back of the fields
 let backsideIcon = 'expand'
-let iconSize = '4x'
+//let iconSize = '4x'
 
 $(document).ready(() => {
-	size = Math.sqrt(icons.length * 2)
+	game = document.getElementById('memoryGame')
+	$('#mainMenu').show()
+	$('#gamePage').hide()
+	$('#startButton').click(() => {
+		icons = []
+		game.innerHTML = ''
+		for (let i = 0; i < Math.pow($("#sizeSelect").val(), 2) / 2; i++) {
+			icons.push(allIcons[i])
+		}
+		$('#mainMenu').hide()
+		$('#gamePage').show()
+		start()
+		
+	})
 	
+	$("#backButton").click(() => {
+		$('#mainMenu').show()
+		$('#gamePage').hide()
+	})
+	
+})
+
+
+function start() {
+	
+	size = Math.sqrt(icons.length * 2)
+	console.log(size)
 	let arr = []
-	while(arr.length < size * size){
-		let rng = Math.floor(Math.random() * size * size) + 1;
-		if(arr.indexOf(rng) > -1) continue;
-		arr[arr.length] = rng;
+	while (arr.length < size * size) {
+		let rng = Math.floor(Math.random() * size * size) + 1
+		if (arr.indexOf(rng) > -1) continue
+		arr[arr.length] = rng
 	}
 	console.log(arr)
 	
 	
-	
-	let game = document.getElementById('memoryGame')
 	let table = document.createElement('table')
+	table.className += 'table table-responsive borderless'
 	
 	let tableBody = document.createElement('tbody')
 	table.appendChild(tableBody)
@@ -61,22 +87,20 @@ $(document).ready(() => {
 		tableBody.appendChild(tableRow)
 	}
 	game.appendChild(table)
-})
-
-
+}
 
 class field {
 	constructor(pos, icon) {
 		this.pos = pos
 		
 		this.backIcon = document.createElement('span')
-		this.backIcon.className += 'fas fa-' + iconSize + ' fa-' + backsideIcon
+		this.backIcon.className += 'fas fa-' + backsideIcon
 		this.backSide = document.createElement('div')
 		this.backSide.className += 'back'
 		this.backSide.appendChild(this.backIcon)
 		
 		this.frontIcon = document.createElement('span')
-		this.frontIcon.className += 'fas fa-' + iconSize + ' fa-' + icon
+		this.frontIcon.className += 'fas fa-' + icon
 		this.frontSide = document.createElement('div')
 		this.frontSide.className += 'front'
 		this.frontSide.appendChild(this.frontIcon)
@@ -98,16 +122,16 @@ class field {
 	}
 	
 	toString() {
-		return 'pos: ' + this.pos.toString() + ', mark: ' + this.mark
+		return 'pos: ' + this.pos.toString()
 	}
 	
 	step() {
-		console.log("step: " + step)
+		console.log('step: ' + step)
 		if (!winState && !this.flipping) {
-			step++;
-			if(!this.found && this !== checking) {
+			step++
+			if (!this.found && this !== checking) {
 				this.flip()
-				if(checking === null) {
+				if (checking === null) {
 					checking = this
 				} else {
 					if (checking.frontIcon.className === this.frontIcon.className) {
@@ -121,7 +145,7 @@ class field {
 							this.checking.flip()
 							this.flip()
 							this.checking = null
-						}, 800);
+						}, 800)
 					}
 				}
 			}
@@ -131,14 +155,14 @@ class field {
 	}
 	
 	flip() {
-		console.log("asd")
+		console.log('asd')
 		
 		this.flipped = !this.flipped
 		$(this.flippable).toggleClass('hover')
 		this.flipping = true
 		setTimeout(() => {
 			this.flipping = false
-		}, 800);
+		}, 800)
 	}
 }
 
@@ -155,8 +179,8 @@ class pos {
 
 function checkWin() {
 	let won = isWin()
-	if(won) {
-		console.log("LEL")
+	if (won) {
+		console.log('LEL')
 	}
 	return won
 }

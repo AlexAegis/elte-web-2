@@ -1,5 +1,5 @@
 .flip-container {
-    perspective: 800px;
+    perspective: 100vw;
 }
 
 .flip-container.hover .flipper {
@@ -9,8 +9,8 @@
 .flip-container,
 .front,
 .back {
-    width: 5.5em;
-    height: 6em;
+    width: 2em;
+    height: 2em;
 }
 
 .flipper {
@@ -34,4 +34,8 @@
 
 .back {
     transform: rotateY(180deg);
+}
+
+.borderless td, .borderless th {
+    border: none;
 }
