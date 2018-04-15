@@ -5,7 +5,13 @@ let fields = []
 let winState
 let size
 let checking = null
+let player1Score
+let player2Score
 let step = 0
+let gameMode
+let aiTurn
+
+
 
 // you need ((size * size) / 2) many icons to fill a square
 // these 18 icons will fit for a sqrt(18 * 2) = 6 size table
@@ -47,6 +53,12 @@ $(document).ready(() => {
 		}
 		$('#mainMenu').hide()
 		$('#gamePage').show()
+		gameMode = $('#modeSelect').val()
+		if(gameMode == 1) {
+			$('#gameState').hide()
+		} else {
+			$('#gameState').show()
+		}
 		start()
 		
 	})
@@ -60,7 +72,9 @@ $(document).ready(() => {
 
 
 function start() {
-	
+	player1Score = 0
+	player2Score = 0
+	aiTurn = false
 	size = Math.sqrt(icons.length * 2)
 	console.log(size)
 	let arr = []
@@ -90,11 +104,11 @@ function start() {
 		tableBody.appendChild(tableRow)
 	}
 	game.appendChild(table)
-	
 	player1 = $('#player1')
 	player2 = $('#player2')
 	currentPlayer = player2
 	changePlayer()
+
 }
 
 function changePlayer() {
@@ -183,7 +197,7 @@ class field {
 	
 	step() {
 		console.log('step: ' + step)
-		if (!winState && !this.flipping) {
+		if (!winState && !this.flipping && !aiTurn) {
 			step++
 			if (!this.found && this !== checking) {
 				this.flip()
@@ -193,6 +207,21 @@ class field {
 					if (checking.frontIcon.className === this.frontIcon.className) {
 						checking.found = true
 						this.found = true
+						
+						this.checking = checking
+						
+						if(currentPlayer === player1) {
+							player1Score += 2
+							console.log('P1 STEP')
+						} else if(currentPlayer === player2) {
+							player2Score += 2
+							console.log('P2 STEP')
+						}
+						setTimeout(() => {
+							$(this.checking.backSide).hide()
+							$(this.backSide).hide()
+							updateScore()
+						}, 800)
 						
 						checking = null
 					} else {
@@ -210,9 +239,18 @@ class field {
 		
 		if(step === 2) {
 			step = 0
-			setTimeout(() => {
-				changePlayer()
-			}, 800)
+			if(gameMode !== 1) {
+				setTimeout(() => {
+					changePlayer()
+				}, 800)
+				if(gameMode === 0) {
+					aiTurn = true
+					setTimeout(() => {
+						aiStep()
+						aiTurn = false
+					}, 800)
+				}
+			}
 		}
 		winState = checkWin()
 		console.log('checkWin: ' + winState)
@@ -228,6 +266,18 @@ class field {
 			this.flipping = false
 		}, 800)
 	}
+}
+
+function aiStep() {
+	remaining = fields.filter(field => !field.found && !field.flipped)
+	let number = Math.floor(Math.random() * remaining.length) + 1
+	console.log("nummber: " + number)
+	
+}
+
+function updateScore() {
+	$('#player1Score').html(player1Score)
+	$('#player2Score').html(player2Score)
 }
 
 class pos {
