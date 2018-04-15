@@ -1,4 +1,4 @@
-let currentPlayer
+let currentPlayer = 0
 let fields = []
 let winState
 let size
@@ -25,11 +25,11 @@ let icons = [
 	'money-bill-alt',
 	'music',
 	'umbrella',
-	'xbox'
+	'heart'
 ]
 // icon for the back of the fields
 let backsideIcon = 'expand'
-let iconSize = '5x'
+let iconSize = '4x'
 
 $(document).ready(() => {
 	size = Math.sqrt(icons.length * 2)
@@ -102,7 +102,8 @@ class field {
 	}
 	
 	step() {
-		if (!winState) {
+		console.log("step: " + step)
+		if (!winState && !this.flipping) {
 			step++;
 			if(!this.found && this !== checking) {
 				this.flip()
@@ -120,8 +121,7 @@ class field {
 							this.checking.flip()
 							this.flip()
 							this.checking = null
-						}, 1000);
-						
+						}, 800);
 					}
 				}
 			}
@@ -131,8 +131,14 @@ class field {
 	}
 	
 	flip() {
+		console.log("asd")
+		
 		this.flipped = !this.flipped
 		$(this.flippable).toggleClass('hover')
+		this.flipping = true
+		setTimeout(() => {
+			this.flipping = false
+		}, 800);
 	}
 }
 
