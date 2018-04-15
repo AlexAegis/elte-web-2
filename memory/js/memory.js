@@ -45,6 +45,7 @@ $(document).ready(() => {
 	game = document.getElementById('memoryGame')
 	$('#mainMenu').show()
 	$('#gamePage').hide()
+	$('#winPage').hide()
 	$('#startButton').click(() => {
 		icons = []
 		game.innerHTML = ''
@@ -53,6 +54,7 @@ $(document).ready(() => {
 		}
 		$('#mainMenu').hide()
 		$('#gamePage').show()
+		$('#winPage').hide()
 		gameMode = $('#modeSelect').val()
 		if(gameMode == 1) {
 			$('#gameState').hide()
@@ -66,6 +68,13 @@ $(document).ready(() => {
 	$("#backButton").click(() => {
 		$('#mainMenu').show()
 		$('#gamePage').hide()
+		$('#winPage').hide()
+	})
+	
+	$("#restartButton").click(() => {
+		$('#mainMenu').show()
+		$('#gamePage').hide()
+		$('#winPage').hide()
 	})
 	
 })
@@ -294,8 +303,27 @@ class pos {
 function checkWin() {
 	let won = isWin()
 	if (won) {
-		console.log('LEL')
+		if(currentPlayer === player1) {
+			if(gameMode === 0) {
+				$('#winMessage').html('A játékos nyert!')
+			} else {
+				$('#winMessage').html('Az első játékos nyert!')
+			}
+		} else if(currentPlayer === player2) {
+			if(gameMode === 0) {
+				$('#winMessage').html('A gép nyert!')
+			} else {
+				$('#winMessage').html('Az második játékos nyert!')
+			}
+		}
+		setTimeout(() => {
+			$('#mainMenu').hide()
+			$('#gamePage').hide()
+			$('#winPage').show()
+		}, 800)
 	}
+	
+	
 	return won
 }
 
