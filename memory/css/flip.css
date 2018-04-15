@@ -6,11 +6,18 @@
     transform: rotateY(180deg);
 }
 
-.flip-container,
-.front,
-.back {
-    width: 2em;
-    height: 2em;
+.flip-container4,
+.front4,
+.back4 {
+    width: 16vw;
+    height: 16vw;
+}
+
+.flip-container6,
+.front6,
+.back6 {
+    width: 8vw;
+    height: 8vw;
 }
 
 .flipper {

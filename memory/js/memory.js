@@ -95,14 +95,35 @@ class field {
 		
 		this.backIcon = document.createElement('span')
 		this.backIcon.className += 'fas fa-' + backsideIcon
+		console.log("size" + size)
+		if(size === 4) {
+			this.backIcon.className += ' fa-4x'
+		} else if(size === 6) {
+			this.backIcon.className += ' fa-2x'
+		}
+		
 		this.backSide = document.createElement('div')
-		this.backSide.className += 'back'
+		if(size === 4) {
+			this.backSide.className += 'back back4'
+		} else if(size === 6) {
+			this.backSide.className += 'back back6'
+		}
 		this.backSide.appendChild(this.backIcon)
 		
 		this.frontIcon = document.createElement('span')
 		this.frontIcon.className += 'fas fa-' + icon
+		if(size === 4) {
+			this.frontIcon.className += ' fa-4x'
+		} else if(size === 6) {
+			this.frontIcon.className += ' fa-2x'
+		}
+		
 		this.frontSide = document.createElement('div')
-		this.frontSide.className += 'front'
+		if(size === 4) {
+			this.frontSide.className += 'front front4'
+		} else if(size === 6) {
+			this.frontSide.className += 'front front6'
+		}
 		this.frontSide.appendChild(this.frontIcon)
 		
 		this.flipper = document.createElement('div')
@@ -111,7 +132,12 @@ class field {
 		this.flipper.appendChild(this.backSide)
 		
 		this.flippable = document.createElement('div')
-		this.flippable.className += 'flip-container'
+		this.flippable.className += ' flip-container'
+		if(size === 4) {
+			this.flippable.className += ' flip-container4'
+		} else if(size === 6) {
+			this.flippable.className += ' flip-container6'
+		}
 		this.flippable.appendChild(this.flipper)
 		
 		this.td = document.createElement('td')
