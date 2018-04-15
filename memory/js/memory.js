@@ -57,9 +57,11 @@ $(document).ready(() => {
 		$('#winPage').hide()
 		gameMode = $('#modeSelect').val()
 		if(gameMode == 1) {
-			$('#gameState').hide()
+			$('#player2').hide()
+			$('#player2Score').hide()
 		} else {
-			$('#gameState').show()
+			$('#player2').show()
+			$('#player2Score').show()
 		}
 		start()
 		
@@ -248,15 +250,16 @@ class field {
 		
 		if(step === 2) {
 			step = 0
-			if(gameMode !== 1) {
+			if(gameMode != 1) {
 				setTimeout(() => {
 					changePlayer()
 				}, 800)
-				if(gameMode === 0) {
+				if(gameMode == 0) {
+					console.log("AITURN")
 					aiTurn = true
 					setTimeout(() => {
 						aiStep()
-						aiTurn = false
+						
 					}, 800)
 				}
 			}
@@ -281,7 +284,16 @@ function aiStep() {
 	remaining = fields.filter(field => !field.found && !field.flipped)
 	let number = Math.floor(Math.random() * remaining.length) + 1
 	console.log("nummber: " + number)
-	
+	fields[number].step()
+	setTimeout(() => {
+		let number2 = Math.floor(Math.random() * remaining.length) + 1
+		console.log("nummber2: " + number2)
+		fields[number2].step()
+		setTimeout(() => {
+			aiTurn = false
+		}, 800)
+	}, 800)
+
 }
 
 function updateScore() {
