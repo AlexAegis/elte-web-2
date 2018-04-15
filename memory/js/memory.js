@@ -1,4 +1,6 @@
-let currentPlayer = 0
+let currentPlayer
+let player1
+let player2
 let fields = []
 let winState
 let size
@@ -79,6 +81,7 @@ function start() {
 	fields = []
 	for (let i = 0; i < size; i++) {
 		let tableRow = document.createElement('tr')
+		tableRow.className += 'row'
 		for (let j = 0; j < size; j++) {
 			let fld = new field(new pos(i, j), icons[arr[i * size + j] % (arr.length / 2)])
 			fields.push(fld)
@@ -87,6 +90,33 @@ function start() {
 		tableBody.appendChild(tableRow)
 	}
 	game.appendChild(table)
+	
+	player1 = $('#player1')
+	player2 = $('#player2')
+	currentPlayer = player2
+	changePlayer()
+}
+
+function changePlayer() {
+	if(currentPlayer.attr('id') === player1.attr('id')) {
+		currentPlayer = player2
+		player1.removeClass('active')
+		player2.addClass('active')
+		
+		player1.removeClass('fas')
+		player1.addClass('far')
+		player2.removeClass('far')
+		player2.addClass('fas')
+	} else if(currentPlayer.attr('id') === player2.attr('id')) {
+		currentPlayer = player1
+		player1.addClass('active')
+		player2.removeClass('active')
+		
+		player2.removeClass('fas')
+		player2.addClass('far')
+		player1.removeClass('far')
+		player1.addClass('fas')
+	}
 }
 
 class field {
@@ -163,6 +193,7 @@ class field {
 					if (checking.frontIcon.className === this.frontIcon.className) {
 						checking.found = true
 						this.found = true
+						
 						checking = null
 					} else {
 						this.checking = checking
@@ -175,6 +206,13 @@ class field {
 					}
 				}
 			}
+		}
+		
+		if(step === 2) {
+			step = 0
+			setTimeout(() => {
+				changePlayer()
+			}, 800)
 		}
 		winState = checkWin()
 		console.log('checkWin: ' + winState)

@@ -46,3 +46,11 @@
 .borderless td, .borderless th {
     border: none;
 }
+
+.active.player1 {
+    color: #0077fe;
+}
+
+.active.player2 {
+    color: #fb6501;
+}
