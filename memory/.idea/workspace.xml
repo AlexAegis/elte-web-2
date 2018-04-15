@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1aaf76-9214-4b53-9e97-ebaede7bfb1a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/flip.css" afterPath="$PROJECT_DIR$/css/flip.css" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/memory.js" afterPath="$PROJECT_DIR$/js/memory.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +18,8 @@
           <file leaf-file-name="memory.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/memory.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="569">
-                  <caret line="123" column="24" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+                <state relative-caret-position="2080">
+                  <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
                   <folding>
                     <element signature="e#223#446#0" expanded="false" />
                   </folding>
@@ -45,7 +40,7 @@
           <file leaf-file-name="flip.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/flip.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
+                <state relative-caret-position="720">
                   <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
                   <folding />
                 </state>
@@ -98,9 +93,25 @@
           <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.htaccess">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
+                <state relative-caret-position="1220">
                   <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-                  <folding />
+                  <folding>
+                    <marker date="1523468485942" expanded="true" signature="1479:1755" ph="&lt;IfModule mod_setenvif.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="2020:2171" ph="&lt;IfModule mod_headers.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="5086:5691" ph="&lt;IfModule mod_headers.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="6886:9840" ph="&lt;IfModule mod_mime.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="10517:11027" ph="&lt;IfModule mod_mime.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="12745:13118" ph="&lt;IfModule mod_rewrite.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="14497:14690" ph="&lt;IfModule mod_rewrite.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="19726:19785" ph="&lt;IfModule mod_autoindex.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="20535:20776" ph="&lt;IfModule mod_rewrite.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="21443:21765" ph="&lt;FilesMatch &quot;(^##.*##|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$&quot;&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="23758:23842" ph="&lt;IfModule mod_headers.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="27173:27239" ph="&lt;IfModule mod_headers.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="28659:32419" ph="&lt;IfModule mod_deflate.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="33760:33818" ph="&lt;IfModule mod_headers.c&gt;" />
+                    <marker date="1523468485942" expanded="true" signature="34322:37759" ph="&lt;IfModule mod_expires.c&gt;" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -118,8 +129,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="553">
-                  <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+                <state relative-caret-position="538">
+                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -132,7 +143,7 @@
           <file leaf-file-name="flip.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/flip.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
+                <state relative-caret-position="60">
                   <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
                   <folding />
                 </state>
@@ -170,7 +181,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="1659" />
-    <option name="width" value="2191" />
+    <option name="width" value="2192" />
     <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -208,9 +219,6 @@
       </list>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -223,7 +231,9 @@
       <updated>1523468483705</updated>
       <workItem from="1523468485357" duration="4470000" />
       <workItem from="1523474253958" duration="2666000" />
-      <workItem from="1523649397564" duration="4295000" />
+      <workItem from="1523649397564" duration="6011000" />
+      <workItem from="1523818728477" duration="13000" />
+      <workItem from="1523818763052" duration="57000" />
     </task>
     <task id="LOCAL-00001" summary="basefield">
       <created>1523473657604</created>
@@ -239,22 +249,27 @@
       <option name="project" value="LOCAL" />
       <updated>1523476911407</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gameplay implemented, winstate is working">
+      <created>1523653718948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523653718948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11431000" />
+    <option name="totallyTimeSpent" value="13217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1659" y="0" width="2191" height="2124" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1845238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985932" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -266,6 +281,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -297,13 +313,139 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basefield" />
-    <option name="LAST_COMMIT_MESSAGE" value="basefield" />
+    <MESSAGE value="gameplay implemented, winstate is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="gameplay implemented, winstate is working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/img/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/flip.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/memory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2080">
+          <caret line="123" column="24" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+          <folding>
+            <element signature="e#223#446#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/browserconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/usage.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+          <folding>
+            <marker date="1523468485942" expanded="true" signature="1479:1755" ph="&lt;IfModule mod_setenvif.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="2020:2171" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="5086:5691" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="6886:9840" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="10517:11027" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="12745:13118" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="14497:14690" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="19726:19785" ph="&lt;IfModule mod_autoindex.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="20535:20776" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="21443:21765" ph="&lt;FilesMatch &quot;(^##.*##|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$&quot;&gt;" />
+            <marker date="1523468485942" expanded="true" signature="23758:23842" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="27173:27239" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="28659:32419" ph="&lt;IfModule mod_deflate.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="33760:33818" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="34322:37759" ph="&lt;IfModule mod_expires.c&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/flip.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/memory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2375">
@@ -361,7 +503,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1525">
           <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-          <folding />
+          <folding>
+            <marker date="1523468485942" expanded="true" signature="1479:1755" ph="&lt;IfModule mod_setenvif.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="2020:2171" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="5086:5691" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="6886:9840" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="10517:11027" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="12745:13118" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="14497:14690" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="19726:19785" ph="&lt;IfModule mod_autoindex.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="20535:20776" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="21443:21765" ph="&lt;FilesMatch &quot;(^##.*##|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$&quot;&gt;" />
+            <marker date="1523468485942" expanded="true" signature="23758:23842" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="27173:27239" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="28659:32419" ph="&lt;IfModule mod_deflate.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="33760:33818" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="34322:37759" ph="&lt;IfModule mod_expires.c&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -419,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -446,7 +603,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1525">
           <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-          <folding />
+          <folding>
+            <marker date="1523468485942" expanded="true" signature="1479:1755" ph="&lt;IfModule mod_setenvif.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="2020:2171" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="5086:5691" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="6886:9840" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="10517:11027" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="12745:13118" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="14497:14690" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="19726:19785" ph="&lt;IfModule mod_autoindex.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="20535:20776" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="21443:21765" ph="&lt;FilesMatch &quot;(^##.*##|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$&quot;&gt;" />
+            <marker date="1523468485942" expanded="true" signature="23758:23842" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="27173:27239" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="28659:32419" ph="&lt;IfModule mod_deflate.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="33760:33818" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="34322:37759" ph="&lt;IfModule mod_expires.c&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -521,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,9 +707,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1220">
           <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-          <folding />
+          <folding>
+            <marker date="1523468485942" expanded="true" signature="1479:1755" ph="&lt;IfModule mod_setenvif.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="2020:2171" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="5086:5691" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="6886:9840" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="10517:11027" ph="&lt;IfModule mod_mime.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="12745:13118" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="14497:14690" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="19726:19785" ph="&lt;IfModule mod_autoindex.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="20535:20776" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="21443:21765" ph="&lt;FilesMatch &quot;(^##.*##|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$&quot;&gt;" />
+            <marker date="1523468485942" expanded="true" signature="23758:23842" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="27173:27239" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="28659:32419" ph="&lt;IfModule mod_deflate.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="33760:33818" ph="&lt;IfModule mod_headers.c&gt;" />
+            <marker date="1523468485942" expanded="true" signature="34322:37759" ph="&lt;IfModule mod_expires.c&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -593,16 +781,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/flip.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="123" column="24" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+        <state relative-caret-position="2080">
+          <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
           <folding>
             <element signature="e#223#446#0" expanded="false" />
           </folding>
@@ -611,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="538">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
