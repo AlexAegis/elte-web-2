@@ -8,7 +8,6 @@ let checking = null
 let player1Score
 let player2Score
 let step = 0
-let gameMode
 let aiTurn
 
 let state // page state
@@ -107,13 +106,13 @@ function initGame() {
 function initWin() {
 	$('#content').load('win.html', () => {
 		if (currentPlayer === player1) {
-			if (gameMode === 0) {
+			if (mode === 0 || mode === 1) {
 				$('#winMessage').html('A játékos nyert!')
 			} else {
 				$('#winMessage').html('Az első játékos nyert!')
 			}
 		} else if (currentPlayer === player2) {
-			if (gameMode === 0) {
+			if (mode === 0) {
 				$('#winMessage').html('A gép nyert!')
 			} else {
 				$('#winMessage').html('Az második játékos nyert!')
@@ -247,8 +246,17 @@ class field {
 	}
 	
 	step() {
-		console.log('step: ' + step)
-		if (!winState && !this.flipping && !aiTurn) {
+		if(!aiTurn) {
+			console.log('go ahead')
+			this.doStep()
+		} else {
+			console.log('no its ai turn')
+		}
+	}
+	
+	doStep() {
+		//console.log('step: ' + step)
+		if (!winState && !this.flipping) {
 			step++
 			if (!this.found && this !== checking) {
 				this.flip()
@@ -256,17 +264,16 @@ class field {
 					checking = this
 				} else {
 					if (checking.frontIcon.className === this.frontIcon.className) {
-						checking.found = true
-						this.found = true
-						
 						this.checking = checking
+						this.checking.found = true
+						this.found = true
 						
 						if (currentPlayer === player1) {
 							player1Score += 2
-							console.log('P1 STEP')
+							//console.log('P1 STEP')
 						} else if (currentPlayer === player2) {
 							player2Score += 2
-							console.log('P2 STEP')
+							//console.log('P2 STEP')
 						}
 						setTimeout(() => {
 							$(this.checking.backSide).hide()
@@ -290,26 +297,28 @@ class field {
 		
 		if (step === 2) {
 			step = 0
-			if (gameMode != 1) {
+			if (mode !== 1) {
 				setTimeout(() => {
 					changePlayer()
 				}, 800)
-				if (gameMode == 0) {
-					console.log('AITURN')
-					aiTurn = true
-					setTimeout(() => {
-						aiStep()
-						
-					}, 800)
+				if (mode === 0) {
+					//console.log('AITURN')
+					if(!aiTurn) {
+						aiTurn = true
+						setTimeout(() => {
+							aiStep()
+						}, 800)
+					}
+	
 				}
 			}
 		}
 		winState = checkWin()
-		console.log('checkWin: ' + winState)
+		//console.log('checkWin: ' + winState)
 	}
 	
 	flip() {
-		console.log('asd')
+		//console.log('asd')
 		
 		this.flipped = !this.flipped
 		$(this.flippable).toggleClass('hover')
@@ -321,16 +330,16 @@ class field {
 }
 
 function aiStep() {
-	remaining = fields.filter(field => !field.found && !field.flipped)
-	let number = Math.floor(Math.random() * remaining.length) + 1
-	console.log('nummber: ' + number)
-	fields[number].step()
 	setTimeout(() => {
-		let number2 = Math.floor(Math.random() * remaining.length) + 1
-		console.log('nummber2: ' + number2)
-		fields[number2].step()
+		let remaining = fields.filter(field => !field.found)
+		remaining[Math.floor(Math.random()*remaining.length)].doStep()
 		setTimeout(() => {
-			aiTurn = false
+			remaining = fields.filter(field => !field.found)
+			remaining[Math.floor(Math.random()*remaining.length)].doStep()
+			setTimeout(() => {
+				aiTurn = false
+				step = 0
+			}, 1600)
 		}, 800)
 	}, 800)
 	

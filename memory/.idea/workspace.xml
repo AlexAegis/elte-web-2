@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1aaf76-9214-4b53-9e97-ebaede7bfb1a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/utility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/win.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/win.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/flip.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/flip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/memory.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/memory.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,10 +21,11 @@
               <file leaf-file-name="memory.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/js/memory.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="366">
-                      <caret line="355" column="21" lean-forward="true" selection-start-line="355" selection-start-column="21" selection-end-line="355" selection-end-column="21" />
+                    <state relative-caret-position="150">
+                      <caret line="106" column="42" lean-forward="true" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
                       <folding>
                         <element signature="n#!!doc;n#loadGame#0" />
+                        <element signature="n#!!block;n#changePlayer#0" />
                       </folding>
                     </state>
                   </provider>
@@ -40,8 +34,8 @@
               <file leaf-file-name="win.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/win.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="98">
-                      <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+                    <state relative-caret-position="14">
+                      <caret line="1" column="22" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="22" />
                     </state>
                   </provider>
                 </entry>
@@ -110,6 +104,7 @@
       <find>.active.player2</find>
       <find>win</find>
       <find>idea.proper</find>
+      <find>gameMode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,7 +214,7 @@
       <workItem from="1523818728477" duration="13000" />
       <workItem from="1523818763052" duration="57000" />
       <workItem from="1523818851916" duration="11078000" />
-      <workItem from="1523893180096" duration="6607000" />
+      <workItem from="1523893180096" duration="8385000" />
     </task>
     <task id="LOCAL-00001" summary="basefield">
       <created>1523473657604</created>
@@ -298,11 +293,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523829340001</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="separated content, added parameters">
+      <created>1523902956158</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1523902956158</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30902000" />
+    <option name="totallyTimeSpent" value="32680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1073" y="0" width="1493" height="1416" extended-state="0" />
@@ -367,11 +369,12 @@
     <MESSAGE value="added scoring system" />
     <MESSAGE value="win animation done" />
     <MESSAGE value="done-ish" />
-    <option name="LAST_COMMIT_MESSAGE" value="done-ish" />
+    <MESSAGE value="separated content, added parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated content, added parameters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -381,6 +384,7 @@
           <caret line="252" column="31" lean-forward="true" selection-start-line="252" selection-start-column="31" selection-end-line="252" selection-end-column="31" />
           <folding>
             <element signature="n#!!doc;n#loadGame#0" />
+            <element signature="n#!!block;n#changePlayer#0" />
           </folding>
         </state>
       </provider>
@@ -627,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/win.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -662,12 +659,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/win.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/memory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="355" column="21" lean-forward="true" selection-start-line="355" selection-start-column="21" selection-end-line="355" selection-end-column="21" />
+        <state relative-caret-position="150">
+          <caret line="106" column="42" lean-forward="true" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
           <folding>
             <element signature="n#!!doc;n#loadGame#0" />
+            <element signature="n#!!block;n#changePlayer#0" />
           </folding>
         </state>
       </provider>
