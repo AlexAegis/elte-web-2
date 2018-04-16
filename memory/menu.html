@@ -1,4 +1,4 @@
-<div id="mainMenu" class="align-items-center p-4">
+<div id="mainMenu" class="align-items-center p-4 h-100 ">
     <h1 class="align-self-center ">Memória</h1>
     <div class="row">
         <h4 class="col-md-4">Méret</h4>
@@ -20,6 +20,7 @@
             <option value="1">Nehéz</option>
         </select>
     </div>
-
-    <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block mt-4" onclick="loadGame($('#modeSelect').val(), $('#sizeSelect').val(), $('#diffSelect').val())">Start</button>
+    <div class="p-5 fixed-bottom">
+        <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block" onclick="loadGame($('#modeSelect').val(), $('#sizeSelect').val(), $('#diffSelect').val())">Játék!</button>
+    </div>
 </div>
