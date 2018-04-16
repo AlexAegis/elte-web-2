@@ -292,6 +292,8 @@ class field {
 						setTimeout(() => {
 							$(this.checking.backSide).hide()
 							$(this.backSide).hide()
+							$(this.checking.frontSide).hide()
+							$(this.frontSide).hide()
 							updateScore()
 						}, 800)
 						
