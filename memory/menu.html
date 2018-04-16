@@ -1,0 +1,19 @@
+<div id="mainMenu" class="align-items-center p-4">
+    <h1 class="align-self-center ">Memória</h1>
+    <div class="row">
+        <h4 class="col-md-4">Méret</h4>
+        <select id="sizeSelect" class="col-md-8 h-25">
+            <option value="4">4x4</option>
+            <option value="6">6x6</option>
+        </select>
+
+        <h4 class="col-md-4">Játékmód</h4>
+        <select id="modeSelect" class="col-md-8 h-25">
+            <option value="0">Számítógép ellen</option>
+            <option value="1">Egyjátékos</option>
+            <option value="2">Kétjátékos</option>
+        </select>
+    </div>
+
+    <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block mt-4" onclick="loadGame($('#modeSelect').val(), $('#sizeSelect').val())">Start</button>
+</div>

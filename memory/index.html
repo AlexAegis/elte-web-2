@@ -30,58 +30,12 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+<script src="js/utility.js"></script>
 <script src="js/memory.js"></script>
 
 
 <div class="container-fluid">
-    <div id="mainMenu" class="align-items-center p-4">
-        <h1 class="align-self-center ">Memória</h1>
-        <div class="row">
-            <h4 class="col-md-4">Méret</h4>
-            <select id="sizeSelect" class="col-md-8 h-25">
-                <option value="4">4x4</option>
-                <option value="6">6x6</option>
-            </select>
-
-            <h4 class="col-md-4">Játékmód</h4>
-            <select id="modeSelect" class="col-md-8 h-25">
-                <option value="0">Számítógép ellen</option>
-                <option value="1">Egyjátékos</option>
-                <option value="2">Kétjátékos</option>
-            </select>
-        </div>
-
-        <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block mt-4">Start</button>
-    </div>
-
-    <div id="gamePage">
-        <div id="memoryGame" class="memgame table-responsive">
-
-        </div>
-
-        <div id="gameState" class="bg-light pt-2 pb-2 mt-2 mb-2">
-            <span id="player1" class="player1 bg-light fa-user fas fa-3x float-left p-2 ml-2"></span>
-            <div id="player1Score" class="float-left h2">0</div>
-            <span id="player2" class="player2 bg-light fa-user fas fa-3x float-right p-2 mr-2"></span>
-            <div id="player2Score" class="float-right h2">0</div>
-        </div>
-        <div id="gameMenu">
-            <button id="backButton" type="button" class="btn btn-danger btn-lg btn-block">
-                <span class="fa fa-sign-out-alt"></span>
-                    Back
-            </button>
-        </div>
-    </div>
-
-    <div id="winPage">
-        <h1 id="winMessage"></h1>
-        <img src="./resources/win.gif" alt="Winning animation">
-        <button id="restartButton" type="button" class="btn btn-danger btn-lg btn-block">
-            <span class="fa fa-sign-out-alt"></span>
-            Back
-        </button>
-    </div>
-
+    <div id="content"></div>
 </div>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

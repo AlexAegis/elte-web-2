@@ -11,7 +11,8 @@ let step = 0
 let gameMode
 let aiTurn
 
-
+let state // page state
+let mode // game mode
 
 // you need ((size * size) / 2) many icons to fill a square
 // these 18 icons will fit for a sqrt(18 * 2) = 6 size table
@@ -42,21 +43,57 @@ let backsideIcon = 'expand'
 //let iconSize = '4x'
 
 $(document).ready(() => {
-	game = document.getElementById('memoryGame')
-	$('#mainMenu').show()
-	$('#gamePage').hide()
-	$('#winPage').hide()
-	$('#startButton').click(() => {
+	state = getUrlParameter('state')
+	if (state === undefined || state === '' || state === 'menu') {
+		initMenu()
+	} else if (state === 'game') {
+		initGame()
+	}
+})
+
+function loadMenu() {
+	setParam('state', 'menu')
+	removeParam('mode')
+	removeParam('size')
+	initMenu()
+}
+
+/**
+ *
+ * @param mode 0 for AI, 1 for single player, 2 for local multi player, if not valid 1 will be used
+ * @param size 4 or 6, if not valid, 4 will be used
+ */
+function loadGame(mode, size) {
+	setParam('state', 'game')
+	setParam('mode', mode)
+	setParam('size', size)
+	initGame()
+}
+
+function initMenu() {
+	$('#content').load('menu.html')
+}
+
+function initGame() {
+	mode = parseInt(getUrlParameter('mode'))
+	size = parseInt(getUrlParameter('size'))
+	if(mode === undefined) {
+		mode = 1 // default game mode
+	}
+	if(size !== 4 || size !== 6) {
+		size = 4
+	}
+	
+	$('#content').load('game.html', () => {
+		game = document.getElementById('memoryGame')
+		
 		icons = []
 		game.innerHTML = ''
-		for (let i = 0; i < Math.pow($("#sizeSelect").val(), 2) / 2; i++) {
+		for (let i = 0; i < Math.pow(size, 2) / 2; i++) {
 			icons.push(allIcons[i])
 		}
-		$('#mainMenu').hide()
-		$('#gamePage').show()
-		$('#winPage').hide()
-		gameMode = $('#modeSelect').val()
-		if(gameMode == 1) {
+		
+		if (mode === '1') {
 			$('#player2').hide()
 			$('#player2Score').hide()
 		} else {
@@ -64,23 +101,26 @@ $(document).ready(() => {
 			$('#player2Score').show()
 		}
 		start()
-		
 	})
-	
-	$("#backButton").click(() => {
-		$('#mainMenu').show()
-		$('#gamePage').hide()
-		$('#winPage').hide()
-	})
-	
-	$("#restartButton").click(() => {
-		$('#mainMenu').show()
-		$('#gamePage').hide()
-		$('#winPage').hide()
-	})
-	
-})
+}
 
+function initWin() {
+	$('#content').load('win.html', () => {
+		if (currentPlayer === player1) {
+			if (gameMode === 0) {
+				$('#winMessage').html('A játékos nyert!')
+			} else {
+				$('#winMessage').html('Az első játékos nyert!')
+			}
+		} else if (currentPlayer === player2) {
+			if (gameMode === 0) {
+				$('#winMessage').html('A gép nyert!')
+			} else {
+				$('#winMessage').html('Az második játékos nyert!')
+			}
+		}
+	})
+}
 
 function start() {
 	player1Score = 0
@@ -119,11 +159,11 @@ function start() {
 	player2 = $('#player2')
 	currentPlayer = player2
 	changePlayer()
-
+	
 }
 
 function changePlayer() {
-	if(currentPlayer.attr('id') === player1.attr('id')) {
+	if (currentPlayer.attr('id') === player1.attr('id')) {
 		currentPlayer = player2
 		player1.removeClass('active')
 		player2.addClass('active')
@@ -132,7 +172,7 @@ function changePlayer() {
 		player1.addClass('far')
 		player2.removeClass('far')
 		player2.addClass('fas')
-	} else if(currentPlayer.attr('id') === player2.attr('id')) {
+	} else if (currentPlayer.attr('id') === player2.attr('id')) {
 		currentPlayer = player1
 		player1.addClass('active')
 		player2.removeClass('active')
@@ -150,33 +190,33 @@ class field {
 		
 		this.backIcon = document.createElement('span')
 		this.backIcon.className += 'fas fa-' + backsideIcon
-		console.log("size" + size)
-		if(size === 4) {
+		console.log('size' + size)
+		if (size === 4) {
 			this.backIcon.className += ' fa-4x'
-		} else if(size === 6) {
+		} else if (size === 6) {
 			this.backIcon.className += ' fa-2x'
 		}
 		
 		this.backSide = document.createElement('div')
-		if(size === 4) {
+		if (size === 4) {
 			this.backSide.className += 'back back4'
-		} else if(size === 6) {
+		} else if (size === 6) {
 			this.backSide.className += 'back back6'
 		}
 		this.backSide.appendChild(this.backIcon)
 		
 		this.frontIcon = document.createElement('span')
 		this.frontIcon.className += 'fas fa-' + icon
-		if(size === 4) {
+		if (size === 4) {
 			this.frontIcon.className += ' fa-4x'
-		} else if(size === 6) {
+		} else if (size === 6) {
 			this.frontIcon.className += ' fa-2x'
 		}
 		
 		this.frontSide = document.createElement('div')
-		if(size === 4) {
+		if (size === 4) {
 			this.frontSide.className += 'front front4'
-		} else if(size === 6) {
+		} else if (size === 6) {
 			this.frontSide.className += 'front front6'
 		}
 		this.frontSide.appendChild(this.frontIcon)
@@ -188,9 +228,9 @@ class field {
 		
 		this.flippable = document.createElement('div')
 		this.flippable.className += ' flip-container'
-		if(size === 4) {
+		if (size === 4) {
 			this.flippable.className += ' flip-container4'
-		} else if(size === 6) {
+		} else if (size === 6) {
 			this.flippable.className += ' flip-container6'
 		}
 		this.flippable.appendChild(this.flipper)
@@ -221,10 +261,10 @@ class field {
 						
 						this.checking = checking
 						
-						if(currentPlayer === player1) {
+						if (currentPlayer === player1) {
 							player1Score += 2
 							console.log('P1 STEP')
-						} else if(currentPlayer === player2) {
+						} else if (currentPlayer === player2) {
 							player2Score += 2
 							console.log('P2 STEP')
 						}
@@ -248,14 +288,14 @@ class field {
 			}
 		}
 		
-		if(step === 2) {
+		if (step === 2) {
 			step = 0
-			if(gameMode != 1) {
+			if (gameMode != 1) {
 				setTimeout(() => {
 					changePlayer()
 				}, 800)
-				if(gameMode == 0) {
-					console.log("AITURN")
+				if (gameMode == 0) {
+					console.log('AITURN')
 					aiTurn = true
 					setTimeout(() => {
 						aiStep()
@@ -283,17 +323,17 @@ class field {
 function aiStep() {
 	remaining = fields.filter(field => !field.found && !field.flipped)
 	let number = Math.floor(Math.random() * remaining.length) + 1
-	console.log("nummber: " + number)
+	console.log('nummber: ' + number)
 	fields[number].step()
 	setTimeout(() => {
 		let number2 = Math.floor(Math.random() * remaining.length) + 1
-		console.log("nummber2: " + number2)
+		console.log('nummber2: ' + number2)
 		fields[number2].step()
 		setTimeout(() => {
 			aiTurn = false
 		}, 800)
 	}, 800)
-
+	
 }
 
 function updateScore() {
@@ -315,30 +355,14 @@ class pos {
 function checkWin() {
 	let won = isWin()
 	if (won) {
-		if(currentPlayer === player1) {
-			if(gameMode === 0) {
-				$('#winMessage').html('A játékos nyert!')
-			} else {
-				$('#winMessage').html('Az első játékos nyert!')
-			}
-		} else if(currentPlayer === player2) {
-			if(gameMode === 0) {
-				$('#winMessage').html('A gép nyert!')
-			} else {
-				$('#winMessage').html('Az második játékos nyert!')
-			}
-		}
 		setTimeout(() => {
-			$('#mainMenu').hide()
-			$('#gamePage').hide()
-			$('#winPage').show()
+			initWin()
 		}, 800)
 	}
-	
-	
 	return won
 }
 
 function isWin() {
 	return fields.every(field => field.found)
 }
+
