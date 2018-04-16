@@ -189,7 +189,6 @@ function start() {
 	player2 = $('#player2')
 	currentPlayer = player2
 	changePlayer()
-	
 }
 
 function changePlayer() {
@@ -197,20 +196,10 @@ function changePlayer() {
 		currentPlayer = player2
 		player1.removeClass('active')
 		player2.addClass('active')
-		
-		player1.removeClass('fas')
-		player1.addClass('far')
-		player2.removeClass('far')
-		player2.addClass('fas')
 	} else if (currentPlayer.attr('id') === player2.attr('id')) {
 		currentPlayer = player1
 		player1.addClass('active')
 		player2.removeClass('active')
-		
-		player2.removeClass('fas')
-		player2.addClass('far')
-		player1.removeClass('far')
-		player1.addClass('fas')
 	}
 }
 
@@ -222,9 +211,9 @@ class field {
 		this.backIcon.className += 'fas fa-' + backsideIcon
 		console.log('size' + size)
 		if (size === 4) {
-			this.backIcon.className += ' fa-4x'
+			this.backIcon.className += ' fa-5x'
 		} else if (size === 6) {
-			this.backIcon.className += ' fa-2x'
+			this.backIcon.className += ' fa-3x'
 		}
 		
 		this.backSide = document.createElement('div')

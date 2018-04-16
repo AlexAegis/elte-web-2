@@ -9,8 +9,8 @@
 .flip-container4,
 .front4,
 .back4 {
-    width: 14vw;
-    height: 14vw;
+    width: 12vw;
+    height: 23vw;
 }
 
 .flip-container6,
@@ -31,12 +31,14 @@
     backface-visibility: hidden;
     position: absolute;
     align-items: center;
-    top: 0;
-    left: 0;
+
+    top: 15%;
+    left: -5%;
 }
 
 .front {
     z-index: 2;
+    margin-top: 20%;
     transform: rotateY(180deg);
 }
 
