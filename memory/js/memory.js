@@ -12,6 +12,7 @@ let aiTurn
 
 let state // page state
 let mode // game mode
+let diff // game difficulty (colors)
 
 // you need ((size * size) / 2) many icons to fill a square
 // these 18 icons will fit for a sqrt(18 * 2) = 6 size table
@@ -54,6 +55,7 @@ function loadMenu() {
 	setParam('state', 'menu')
 	removeParam('mode')
 	removeParam('size')
+	removeParam('diff')
 	initMenu()
 }
 
@@ -61,11 +63,13 @@ function loadMenu() {
  *
  * @param mode 0 for AI, 1 for single player, 2 for local multi player, if not valid 1 will be used
  * @param size 4 or 6, if not valid, 4 will be used
+ * @param diff 0 for Easy (colored) 1 for Hard (colorless)
  */
-function loadGame(mode, size) {
+function loadGame(mode, size, diff) {
 	setParam('state', 'game')
 	setParam('mode', mode)
 	setParam('size', size)
+	setParam('diff', diff)
 	initGame()
 }
 
@@ -76,11 +80,15 @@ function initMenu() {
 function initGame() {
 	mode = parseInt(getUrlParameter('mode'))
 	size = parseInt(getUrlParameter('size'))
-	if(mode === undefined) {
+	diff = parseInt(getUrlParameter('diff'))
+	if (mode !== 0 && mode !== 1 && mode !== 2) {
 		mode = 1 // default game mode
 	}
-	if(size !== 4 || size !== 6) {
+	if (size !== 4 && size !== 6) {
 		size = 4
+	}
+	if(diff !== 0 && diff !== 1) {
+		diff = 0
 	}
 	
 	$('#content').load('game.html', () => {
@@ -212,6 +220,12 @@ class field {
 			this.frontIcon.className += ' fa-2x'
 		}
 		
+		console.log('this.frontIcon.style.color ' + this.frontIcon.style.color)
+		if(diff === 0) {
+			this.frontIcon.setAttribute('style', 'color: #' + this.color())
+		}
+		console.log('this.frontIcon.style.color ' + this.frontIcon.style.color)
+		
 		this.frontSide = document.createElement('div')
 		if (size === 4) {
 			this.frontSide.className += 'front front4'
@@ -246,7 +260,7 @@ class field {
 	}
 	
 	step() {
-		if(!aiTurn) {
+		if (!aiTurn) {
 			console.log('go ahead')
 			this.doStep()
 		} else {
@@ -303,13 +317,13 @@ class field {
 				}, 800)
 				if (mode === 0) {
 					//console.log('AITURN')
-					if(!aiTurn) {
+					if (!aiTurn) {
 						aiTurn = true
 						setTimeout(() => {
 							aiStep()
 						}, 800)
 					}
-	
+					
 				}
 			}
 		}
@@ -327,15 +341,31 @@ class field {
 			this.flipping = false
 		}, 800)
 	}
+	
+	hashCode() {
+		let str = this.frontIcon.className
+		let hash = 0
+		for (let i = 0; i < str.length; i++) {
+			hash = str.charCodeAt(i) + ((hash <<2) - hash * 7.4)
+		}
+		return hash
+	}
+	
+	color() {
+		let c = (this.hashCode() & 0x00FFFFFF)
+			.toString(16)
+			.toUpperCase()
+		return '00000'.substring(0, 6 - c.length) + c
+	}
 }
 
 function aiStep() {
 	setTimeout(() => {
-		let remaining = fields.filter(field => !field.found)
-		remaining[Math.floor(Math.random()*remaining.length)].doStep()
+		let remaining = fields.filter(field => !field.found && !field.flipped)
+		remaining[Math.floor(Math.random() * remaining.length)].doStep()
 		setTimeout(() => {
-			remaining = fields.filter(field => !field.found)
-			remaining[Math.floor(Math.random()*remaining.length)].doStep()
+			remaining = fields.filter(field => !field.found && !field.flipped)
+			remaining[Math.floor(Math.random() * remaining.length)].doStep()
 			setTimeout(() => {
 				aiTurn = false
 				step = 0

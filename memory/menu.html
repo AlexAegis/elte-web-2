@@ -13,7 +13,13 @@
             <option value="1">Egyjátékos</option>
             <option value="2">Kétjátékos</option>
         </select>
+
+        <h4 class="col-md-4">Nehézség</h4>
+        <select id="diffSelect" class="col-md-8 h-25">
+            <option value="0">Könnyű</option>
+            <option value="1">Nehéz</option>
+        </select>
     </div>
 
-    <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block mt-4" onclick="loadGame($('#modeSelect').val(), $('#sizeSelect').val())">Start</button>
+    <button id="startButton" type="button" class="btn btn-primary btn-lg btn-block mt-4" onclick="loadGame($('#modeSelect').val(), $('#sizeSelect').val(), $('#diffSelect').val())">Start</button>
 </div>
