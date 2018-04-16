@@ -9,15 +9,15 @@
 .flip-container4,
 .front4,
 .back4 {
-    width: 16vw;
-    height: 16vw;
+    width: 14vw;
+    height: 14vw;
 }
 
 .flip-container6,
 .front6,
 .back6 {
-    width: 8vw;
-    height: 8vw;
+    width: 6vw;
+    height: 14vw;
 }
 
 .flipper {
@@ -30,6 +30,7 @@
 .back {
     backface-visibility: hidden;
     position: absolute;
+    align-items: center;
     top: 0;
     left: 0;
 }

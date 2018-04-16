@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad1aaf76-9214-4b53-9e97-ebaede7bfb1a" name="Default" comment="added difficulty (colors)">
+    <list default="true" id="ad1aaf76-9214-4b53-9e97-ebaede7bfb1a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/flip.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/flip.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/win.html" beforeDir="false" afterPath="$PROJECT_DIR$/win.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/memory.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/memory.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,14 +17,14 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.504">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.7928934">
+        <splitter split-orientation="vertical" split-proportion="0.57258886">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
               <file leaf-file-name="memory.js" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/js/memory.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="305">
-                      <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+                    <state relative-caret-position="176">
+                      <caret line="249" column="8" lean-forward="true" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
                       <folding>
                         <element signature="n#!!block;n#changePlayer#0" />
                       </folding>
@@ -33,7 +32,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="win.html" pinned="false" current-in-tab="true">
+              <file leaf-file-name="win.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/win.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="126">
@@ -42,11 +41,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
+              <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/game.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="154">
-                      <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="48" />
+                    <state relative-caret-position="56">
+                      <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
                     </state>
                   </provider>
                 </entry>
@@ -76,8 +75,8 @@
               <file leaf-file-name="flip.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/css/flip.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="61">
-                      <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+                    <state relative-caret-position="70">
+                      <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
                     </state>
                   </provider>
                 </entry>
@@ -117,12 +116,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/utility.js" />
-        <option value="$PROJECT_DIR$/css/flip.css" />
-        <option value="$PROJECT_DIR$/js/memory.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/menu.html" />
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/win.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/memory.js" />
+        <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/css/flip.css" />
       </list>
     </option>
   </component>
@@ -217,7 +216,7 @@
       <workItem from="1523818728477" duration="13000" />
       <workItem from="1523818763052" duration="57000" />
       <workItem from="1523818851916" duration="11078000" />
-      <workItem from="1523893180096" duration="10971000" />
+      <workItem from="1523893180096" duration="11996000" />
     </task>
     <task id="LOCAL-00001" summary="basefield">
       <created>1523473657604</created>
@@ -317,11 +316,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523907964784</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="nicer bottom buttons">
+      <created>1523908688947</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1523908688947</updated>
+    </task>
+    <task id="LOCAL-00016" summary="frontside hide">
+      <created>1523908967978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1523908967978</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35266000" />
+    <option name="totallyTimeSpent" value="36291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1073" y="0" width="1493" height="1416" extended-state="0" />
@@ -389,7 +402,9 @@
     <MESSAGE value="separated content, added parameters" />
     <MESSAGE value="added AI" />
     <MESSAGE value="added difficulty (colors)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added difficulty (colors)" />
+    <MESSAGE value="nicer bottom buttons" />
+    <MESSAGE value="frontside hide" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontside hide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,20 +664,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/flip.css">
+    <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="308">
+          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/memory.js">
+    <entry file="file://$PROJECT_DIR$/win.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!block;n#changePlayer#0" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -673,24 +685,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
+    <entry file="file://$PROJECT_DIR$/js/memory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="176">
+          <caret line="249" column="8" lean-forward="true" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!block;n#changePlayer#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="48" />
+        <state relative-caret-position="56">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/win.html">
+    <entry file="file://$PROJECT_DIR$/css/flip.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="70">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>

@@ -144,15 +144,15 @@ function start() {
 	console.log(arr)
 	
 	
-	let table = document.createElement('table')
-	table.className += 'table table-responsive borderless'
+	let table = document.createElement('div')
+	table.className += 'borderless'
 	
-	let tableBody = document.createElement('tbody')
+	let tableBody = document.createElement('div')
 	table.appendChild(tableBody)
 	
 	fields = []
 	for (let i = 0; i < size; i++) {
-		let tableRow = document.createElement('tr')
+		let tableRow = document.createElement('div')
 		tableRow.className += 'row'
 		for (let j = 0; j < size; j++) {
 			let fld = new field(new pos(i, j), icons[arr[i * size + j] % (arr.length / 2)])
@@ -248,8 +248,9 @@ class field {
 		}
 		this.flippable.appendChild(this.flipper)
 		
-		this.td = document.createElement('td')
+		this.td = document.createElement('div')
 		this.td.setAttribute('id', 'field' + this.pos)
+		this.td.setAttribute('class', 'col')
 		this.td.appendChild(this.flippable)
 		
 		this.flipper.addEventListener('click', () => this.step())
