@@ -9,6 +9,7 @@ let player1Score
 let player2Score
 let step = 0
 let aiTurn
+let winner
 
 let state // page state
 let mode // game mode
@@ -48,6 +49,8 @@ $(document).ready(() => {
 		initMenu()
 	} else if (state === 'game') {
 		initGame()
+	} else if(state === 'win') {
+		initWin()
 	}
 })
 
@@ -56,6 +59,7 @@ function loadMenu() {
 	removeParam('mode')
 	removeParam('size')
 	removeParam('diff')
+	removeParam('winner')
 	initMenu()
 }
 
@@ -70,7 +74,17 @@ function loadGame(mode, size, diff) {
 	setParam('mode', mode)
 	setParam('size', size)
 	setParam('diff', diff)
+	removeParam('winner')
 	initGame()
+}
+
+function loadWin(player) {
+	setParam('state', 'win')
+	setParam('winner', player)
+	removeParam('mode')
+	removeParam('size')
+	removeParam('diff')
+	initWin()
 }
 
 function initMenu() {
@@ -81,6 +95,7 @@ function initGame() {
 	mode = parseInt(getUrlParameter('mode'))
 	size = parseInt(getUrlParameter('size'))
 	diff = parseInt(getUrlParameter('diff'))
+	
 	if (mode !== 0 && mode !== 1 && mode !== 2) {
 		mode = 1 // default game mode
 	}
@@ -112,19 +127,27 @@ function initGame() {
 }
 
 function initWin() {
+	winner = parseInt(getUrlParameter('winner'))
+	mode = parseInt(getUrlParameter('mode'))
 	$('#content').load('win.html', () => {
-		if (currentPlayer === player1) {
-			if (mode === 0 || mode === 1) {
+		if (winner === 1) {
+			if (mode === 0) {
 				$('#winMessage').html('A játékos nyert!')
+			} else if(mode === 1) {
+				$('#winMessage').html('Gratulálok!')
 			} else {
 				$('#winMessage').html('Az első játékos nyert!')
 			}
-		} else if (currentPlayer === player2) {
+		} else if (winner === 2) {
 			if (mode === 0) {
 				$('#winMessage').html('A gép nyert!')
-			} else {
+			} else if(mode === 2) {
 				$('#winMessage').html('Az második játékos nyert!')
+			} else {
+				$('#winMessage').html('Te kis vicces')
 			}
+		} else {
+			$('#winMessage').html('Döntetlen!')
 		}
 	})
 }
@@ -398,7 +421,13 @@ function checkWin() {
 	let won = isWin()
 	if (won) {
 		setTimeout(() => {
-			initWin()
+			if (player1Score > player2Score) {
+				loadWin(1)
+			} else if (player1Score < player2Score) {
+				loadWin(2)
+			} else {
+				loadWin(0)
+			}
 		}, 800)
 	}
 	return won

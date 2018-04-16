@@ -55,3 +55,11 @@
 .active.player2 {
     color: #fb6501;
 }
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+.memGame {
+
+}
