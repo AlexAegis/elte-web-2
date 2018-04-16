@@ -10,6 +10,7 @@ let player2Score
 let step = 0
 let aiTurn
 let winner
+let aiFound
 
 let state // page state
 let mode // game mode
@@ -156,6 +157,7 @@ function start() {
 	player1Score = 0
 	player2Score = 0
 	aiTurn = false
+	aiFound = false
 	size = Math.sqrt(icons.length * 2)
 	console.log(size)
 	let arr = []
@@ -294,7 +296,10 @@ class field {
 						this.checking = checking
 						this.checking.found = true
 						this.found = true
-						
+						if(aiTurn) {
+							aiFound = true
+						}
+						step = 0
 						if (currentPlayer === player1) {
 							player1Score += 2
 							//console.log('P1 STEP')
@@ -338,17 +343,13 @@ class field {
 							aiStep()
 						}, 800)
 					}
-					
 				}
 			}
 		}
 		winState = checkWin()
-		//console.log('checkWin: ' + winState)
 	}
 	
 	flip() {
-		//console.log('asd')
-		
 		this.flipped = !this.flipped
 		$(this.flippable).toggleClass('hover')
 		this.flipping = true
@@ -382,9 +383,15 @@ function aiStep() {
 			remaining = fields.filter(field => !field.found && !field.flipped)
 			remaining[Math.floor(Math.random() * remaining.length)].doStep()
 			setTimeout(() => {
-				aiTurn = false
-				step = 0
-			}, 1600)
+				if(aiFound) {
+					step = 0
+					aiFound = false
+					aiStep()
+				} else {
+					aiTurn = false
+					step = 0
+				}
+			}, 800)
 		}, 800)
 	}, 800)
 	
