@@ -115,7 +115,7 @@ function initGame() {
 			icons.push(allIcons[i])
 		}
 		
-		if (mode === '1') {
+		if (mode == 1) {
 			$('#player2').hide()
 			$('#player2Score').hide()
 		} else {
@@ -130,18 +130,18 @@ function initWin() {
 	winner = parseInt(getUrlParameter('winner'))
 	mode = parseInt(getUrlParameter('mode'))
 	$('#content').load('win.html', () => {
-		if (winner === 1) {
-			if (mode === 0) {
+		if (winner == 1) {
+			if (mode == 0) {
 				$('#winMessage').html('A játékos nyert!')
-			} else if(mode === 1) {
+			} else if(mode == 1) {
 				$('#winMessage').html('Gratulálok!')
 			} else {
 				$('#winMessage').html('Az első játékos nyert!')
 			}
-		} else if (winner === 2) {
-			if (mode === 0) {
+		} else if (winner == 2) {
+			if (mode == 0) {
 				$('#winMessage').html('A gép nyert!')
-			} else if(mode === 2) {
+			} else if(mode == 2) {
 				$('#winMessage').html('Az második játékos nyert!')
 			} else {
 				$('#winMessage').html('Te kis vicces')
