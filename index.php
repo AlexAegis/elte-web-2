@@ -10,11 +10,6 @@
 <body>
 
 <?php
-
-/*  ssh
-    ssh-keygen -t rsa
-    chmod -R 0755
-*/
 set_include_path(getcwd() . "/lib");
 include_once('lib/Crypt/Base.php');
 include_once('lib/Crypt/RSA.php');
@@ -43,7 +38,7 @@ $ssh->write("ls -la\n");
 echo $ssh->read('alexaegis@caesar.elte.hu:~$');
 
 
-/*
+
 $dbServerName = "mysql.caesar.elte.hu";
 $dbUsername = "alexaegis";
 $dbPassword = "1NGYbU67ILtxsVgF";
@@ -56,7 +51,8 @@ $conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";*/
+echo "Connected successfully";
+
 ?>
 
     <?php
