@@ -27,8 +27,6 @@ include_once('lib/Net/SFTP/Stream.php');
 include_once('lib/Net/SCP.php');
 include_once('lib/Net/SFTP.php');
 include_once('lib/Net/SSH2.php');
-include_once('lib/System');
-include_once('lib/System/SSH');
 include_once('lib/System/SSH/Agent.php');
 include_once('lib/System/SSH_Agent.php');
 include_once('lib/bootstrap.php');
