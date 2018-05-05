@@ -30,48 +30,13 @@ include_once('lib/System/SSH_Agent.php');
 include_once('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
-//$key->setPassword('whatever');
-$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/caesar_rsa'));
-
-$key2 = new Crypt_RSA();
-$key2->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/caesar_rsa.pub'));
-
-
-$key3 = new Crypt_RSA();
-$key3->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/id_rsa'));
-
-$key4 = new Crypt_RSA();
-$key4 ->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/id_rsa.pub'));
+$key->setPassword('elte-web-2');
+$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/id_rsa'));
 
 $ssh = new Net_SSH2('caesar.elte.hu');
 if (!$ssh->login('alexaegis', $key)) {
-
-    if (!$ssh->login('alexaegis', $key2)) {
-
-
-        if (!$ssh->login('alexaegis', $key3)) {
-
-
-            if (!$ssh->login('alexaegis', $key4)) {
-                exit('Login Failed4');
-            }
-
-
-            exit('Login Failed3');
-        }
-
-
-        exit('Login Failed2');
-    }
-
-
     exit('Login Failed');
 }
-
-
-
-
-
 
 echo $ssh->read('alexaegis@caesar.elte.hu:~$');
 $ssh->write("ls -la\n");
