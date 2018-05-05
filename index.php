@@ -15,7 +15,7 @@
     ssh-keygen -t rsa
     chmod -R 0755
 */
-
+set_include_path(getcwd());
 include_once('lib/Crypt/Base.php');
 include_once('lib/Crypt/RSA.php');
 include_once('lib/Math/BigInteger.php');
