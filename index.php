@@ -33,16 +33,16 @@ include_once('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
-$key->loadKey(file_get_contents('privatekey'));
+$key->loadKey(file_get_contents('~/.ssh/id_rsa.pub'));
 
-$ssh = new Net_SSH2('www.domain.tld');
-if (!$ssh->login('username', $key)) {
+$ssh = new Net_SSH2('caesar.elte.hu');
+if (!$ssh->login('alexaegis', $key)) {
     exit('Login Failed');
 }
 
-echo $ssh->read('username@username:~$');
+echo $ssh->read('alexaegis@caesar.elte.hu:~$');
 $ssh->write("ls -la\n");
-echo $ssh->read('username@username:~$');
+echo $ssh->read('alexaegis@caesar.elte.hu:~$');
 
 
 /*
