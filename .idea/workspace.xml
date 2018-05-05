@@ -29,8 +29,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state relative-caret-position="576">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -66,6 +66,7 @@
         <option value="$PROJECT_DIR$/tictactoe/tictactoe.css" />
         <option value="$PROJECT_DIR$/tictactoe/tictactoe.html" />
         <option value="$PROJECT_DIR$/tictactoe/tictactoe.js" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -111,50 +112,6 @@
               <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Crypt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="File" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Math" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Net" type="462c0819:PsiDirectoryNode" />
-              <item name="SFTP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="System" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="System" type="462c0819:PsiDirectoryNode" />
-              <item name="SSH" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -199,7 +156,7 @@
       <workItem from="1519934696263" duration="599000" />
       <workItem from="1520069005631" duration="10587000" />
       <workItem from="1525520292707" duration="7000" />
-      <workItem from="1525520326710" duration="3477000" />
+      <workItem from="1525520326710" duration="4115000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1525520646619</created>
@@ -264,26 +221,41 @@
       <option name="project" value="LOCAL" />
       <updated>1525524108791</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="every include">
+      <created>1525524131419</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1525524131419</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ssh try">
+      <created>1525524493295</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525524493295</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25038000" />
+    <option name="totallyTimeSpent" value="25676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1293" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19302514" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19302514" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.006701031" />
@@ -306,7 +278,8 @@
     <MESSAGE value="ssh test" />
     <MESSAGE value="try lib" />
     <MESSAGE value="every include" />
-    <option name="LAST_COMMIT_MESSAGE" value="every include" />
+    <MESSAGE value="ssh try" />
+    <option name="LAST_COMMIT_MESSAGE" value="ssh try" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.html">
@@ -497,10 +470,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="112">
+            <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="576">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
