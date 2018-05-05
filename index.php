@@ -31,7 +31,7 @@ $methods = array(
         'comp' => 'none'));
 
 $connection = ssh2_connect('caesar.elte.hu', 22, $methods);
-if(ssh2_auth_pubkey_file($connect, 'alexaegis', '~/.ssh/id_dsa.pub', '~/.ssh/id_dsa')) {
+if(ssh2_auth_pubkey_file($connection, 'alexaegis', '~/.ssh/id_dsa.pub', '~/.ssh/id_dsa')) {
     echo "Public Key Authentication Successful\n";
 } else {
     echo "Public Key Authentication Failed\n";
