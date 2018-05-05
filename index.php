@@ -16,6 +16,7 @@
     chmod -R 0755
 */
 
+include_once('lib/Crypt/Base.php');
 include_once('lib/Crypt/RSA.php');
 include_once('lib/Math/BigInteger.php');
 include_once('lib/Net/SFTP/Stream.php');
