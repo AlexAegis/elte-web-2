@@ -18,24 +18,21 @@
     chmod 700 ~/.ssh/
     chmod -R 600 ~/.ssh/*
  */
-$methods = array(
-    'kex' => 'diffie-hellman-group1-sha1',
-    'hostkey' => 'ssh-dss',
-    'client_to_server' => array(
-        'crypt' => '3des-cbc',
-        'mac' => 'hmac-md5',
-        'comp' => 'none'),
-    'server_to_client' => array(
-        'crypt' => '3des-cbc',
-        'mac' => 'hmac-md5',
-        'comp' => 'none'));
+include('Net/SSH2.php');
 
-$connection = ssh2_connect('caesar.elte.hu', 22, $methods);
-if(ssh2_auth_pubkey_file($connection, 'alexaegis', '~/.ssh/id_dsa.pub', '~/.ssh/id_dsa')) {
-    echo "Public Key Authentication Successful\n";
-} else {
-    echo "Public Key Authentication Failed\n";
+$key = new Crypt_RSA();
+//$key->setPassword('whatever');
+$key->loadKey(file_get_contents('privatekey'));
+
+$ssh = new Net_SSH2('www.domain.tld');
+if (!$ssh->login('username', $key)) {
+    exit('Login Failed');
 }
+
+echo $ssh->read('username@username:~$');
+$ssh->write("ls -la\n");
+echo $ssh->read('username@username:~$');
+?>
 
 /*
 $dbServerName = "mysql.caesar.elte.hu";
