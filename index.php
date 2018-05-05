@@ -33,7 +33,7 @@ include_once('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
-$key->loadKey(file_get_contents('~/.ssh/caesar_rsa.pub'));
+$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/caesar_rsa.pub'));
 
 $ssh = new Net_SSH2('caesar.elte.hu');
 if (!$ssh->login('alexaegis', $key)) {
