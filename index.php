@@ -18,7 +18,8 @@
     chmod 700 ~/.ssh/
     chmod -R 600 ~/.ssh/*
  */
-include('Net/SSH2.php');
+include('lib/Net/SSH2.php');
+include('lib/Crypt/RSA.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
@@ -32,7 +33,7 @@ if (!$ssh->login('username', $key)) {
 echo $ssh->read('username@username:~$');
 $ssh->write("ls -la\n");
 echo $ssh->read('username@username:~$');
-?>
+
 
 /*
 $dbServerName = "mysql.caesar.elte.hu";
