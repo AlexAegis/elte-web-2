@@ -16,7 +16,7 @@
     chmod -R 0755
 */
 echo getcwd();
-set_include_path(getcwd() . "lib/");
+set_include_path(getcwd() . "/lib");
 include_once('lib/Crypt/Base.php');
 include_once('lib/Crypt/RSA.php');
 include_once('lib/Math/BigInteger.php');
