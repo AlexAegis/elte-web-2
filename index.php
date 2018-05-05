@@ -18,6 +18,7 @@
 set_include_path(getcwd() . "/lib");
 include_once('lib/Crypt/Base.php');
 include_once('lib/Crypt/RSA.php');
+include_once('lib/Crypt/AES.php');
 include_once('lib/Math/BigInteger.php');
 include_once('lib/Net/SFTP/Stream.php');
 include_once('lib/Net/SCP.php');
@@ -30,7 +31,7 @@ include_once('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
-$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/id_rsa.pub'));
+$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/caesar_rsa.pub'));
 
 $ssh = new Net_SSH2('caesar.elte.hu');
 if (!$ssh->login('alexaegis', $key)) {
