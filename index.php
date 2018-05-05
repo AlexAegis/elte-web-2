@@ -18,9 +18,33 @@
     chmod 700 ~/.ssh/
     chmod -R 600 ~/.ssh/*
  */
-include('lib/Math/BigInteger.php');
+
+include('lib/Crypt/AES.php');
+include('lib/Crypt/Base.php');
+include('lib/Crypt/Blowfish.php');
+include('lib/Crypt/DES.php');
+include('lib/Crypt/Hash.php');
+include('lib/Crypt/Random.php');
+include('lib/Crypt/RC2.php');
+include('lib/Crypt/RC4.php');
+include('lib/Crypt/Rijndael.php');
 include('lib/Crypt/RSA.php');
+include('lib/Crypt/TripleDES.php');
+include('lib/Crypt/Twofish.php');
+include('lib/File/ANSI.php');
+include('lib/File/ASN1.php');
+include('lib/File/X509.php');
+include('lib/Math/BigInteger.php');
+include('lib/Net/SFTP/Stream.php');
+include('lib/Net/SCP.php');
+include('lib/Net/SFTP.php');
+include('lib/Net/SSH1.php');
 include('lib/Net/SSH2.php');
+include('lib/System');
+include('lib/System/SSH');
+include('lib/System/SSH/Agent.php');
+include('lib/System/SSH_Agent.php');
+include('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
