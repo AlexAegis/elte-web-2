@@ -23,6 +23,7 @@ include_once('lib/Math/BigInteger.php');
 include_once('lib/Net/SFTP/Stream.php');
 include_once('lib/Net/SCP.php');
 include_once('lib/Net/SFTP.php');
+include_once('lib/Net/SSH1.php');
 include_once('lib/Net/SSH2.php');
 include_once('lib/System/SSH/Agent.php');
 include_once('lib/System/SSH_Agent.php');
@@ -30,7 +31,7 @@ include_once('lib/bootstrap.php');
 
 $key = new Crypt_RSA();
 //$key->setPassword('whatever');
-$key->loadKey(file_get_contents('~/.ssh/caesar_rsa.pub'));
+$key->loadKey(file_get_contents('/home/hallgatok/alexaegis/.ssh/caesar_rsa.pub'));
 
 $ssh = new Net_SSH2('caesar.elte.hu');
 if (!$ssh->login('alexaegis', $key)) {
