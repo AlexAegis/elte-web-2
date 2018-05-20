@@ -33,11 +33,6 @@ if (!$ssh->login('alexaegis', $key)) {
     exit('Login Failed');
 }
 
-echo $ssh->read('alexaegis@caesar.elte.hu:~$');
-$ssh->write("ls -la\n");
-echo $ssh->read('alexaegis@caesar.elte.hu:~$');
-
-
 
 $dbServerName = "mysql.caesar.elte.hu";
 $dbUsername = "alexaegis";
