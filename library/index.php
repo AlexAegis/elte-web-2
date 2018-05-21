@@ -23,13 +23,14 @@ $conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
-
 ?>
 
     <?php
         echo "<h1>Hello, PHP-7!</h1>";
     ?>
+    <label id="label">lol</label>
+    <input id="email" type="text"/>
+
 
 
 </body>
