@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/class/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/class/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/js/login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,8 +106,8 @@
           <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/class/config.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+                <state relative-caret-position="92">
+                  <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -139,8 +141,8 @@
               <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/library/class/login.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="115">
-                      <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
+                    <state relative-caret-position="255">
+                      <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
                     </state>
                   </provider>
                 </entry>
@@ -183,7 +185,7 @@
                 <entry file="file://$PROJECT_DIR$/library/js/login.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="140">
-                      <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+                      <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
                     </state>
                   </provider>
                 </entry>
@@ -221,11 +223,11 @@
         <option value="$PROJECT_DIR$/library/logout.php" />
         <option value="$PROJECT_DIR$/library/config.php" />
         <option value="$PROJECT_DIR$/library/login.php" />
-        <option value="$PROJECT_DIR$/library/class/config.php" />
         <option value="$PROJECT_DIR$/library/js/utility.js" />
         <option value="$PROJECT_DIR$/library/main.php" />
         <option value="$PROJECT_DIR$/library/index.php" />
         <option value="$PROJECT_DIR$/library/js/login.js" />
+        <option value="$PROJECT_DIR$/library/class/config.php" />
         <option value="$PROJECT_DIR$/library/class/login.php" />
       </list>
     </option>
@@ -291,7 +293,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -335,21 +337,7 @@
       <workItem from="1525623320818" duration="178000" />
       <workItem from="1526848083452" duration="2164000" />
       <workItem from="1526882500488" duration="669000" />
-      <workItem from="1526888536731" duration="12017000" />
-    </task>
-    <task id="LOCAL-00002" summary="ssh test">
-      <created>1525522378881</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1525522378881</updated>
-    </task>
-    <task id="LOCAL-00003" summary="ssh test">
-      <created>1525522428761</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1525522428761</updated>
+      <workItem from="1526888536731" duration="13372000" />
     </task>
     <task id="LOCAL-00004" summary="try lib">
       <created>1525523585667</created>
@@ -680,26 +668,40 @@
       <option name="project" value="LOCAL" />
       <updated>1526912372019</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="try">
+      <created>1526913477413</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1526913477414</updated>
+    </task>
+    <task id="LOCAL-00052" summary="try">
+      <created>1526913799204</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1526913799204</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50193000" />
+    <option name="totallyTimeSpent" value="51548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="27" width="2218" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3296875" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.3296875" />
+      <window_info active="true" anchor="bottom" id="File Transfer" visible="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" weight="0.3296875" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118164964" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118164964" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.101019464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -967,13 +969,6 @@
         <state relative-caret-position="-628" />
       </provider>
     </entry>
-    <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f1086c00-e9d6-4363-95f9-c7796803c31e/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1056,24 +1051,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1084,10 +1065,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/class/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
+        <state relative-caret-position="255">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
         </state>
       </provider>
     </entry>

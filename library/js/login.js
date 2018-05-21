@@ -7,7 +7,7 @@ $(document).ready(function() {
 			url: window.location.pathname + '/class/login.php',
 			data: $(this).serialize(),
 			success: function(data) {
-				if (data === 'Login') {
+				if (data === 'success') {
 					alert('login succc');
 					
 					//window.location = '/user-page.php';
