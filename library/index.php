@@ -28,8 +28,10 @@ if ($conn->connect_error) {
     <?php
         echo "<h1>Hello, PH!</h1>";
     ?>
-    <label id="label">lol</label>
-    <input id="email" type="text"/>
+    <label id="label" for="email">E-mail:</label>
+    <input id="email" type="email"/>
+    <label id="label" for="password">Password:</label>
+    <input id="password" type="password"/>
 
 
 
