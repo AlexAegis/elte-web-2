@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('#loginForm').submit(function(e) {
 		e.preventDefault();
+		console.log('AAAAAAAAAAAAAASDASD');
 		$.ajax({
 			type: "POST",
 			url: '/class/login.php',
