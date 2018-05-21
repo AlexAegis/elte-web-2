@@ -1,0 +1,33 @@
+<form id="loginForm" action="" method="post">
+    <h1>Personal Library</h1>
+    <label id="emailLabel" for="email">E-mail:</label>
+    <input id="email" name="username" type="email" placeholder="Enter email" required/>
+    <label id="passwordLabel" for="password">Password:</label>
+    <input id="password" name="password" type="password" placeholder="Enter password" required/>
+    <button id="login" type="submit">Login</button>
+</form>
+<script>
+	$(document).ready(function() {
+		$('#loginForm').submit(function(e) {
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: window.location.pathname + 'class/login.php',
+				data: $(this).serialize(),
+				success: function(data) {
+					if (data === 'success') {
+						$('body').load(window.location.pathname + 'content/main.html', data, () => {
+							console.log('BODY LOADED')
+						});
+
+						//window.location = '/user-page.php';
+					}
+					else {
+						alert('Invalid Credentials');
+					}
+				}
+			});
+		});
+	});
+
+</script>
