@@ -4,7 +4,7 @@ $(document).ready(function() {
 		console.log('AAAAAAAAAAAAAASDASD');
 		$.ajax({
 			type: "POST",
-			url: '/class/login.php',
+			url: window.location.pathname + '/class/login.php',
 			data: $(this).serialize(),
 			success: function(data) {
 				if (data === 'Login') {
