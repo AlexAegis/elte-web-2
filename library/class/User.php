@@ -35,7 +35,7 @@
             echo('success');
             exit();
         } else {
-            $error = "Your Login Name or Password is invalid";
+            echo "Your Login Name or Password is invalid";
         }
         return $success;
     }

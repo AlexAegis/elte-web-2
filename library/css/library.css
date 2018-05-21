@@ -1,7 +1,42 @@
+html {
+    background-color: #fffbfb;
+}
+
 #header {
+    overflow: hidden;
+    min-height: 6em;
+    position: relative;
+    background-color: #9fcdff;
+}
+
+#status {
+    float: left;
+    height: 100%;
+    position: absolute;
+    width: 40vw;
+    padding: 1em;
     background-color: #dfc4a8;
 }
 
+#control {
+    float: right;
+    right: 0;
+    top: 0;
+    width: 60vw;
+
+    vertical-align: center;
+    padding: 1em;
+}
+
+#control > form {
+    float: right;
+    padding: 1em;
+}
+
 #content {
-    background-color: #fff9ea;
+   padding: 1em;
+}
+
+.error {
+    color: red;
 }
