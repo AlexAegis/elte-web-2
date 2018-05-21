@@ -27,7 +27,8 @@ class User
         $db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
         $username = mysqli_real_escape_string($db, $_POST['username']);
-        $password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
+        //$password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
+        $password = mysqli_real_escape_string($db, $_POST['password']);
         $sql = "select name from user where email = '$username' and password = '$password'";
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
