@@ -139,8 +139,8 @@
               <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/library/class/login.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="140">
-                      <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+                    <state relative-caret-position="115">
+                      <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
                     </state>
                   </provider>
                 </entry>
@@ -335,14 +335,7 @@
       <workItem from="1525623320818" duration="178000" />
       <workItem from="1526848083452" duration="2164000" />
       <workItem from="1526882500488" duration="669000" />
-      <workItem from="1526888536731" duration="10837000" />
-    </task>
-    <task id="LOCAL-00001" summary="test">
-      <created>1525520646619</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1525520646619</updated>
+      <workItem from="1526888536731" duration="12017000" />
     </task>
     <task id="LOCAL-00002" summary="ssh test">
       <created>1525522378881</created>
@@ -673,11 +666,25 @@
       <option name="project" value="LOCAL" />
       <updated>1526912167058</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="try">
+      <created>1526912273301</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1526912273301</updated>
+    </task>
+    <task id="LOCAL-00050" summary="try">
+      <created>1526912372019</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1526912372019</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49013000" />
+    <option name="totallyTimeSpent" value="50193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="27" width="2218" height="1416" extended-state="0" />
@@ -733,13 +740,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lesson03/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
@@ -1077,10 +1077,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/cubrid/cubrid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="496" column="9" selection-start-line="496" selection-start-column="9" selection-end-line="496" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/class/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="115">
+          <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
         </state>
       </provider>
     </entry>

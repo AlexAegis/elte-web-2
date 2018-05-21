@@ -9,6 +9,7 @@ class User
 {
     public $username = null;
     public $password = null;
+    public $name = null;
 
     public function __construct($data = array())
     {
@@ -26,13 +27,16 @@ class User
         $success = false;
         $db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $this->username = mysqli_real_escape_string($db, $_POST['username']);
         //$password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
-        $password = mysqli_real_escape_string($db, $_POST['password']);
-        $sql = "select name from user where email = '$username' and password = '$password'";
+        $this->password = password_hash(mysqli_real_escape_string($db, $_POST['password']), 'sha256');
+        // = mysqli_real_escape_string($db, $_POST['password']);
+        $sql = "select name from user where email = '$this->username' and password = '$this->password'";
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
+        $this->name = $row[0];
+
         if ($count == 1) {
             $success = true;
             session_start();
