@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 ?>
 
     <?php
-        echo "<h1>Hello, PHP-7!</h1>";
+        echo "<h1>Hello, PHP!</h1>";
     ?>
     <label id="label">lol</label>
     <input id="email" type="text"/>
