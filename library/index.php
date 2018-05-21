@@ -1,4 +1,3 @@
-
 <?php
 include("config.php");
 session_start();
@@ -17,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($count == 1) {
         $_SESSION['user'] = $username;
         echo 'LOGIN SUCC';
-        header("location: welcome.php");
+        //header("location: welcome.php");
     } else {
         echo 'LOGIN FAIL';
         $error = "Your Login Name or Password is invalid";
@@ -40,9 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <form action="" method="post">
     <h1>Personal Library</h1>
     <label id="label" for="email">E-mail:</label>
-    <input id="email" type="email" placeholder="Enter email" required/>
+    <input id="email" name="username" type="email" placeholder="Enter email" required/>
     <label id="label" for="password">Password:</label>
-    <input id="password" type="password" placeholder="Enter password" required/>
+    <input id="password" name="password" type="password" placeholder="Enter password" required/>
     <button id="login" type="submit">Login</button>
 
 </form>

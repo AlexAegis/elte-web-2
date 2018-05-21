@@ -803,5 +803,164 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
+    <table id="201" parent="3" name="book">
+      <Comment>Books for the library appliations</Comment>
+    </table>
+    <table id="202" parent="3" name="book_category">
+      <Comment>Categories of books</Comment>
+    </table>
+    <table id="203" parent="3" name="user">
+      <Comment>Users of the application for the second web programming submission</Comment>
+    </table>
+    <column id="204" parent="201" name="id">
+      <Position>1</Position>
+      <Comment>primary key</Comment>
+      <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="205" parent="201" name="owner">
+      <Position>2</Position>
+      <Comment>owner of the book</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="206" parent="201" name="author">
+      <Position>3</Position>
+      <Comment>author of the book</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="207" parent="201" name="title">
+      <Position>4</Position>
+      <Comment>title of the book</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="208" parent="201" name="page">
+      <Position>5</Position>
+      <Comment>current page</Comment>
+      <DataType>int(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="209" parent="201" name="category">
+      <Position>6</Position>
+      <Comment>category of the book</Comment>
+      <DataType>int(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="210" parent="201" name="isbn">
+      <Position>7</Position>
+      <Comment>isbn number</Comment>
+      <DataType>int(13)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="211" parent="201" name="is_read">
+      <Position>8</Position>
+      <Comment>is the book read by the user or not</Comment>
+      <DataType>tinyint(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="212" parent="201" name="owner">
+      <Comment>one owner can only own a book once</Comment>
+      <ColNames>owner
+author
+title</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="213" parent="201" name="category">
+      <ColNames>category</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="214" parent="201" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="215" parent="201" name="owner">
+      <ColNames>owner
+author
+title</ColNames>
+      <UnderlyingIndexName>owner</UnderlyingIndexName>
+    </key>
+    <foreign-key id="216" parent="201" name="book_ibfk_1">
+      <ColNames>owner</ColNames>
+      <RefSchemaName>wf2_aqv5ak</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>email</RefColNames>
+    </foreign-key>
+    <foreign-key id="217" parent="201" name="book_ibfk_2">
+      <ColNames>category</ColNames>
+      <RefSchemaName>wf2_aqv5ak</RefSchemaName>
+      <RefTableName>book_category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="218" parent="202" name="id">
+      <Position>1</Position>
+      <Comment>primary key</Comment>
+      <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="219" parent="202" name="name">
+      <Position>2</Position>
+      <Comment>name of the category</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <index id="220" parent="202" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="221" parent="202" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="222" parent="202" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="223" parent="203" name="email">
+      <Position>1</Position>
+      <Comment>primary key, used as username</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="224" parent="203" name="password">
+      <Position>2</Position>
+      <Comment>password, at least 6 char long stored with sha-256</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="225" parent="203" name="name">
+      <Position>3</Position>
+      <Comment>name of the user</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <key id="226" parent="203" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>email</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
