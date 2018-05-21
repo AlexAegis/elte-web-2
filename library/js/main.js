@@ -1,5 +1,25 @@
 $(document).ready(init());
 
+
+function login(data) {
+	$.ajax({
+		type: "POST",
+		url: window.location.pathname + 'class/login.php',
+		data: data.serialize(),
+		success: function(data) {
+			if (data === 'success') {
+				$('body').load(window.location.pathname + 'index.html', null, () => {
+					console.log('BODY LOADED')
+					
+				});
+			}
+			else {
+				alert('Invalid Credentials');
+			}
+		}
+	});
+}
+
 function init() {
 	$.ajax({
 		type: "POST",

@@ -10,22 +10,9 @@
 	$(document).ready(function() {
 		$('#loginForm').submit(function(e) {
 			e.preventDefault();
-			$.ajax({
-				type: "POST",
-				url: window.location.pathname + 'class/login.php',
-				data: $(this).serialize(),
-				success: function(data) {
-					if (data === 'success') {
-						$('body').load(window.location.pathname + 'index.html', null, () => {
-							console.log('BODY LOADED')
-						});
-					}
-					else {
-						alert('Invalid Credentials');
-					}
-				}
-			});
+            login($(this));
 		});
 	});
+
 
 </script>
