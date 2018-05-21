@@ -8,7 +8,6 @@ function init() {
 			action: 'login'
 		},
 		success: function(response) {
-			console.log('session response:' + response);
 			if (response === 'logged') {
 				$('#control').load(window.location.pathname + '/content/logout.php', response);
 				$('#content').load(window.location.pathname + '/content/main.php', response);
@@ -26,13 +25,14 @@ function userController(data, action) {
 		url: window.location.pathname + 'class/userController.php',
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
-			if (response === 'success') {
+			let jsonResponse = JSON.parse(response);
+			if (jsonResponse.result === 'loginSuccess') {
 				$('body').load(window.location.pathname + 'index.html');
-			} else if(response === 'loginError') {
+			} else if(jsonResponse.result === 'loginError') {
 				$('#loginMessage').html('Your Login Name or Password is invalid"');
-			} else if(response === 'registrationError') {
+			} else if(jsonResponse.result === 'registrationError') {
 				$('#registrationMessage').html('Already taken');
-			} else if(response === 'navigateRegistration') {
+			} else if(jsonResponse.result === 'navigateRegistration') {
 				$('#content').load(window.location.pathname + '/content/registration.php', () => {
 					let dataArray = data.serializeArray();
 					let email = dataArray.filter(e => e.name === 'username').map(e => e.value)[0];

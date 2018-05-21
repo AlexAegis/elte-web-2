@@ -1,4 +1,5 @@
 <form id="logoutForm" method="post">
+
     <button id="logout">Logout</button>
 </form>
 

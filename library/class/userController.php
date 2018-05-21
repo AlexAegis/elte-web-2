@@ -11,5 +11,6 @@ if ($_POST['action'] == "login") {
 } else if ($_POST['action'] == "register") {
     $user->register();
 } else if ($_POST['action'] == "registrationStart") {
-    echo "navigateRegistration";
+    echo json_encode(
+        array("result" => "navigateRegistration"));
 }

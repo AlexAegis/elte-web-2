@@ -13,7 +13,6 @@
 	$(document).ready(function() {
 		$('#loginForm').submit(function(e) {
 			e.preventDefault();
-			$(this).serializeArray()
 			userController($(this), $('#mode').val());
 		});
 	});

@@ -20,23 +20,25 @@
 
     public function login()
     {
-        $success = false;
         $result = mysqli_query($this->db,
             "select name from user where email = '$this->username' and password = '$this->password'");
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
         $this->name = $row;
+        $result = "loginError";
         if ($count == 1) {
-            $success = true;
             session_start();
             session_regenerate_id();
             $_SESSION['login'] = $this;
-            echo('success');
-            exit();
-        } else {
-            echo 'loginError';
+            $result = "loginSuccess";
+
         }
-        return $success;
+        echo json_encode(array(
+            'result' => $result,
+            'name' => $this->name,
+            'username' => $this->username,
+            'password' => $this->password),
+            JSON_FORCE_OBJECT);
     }
 
     public function register() {
@@ -48,7 +50,7 @@
                 "insert into user (email, password, name) value ('$this->username', '$this->password', '$this->name')");
             $this->login();
         } else {
-            echo "registrationError";
+            echo json_encode(array('result' => 'registrationError'));
         }
     }
 }

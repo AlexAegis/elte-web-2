@@ -10,7 +10,7 @@
     <label id="registrationPasswordLabel" for="password">Password:</label>
     <input id="registrationPassword" name="password" type="password" placeholder="Enter password" required/>
     <br/>
-    <button id="register" type="submit" onclick="$('#registrationMode').val('register')">Login</button>
+    <button id="register" type="submit" onclick="$('#registrationMode').val('register')">Register</button>
     <h6 id="registrationMessage" class="error"></h6>
 </form>
 <script>
