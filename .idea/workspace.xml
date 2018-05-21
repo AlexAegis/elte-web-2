@@ -2,8 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/AES.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Base.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Blowfish.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/DES.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Hash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/RC2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/RC4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/RSA.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Random.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Rijndael.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/TripleDES.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Crypt/Twofish.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/File/ANSI.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/File/ASN1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/File/X509.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Math/BigInteger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Net/SCP.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Net/SFTP.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Net/SFTP/Stream.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Net/SSH1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Net/SSH2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/System/SSH/Agent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/System/SSH_Agent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/openssl.cnf" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,31 +56,34 @@
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$PROJECT_DIR$/library/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="928">
-              <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="264">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SSH2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Net/SSH2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12222">
-              <caret line="937" column="13" selection-start-line="937" selection-start-column="13" selection-end-line="937" selection-end-column="13" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="70">
-                <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
+              <first_editor />
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -89,6 +121,8 @@
         <option value="$PROJECT_DIR$/tictactoe/tictactoe.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/library/README.md" />
+        <option value="$PROJECT_DIR$/library/index.php" />
       </list>
     </option>
   </component>
@@ -108,8 +142,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="width" value="1940" />
+    <option name="x" value="1111" />
+    <option name="width" value="2738" />
     <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -120,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,43 +164,13 @@
             <path>
               <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
               <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Crypt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="File" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Math" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="Net" type="462c0819:PsiDirectoryNode" />
-              <item name="SFTP" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,10 +178,12 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.chrisrm.idea.config.mtCustomThemeConfig" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Git\elte-web-2\library" />
+      <recent name="D:\Work\Git\elte-web-2" />
       <recent name="D:\Work\Git\elte-web-2\lib" />
     </key>
   </component>
@@ -211,7 +216,9 @@
       <workItem from="1525520292707" duration="7000" />
       <workItem from="1525520326710" duration="13604000" />
       <workItem from="1525623320818" duration="178000" />
-      <workItem from="1526848083452" duration="1133000" />
+      <workItem from="1526848083452" duration="2164000" />
+      <workItem from="1526882500488" duration="669000" />
+      <workItem from="1526888536731" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1525520646619</created>
@@ -402,28 +409,35 @@
       <option name="project" value="LOCAL" />
       <updated>1525529367570</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="ssh success, db next">
+      <created>1526849430871</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1526849430871</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36476000" />
+    <option name="totallyTimeSpent" value="38309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1293" height="1416" extended-state="0" />
+    <frame x="741" y="0" width="1825" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19951338" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10368272" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.006701031" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -458,6 +472,49 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/library/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Net/SSH2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12222">
+          <caret line="937" column="13" selection-start-line="937" selection-start-column="13" selection-end-line="937" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson02/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1519213857224" expanded="true" signature="1614:1642" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -472,16 +529,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="112">
-            <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/lesson02/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -491,7 +539,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/library/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Net/SSH2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12222">
+          <caret line="937" column="13" selection-start-line="937" selection-start-column="13" selection-end-line="937" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/lesson02/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1519213857224" expanded="true" signature="1614:1642" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
           <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
@@ -512,16 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="112">
-            <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/lesson02/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -531,7 +601,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
@@ -741,19 +811,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="70">
-            <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/library/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
