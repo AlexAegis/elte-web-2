@@ -1,3 +1,30 @@
+
+<?php
+include("config.php");
+session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
+    echo 'pass in sha: ' . $password;
+
+    $sql = "select name from user where email = '$username' and password = '$password'";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+    $count = mysqli_num_rows($result);
+
+    if($count == 1) {
+        $_SESSION['user'] = $username;
+        echo 'LOGIN SUCC';
+        header("location: welcome.php");
+    } else {
+        echo 'LOGIN FAIL';
+        $error = "Your Login Name or Password is invalid";
+    }
+}
+?>
+
 <!doctype html>
 <html lang="hu">
 <head>
@@ -9,28 +36,16 @@
 </head>
 <body>
 
-<?php
 
-$dbServerName = "localhost";
-$dbUsername = "aqv5ak";
-$dbPassword = "aqv5ak";
-$dbName = "wf2_aqv5ak";
-
-// create connection
-$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
-
-// check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
+<form>
     <h1>Personal Library</h1>
     <label id="label" for="email">E-mail:</label>
-    <input id="email" type="email"/>
+    <input id="email" type="email" placeholder="Enter email" required/>
     <label id="label" for="password">Password:</label>
-    <input id="password" type="password"/>
-    <input id="login" type="button" value="Login">
+    <input id="password" type="password" placeholder="Enter password" required/>
+    <button id="login" type="submit" value="Login">
 
+</form>
 
 
 </body>
