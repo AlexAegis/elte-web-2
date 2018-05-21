@@ -5,7 +5,7 @@
       <paths name="webprogramozas.inf.elte.hu">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/hallgatok/alexaegis/www/library" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/hallgatok/alexaegis/www/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
