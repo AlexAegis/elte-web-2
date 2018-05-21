@@ -1,27 +1,3 @@
-<?php
-require_once 'class/login.php';
-/*
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    $password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
-    echo 'pass in sha: ' . $password;
-
-    $sql = "select name from user where email = '$username' and password = '$password'";
-    $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $count = mysqli_num_rows($result);
-    if($count == 1) {
-        $_SESSION['login'] = $username;
-        echo 'LOGIN SUCC';
-        //header("location: welcome.php");
-    } else {
-        echo 'LOGIN FAIL';
-        $error = "Your Login Name or Password is invalid";
-    }
-}*/
-
-?>
-
 <!doctype html>
 <head>
     <meta charset="UTF-8">
