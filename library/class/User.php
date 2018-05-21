@@ -30,6 +30,7 @@
             session_start();
             session_regenerate_id();
             $_SESSION['login'] = $this;
+
             $result = "loginSuccess";
 
         }
