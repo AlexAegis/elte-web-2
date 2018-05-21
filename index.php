@@ -1,0 +1,1 @@
+<?php header('Location: http://webprogramozas.inf.elte.hu/hallgatok/alexaegis/library/index.php'); ?>
