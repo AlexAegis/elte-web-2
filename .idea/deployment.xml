@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="webprogramozas.inf.elte.hu" uploadOnCheckin="30878c2b-c478-4cbc-974b-571055bd6126">
+  <component name="PublishConfigData" autoUpload="Always" serverName="webprogramozas.inf.elte.hu" uploadOnCheckin="30878c2b-c478-4cbc-974b-571055bd6126">
     <serverData>
       <paths name="webprogramozas.inf.elte.hu">
         <serverdata>
@@ -11,5 +11,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="webprogramozas.inf.elte.hu" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -8,7 +8,8 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function(data) {
 				if (data === 'Login') {
-					alert('login succ');
+					alert('login succc');
+					
 					//window.location = '/user-page.php';
 				}
 				else {

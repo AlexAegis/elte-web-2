@@ -29,7 +29,7 @@ class User
 
         $this->username = mysqli_real_escape_string($db, $_POST['username']);
         //$password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
-        $this->password = password_hash(mysqli_real_escape_string($db, $_POST['password']), 'sha256');
+        $this->password = hash('sha256', mysqli_real_escape_string($db, $_POST['password']));
         // = mysqli_real_escape_string($db, $_POST['password']);
         $sql = "select name from user where email = '$this->username' and password = '$this->password'";
         $result = mysqli_query($db, $sql);
