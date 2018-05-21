@@ -25,7 +25,6 @@
         <input id="email" name="username" type="email" placeholder="Enter email" required/>
         <label id="label" for="password">Password:</label>
         <input id="password" name="password" type="password" placeholder="Enter password" required/>
-        <button id="login" type="submit" onclick="login(document.getElementsByName(''))">Login</button>
-
+        <button id="login" type="submit">Login</button>
     </form>
 </body>
