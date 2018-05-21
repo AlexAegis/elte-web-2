@@ -7,29 +7,43 @@ function init() {
 		data: {
 			action: 'login'
 		},
-		success: function(data) {
-			console.log('session response:' + data);
-			if (data === 'logged') {
-				$('#control').load(window.location.pathname + '/content/logout.html', data);
-				$('#content').load(window.location.pathname + '/content/main.html', data);
+		success: function(response) {
+			console.log('session response:' + response);
+			if (response === 'logged') {
+				$('#control').load(window.location.pathname + '/content/logout.php', response);
+				$('#content').load(window.location.pathname + '/content/main.php', response);
 			} else {
-				$('#control').load(window.location.pathname + '/content/login.html', data);
-				$('#content').load(window.location.pathname + '/content/welcome.html', data);
+				$('#control').load(window.location.pathname + '/content/login.php', response);
+				$('#content').load(window.location.pathname + '/content/welcome.php', response);
 			}
 		}
 	});
 }
 
-function login(data) {
+function userController(data, action) {
 	$.ajax({
 		type: "POST",
-		url: window.location.pathname + 'class/login.php',
-		data: data.serialize(),
-		success: function(data) {
-			if (data === 'success') {
+		url: window.location.pathname + 'class/userController.php',
+		data: data.serialize() + '&action=' + action,
+		success: function(response) {
+			if (response === 'success') {
 				$('body').load(window.location.pathname + 'index.html');
-			} else {
-				$('#loginMessage').html(data);
+			} else if(response === 'loginError') {
+				$('#loginMessage').html('Your Login Name or Password is invalid"');
+			} else if(response === 'registrationError') {
+				$('#registrationMessage').html('Already taken');
+			} else if(response === 'navigateRegistration') {
+				$('#content').load(window.location.pathname + '/content/registration.php', () => {
+					let dataArray = data.serializeArray();
+					let email = dataArray.filter(e => e.name === 'username').map(e => e.value)[0];
+					if (email.indexOf('@') > -1) {
+						$('#registrationEmail').val(email);
+						$('#registrationName').val(email.split('@')[0]);
+					} else {
+						$('#registrationName').val(email);
+					}
+					$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0]);
+				});
 			}
 		}
 	});
@@ -43,9 +57,9 @@ function logout() {
 		data: {
 			action: 'logout'
 		},
-		success: function(data) {
-			if (data === 'success') {
-				$('body').load(window.location.pathname + 'index.html', null);
+		success: function(response) {
+			if (response === 'success') {
+				$('body').load(window.location.pathname + 'index.html', null, init());
 			}
 		}
 	});
