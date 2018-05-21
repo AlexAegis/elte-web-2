@@ -24,14 +24,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 ?>
-
-    <?php
-        echo "<h1>Hello, PH!</h1>";
-    ?>
+    <h1>Personal Library</h1>
     <label id="label" for="email">E-mail:</label>
     <input id="email" type="email"/>
     <label id="label" for="password">Password:</label>
     <input id="password" type="password"/>
+    <input id="login" type="button" value="Login">
 
 
 
