@@ -19,6 +19,7 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/utility.js"></script>
+    <script src="js/login.js"></script>
     <form id="loginForm" action="" method="post">
         <h1>Personal Library</h1>
         <label id="label" for="email">E-mail:</label>

@@ -68,8 +68,17 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
-                  <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                <state relative-caret-position="336">
+                  <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/library/main.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="4" selection-start-column="4" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -173,8 +182,8 @@
               <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/library/js/login.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="140">
-                      <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+                    <state relative-caret-position="42">
+                      <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
                     </state>
                   </provider>
                 </entry>
@@ -213,8 +222,9 @@
         <option value="$PROJECT_DIR$/library/login.php" />
         <option value="$PROJECT_DIR$/library/class/config.php" />
         <option value="$PROJECT_DIR$/library/class/login.php" />
-        <option value="$PROJECT_DIR$/library/js/login.js" />
         <option value="$PROJECT_DIR$/library/js/utility.js" />
+        <option value="$PROJECT_DIR$/library/main.php" />
+        <option value="$PROJECT_DIR$/library/js/login.js" />
         <option value="$PROJECT_DIR$/library/index.php" />
       </list>
     </option>
@@ -324,7 +334,7 @@
       <workItem from="1525623320818" duration="178000" />
       <workItem from="1526848083452" duration="2164000" />
       <workItem from="1526882500488" duration="669000" />
-      <workItem from="1526888536731" duration="10517000" />
+      <workItem from="1526888536731" duration="10651000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1525520646619</created>
@@ -634,18 +644,32 @@
       <option name="project" value="LOCAL" />
       <updated>1526911901172</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="try">
+      <created>1526911954806</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1526911954806</updated>
+    </task>
+    <task id="LOCAL-00046" summary="try">
+      <created>1526912060254</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1526912060254</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48693000" />
+    <option name="totallyTimeSpent" value="48827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="27" width="2218" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" weight="0.3296875" />
@@ -653,7 +677,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" weight="0.3296875" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118164964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118164964" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.101019464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -694,22 +718,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lesson02/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1519213857224" expanded="true" signature="1614:1642" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1012,13 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/css/bootstrap-grid.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
@@ -1040,10 +1041,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="336">
+          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
         </state>
       </provider>
     </entry>
