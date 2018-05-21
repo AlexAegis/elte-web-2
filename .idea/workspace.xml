@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/library/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
     </list>
@@ -51,8 +50,8 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+                <state relative-caret-position="462">
+                  <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -60,8 +59,8 @@
           <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/config.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+                <state relative-caret-position="23">
+                  <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -139,8 +138,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1111" />
-    <option name="width" value="2738" />
+    <option name="x" value="1005" />
+    <option name="y" value="40" />
+    <option name="width" value="2448" />
     <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -216,7 +216,7 @@
       <workItem from="1525623320818" duration="178000" />
       <workItem from="1526848083452" duration="2164000" />
       <workItem from="1526882500488" duration="669000" />
-      <workItem from="1526888536731" duration="6367000" />
+      <workItem from="1526888536731" duration="6768000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1525520646619</created>
@@ -484,14 +484,28 @@
       <option name="project" value="LOCAL" />
       <updated>1526895406186</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="try redirect">
+      <created>1526896260606</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1526896260606</updated>
+    </task>
+    <task id="LOCAL-00040" summary="try redirect">
+      <created>1526896313568</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1526896313568</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44543000" />
+    <option name="totallyTimeSpent" value="44944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="741" y="0" width="1825" height="1416" extended-state="0" />
+    <frame x="670" y="27" width="1632" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -501,7 +515,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10368272" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.116412215" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.23399433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -884,15 +898,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="23">
+          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="462">
+          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
         </state>
       </provider>
     </entry>

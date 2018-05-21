@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 
-<form>
+<form action="" method="post">
     <h1>Personal Library</h1>
     <label id="label" for="email">E-mail:</label>
     <input id="email" type="email" placeholder="Enter email" required/>
