@@ -11,7 +11,7 @@
 
 <?php
 
-$dbServerName = "webprogramozas.inf.elte.hu";
+$dbServerName = "localhost";
 $dbUsername = "aqv5ak";
 $dbPassword = "aqv5ak";
 $dbName = "wf2_aqv5ak";
