@@ -16,11 +16,9 @@
 				data: $(this).serialize(),
 				success: function(data) {
 					if (data === 'success') {
-						$('body').load(window.location.pathname + 'content/main.html', data, () => {
+						$('body').load(window.location.pathname + 'index.html', null, () => {
 							console.log('BODY LOADED')
 						});
-
-						//window.location = '/user-page.php';
 					}
 					else {
 						alert('Invalid Credentials');

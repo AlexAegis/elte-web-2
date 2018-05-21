@@ -10,13 +10,11 @@ function init() {
 		success: function(data) {
 			console.log('session response:' + data);
 			if (data === 'logged') {
-				$('body').load(window.location.pathname + '/content/main.html', data, () => {
-					console.log('MAIN BODY LOADED')
-				});
+				$('#header').load(window.location.pathname + '/content/logout.html', data);
+				$('#content').load(window.location.pathname + '/content/main.html', data);
 			} else {
-				$('body').load(window.location.pathname + '/content/login.html', data, () => {
-					console.log('LOGIN BODY LOADED')
-				});
+				$('#header').load(window.location.pathname + '/content/login.html', data);
+				$('#content').load(window.location.pathname + '/content/welcome.html', data);
 			}
 		}
 	});
