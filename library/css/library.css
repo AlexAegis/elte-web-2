@@ -1,42 +1,52 @@
-html {
-    background-color: #fffbfb;
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
-#header {
-    overflow: hidden;
-    min-height: 6em;
-    position: relative;
-    background-color: #9fcdff;
-}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
 
-#status {
-    float: left;
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
     height: 100%;
-    position: absolute;
-    width: 40vw;
-    padding: 1em;
-    background-color: #dfc4a8;
 }
 
-#control {
-    float: right;
-    right: 0;
-    top: 0;
-    width: 60vw;
-
-    vertical-align: center;
-    padding: 1em;
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
 }
 
-#control > form {
-    float: right;
-    padding: 1em;
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;}
 }
 
-#content {
-   padding: 1em;
+html, body {
+    height: 100%;
 }
 
-.error {
-    color: red;
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
 }

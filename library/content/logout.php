@@ -1,16 +1,21 @@
-<form id="logoutForm" method="post">
-    <div id="loggedInUser">
+<form id="logoutForm" method="post" class="form-inline ">
+    <div class="form-group row">
+        <label id="loggedInUser" for="logout">
+            <?php
+            require_once '../class/User.php';
+            session_start();
+            if(isset($_SESSION['login'])) {
+                echo $_SESSION['login']->username;
+            }
+            ?>
+        </label>
+        <br/>
 
-    <?php
-    require_once '../class/User.php';
-    session_start();
-    if(isset($_SESSION['login'])) {
-        echo $_SESSION['login']->username;
-    }
-    ?>
 
+        <button id="logout" class="btn btn-default col-sm-5 ml-2">Logout</button>
     </div>
-    <button id="logout">Logout</button>
+
+
 </form>
 
 <script>
