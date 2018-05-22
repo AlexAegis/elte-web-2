@@ -9,10 +9,10 @@ function init() {
 		},
 		success: function(response) {
 			if (response === 'logged') {
-				$('#control').load(window.location.pathname + '/content/logout.php', response);
+				$('#user').load(window.location.pathname + '/content/user/logout.php', response);
 				$('#content').load(window.location.pathname + '/content/main.php', response);
 			} else {
-				$('#control').load(window.location.pathname + '/content/login.php', response);
+				$('#user').load(window.location.pathname + '/content/user/login.php', response);
 				$('#content').load(window.location.pathname + '/content/welcome.php', response);
 			}
 		}
