@@ -1,5 +1,4 @@
 $(document).ready(init());
-
 function init() {
 	$.ajax({
 		type: "POST",
@@ -25,9 +24,10 @@ function userController(data, action) {
 		url: window.location.pathname + 'class/userController.php',
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
+			console.log("ASD");
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'loginSuccess') {
-				$('body').load(window.location.pathname + 'index.html');
+				$('body').load(window.location.pathname + 'index.php');
 			} else if(jsonResponse.result === 'loginError') {
 				$('#loginMessage').html('Your Login Name or Password is invalid"');
 			} else if(jsonResponse.result === 'registrationError') {
@@ -59,7 +59,7 @@ function logout() {
 		},
 		success: function(response) {
 			if (response === 'success') {
-				$('body').load(window.location.pathname + 'index.html', null, init());
+				$('body').load(window.location.pathname + 'index.php', null, init());
 			}
 		}
 	});

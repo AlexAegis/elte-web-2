@@ -1,33 +1,52 @@
-<form id="loginForm" method="post" class="form-inline my-2 my-lg-0" action="content/main.php">
-    <label id="emailLabel" for="email" class="control-label col-sm-4">E-mail:</label>
-    <input id="email" name="username" type="email" placeholder="Enter email" class="form-control col-sm-8" required/>
-    <label id="passwordLabel" for="password" class="control-label col-sm-4">Password:</label>
-    <input id="password" name="password" type="password" placeholder="Enter password" class="form-control col-sm-8" required/>
+<form id="loginForm" method="post" class="form-inline my-2 my-lg-0" action="../../index.php">
+    <label id="emailLabel"
+           for="email"
+           class="text-white-50 control-label mr-1">
+        E-mail:
+    </label>
+    <input id="email"
+           name="username"
+           type="email"
+           placeholder="Enter email"
+           class="form-control"
+           required/>
+    <div class="fixed-bottom">
+        <h6 id="loginMessage" class="error form-inline">sdgfg</h6>
 
+    </div>
+    <label id="passwordLabel"
+           for="password"
+           class="text-white-50 control-label mr-1 ml-1">
+        Password:
+    </label>
+    <input id="password"
+           name="password"
+           type="password"
+           placeholder="Enter password"
+           class="form-control"
+           required/>
     <button id="login"
             type="submit"
-            class="form-control btn btn-outline-success col-sm-6 my-2 my-sm-0 ml-2"
+            class="form-control btn btn-outline-success my-2 my-sm-0 ml-2"
             onclick="$('#mode').val('login')">
         Login
     </button>
     <button id="navigateRegistration"
             type="submit"
             formnovalidate
-            class="form-control btn btn-outline-light col-sm-4 my-2 my-sm-0 ml-2"
+            class="form-control btn btn-outline-light my-2 my-sm-0 ml-2"
             onclick="$('#mode').val('registrationStart')">
         Register
     </button>
     <input id="mode" type="hidden">
-    <h6 id="loginMessage" class="error">sdgfg</h6>
+
 </form>
 
-
-<script>
-	$(document).ready(function() {
-		$('#loginForm').submit(function(e) {
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#loginForm').submit(function (e) {
 			e.preventDefault();
 			userController($(this), $('#mode').val());
 		});
 	});
-
 </script>

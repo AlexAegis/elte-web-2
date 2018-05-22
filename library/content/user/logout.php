@@ -1,24 +1,20 @@
-<form id="logoutForm" method="post" class="form-inline ">
-    <div class="form-group row">
-        <label id="loggedInUser" for="logout">
+<form id="logoutForm" method="post" class="form-inline my-2 my-lg-0" action="../../index.php">
+
+        <label id="loggedInUser" class="text-white control-label">
             <?php
-            require_once '../class/User.php';
+            require_once '../../class/User.php';
             session_start();
             if(isset($_SESSION['login'])) {
                 echo $_SESSION['login']->username;
             }
             ?>
         </label>
-        <br/>
-
-
-        <button id="logout" class="btn btn-default col-sm-5 ml-2">Logout</button>
-    </div>
-
+        <button id="logout" class="btn btn-outline-secondary form-control my-2 my-sm-0 ml-2">Logout</button>
 
 </form>
 
-<script>
+
+<script type="text/javascript">
 
 	$(document).ready(function() {
 		$('#logoutForm').submit(function(e) {
