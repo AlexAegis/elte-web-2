@@ -4,8 +4,7 @@
     I actually deal with crippling depression.
     Please help. This is serious.</p>
 Felhasználók száma jelenleg: <span id="userCount"/>. Könyvek száma jelenleg: <span id="bookCount"></span>.
-<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-
+<p><a class="btn btn-outline-secondary btn-lg mt-2" href="https://github.com/AlexAegis/elte-web-2/tree/master/library" target="_blank" role="button"><i class="fab fa-github mr-1"></i>/AlexAegis &raquo;</a></p>
 <script>
 	$(document).ready(function () {
 		get('userCount', $('#userCount'));
