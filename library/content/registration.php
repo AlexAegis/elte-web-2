@@ -56,6 +56,8 @@
 	$(document).ready(function() {
 		$('#registrationForm').submit(function(e) {
 			e.preventDefault();
+			$('#registrationName').removeClass('is-invalid');
+			$('#registrationEmail').removeClass('is-invalid');
 			userController($(this), $('#registrationMode').val());
 		});
 	});

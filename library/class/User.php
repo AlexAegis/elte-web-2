@@ -28,7 +28,7 @@ class User
         $count = mysqli_num_rows($result);
         $this->name = $row;
         $result = "loginSuccess";
-        $reason = "LoggedIn";
+        $errors = array();
         if ($count == 1) {
             session_start();
             session_regenerate_id();
@@ -39,30 +39,46 @@ class User
                 "select name from user where email = '$this->username'");
             $userNoPassCount = mysqli_num_rows($userQuery);
             if($userNoPassCount == 1) {
-                $reason = "invalidPassword";
+                array_push($errors,"invalidPassword");
             } else {
-                $reason = "invalidUsername";
+                array_push($errors,"invalidUsername");
             }
         }
         echo json_encode(array(
             'result' => $result,
-            'reason' => $reason,
+            'errors' => $errors,
             'name' => $this->name,
             'username' => $this->username,
-            'password' => $this->password),
-            JSON_FORCE_OBJECT);
+            'password' => $this->password));
     }
 
     public function register() {
-        $result = mysqli_query($this->db,
-            "select name from user where email = '$this->username' or name = '$this->name'");
-        $count = mysqli_num_rows($result);
-        if($count == 0) {
+        $emailResult = mysqli_query($this->db,
+            "select name from user where email = '$this->username'");
+
+        $nameResult = mysqli_query($this->db,
+            "select name from user where name = '$this->name'");
+
+        $emailCount = mysqli_num_rows($emailResult);
+        $nameCount = mysqli_num_rows($nameResult);
+
+        $errors = array();
+        if($emailCount > 0) {
+            array_push($errors, "emailAlreadyTaken");
+        }
+
+        if($nameCount > 0) {
+            array_push($errors, "nameAlreadyTaken");
+        }
+
+        if($emailCount == 0 && $nameCount == 0) {
             mysqli_query($this->db,
                 "insert into user (email, password, name) value ('$this->username', '$this->password', '$this->name')");
             $this->login();
-        } else {
-            echo json_encode(array('result' => 'registrationError'));
+        }
+
+        if(count($errors) > 0) {
+            echo json_encode(array('result' => 'registrationError', 'errors' => $errors));
         }
     }
 }

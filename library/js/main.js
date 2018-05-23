@@ -1,5 +1,7 @@
 $(document).ready(init());
+
 function init() {
+	
 	$.ajax({
 		type: "POST",
 		url: window.location.pathname + '/class/session.php',
@@ -26,19 +28,22 @@ function userController(data, action) {
 		url: window.location.pathname + 'class/userController.php',
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
-			$('#email').removeClass('is-invalid');
-			$('#password').removeClass('is-invalid');
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'loginSuccess') {
 				$('body').load(window.location.pathname + 'index.php');
 			} else if(jsonResponse.result === 'loginError') {
-				if(jsonResponse.reason === 'invalidPassword') {
+				if(jsonResponse.errors.includes('invalidPassword')) {
 					$('#password').addClass('is-invalid');
-				} else if(jsonResponse.reason === 'invalidUsername') {
+				} else if(jsonResponse.errors.includes('invalidUsername')) {
 					$('#email').addClass('is-invalid');
 				}
 			} else if(jsonResponse.result === 'registrationError') {
-				$('#registrationMessage').html('Already taken');
+				if(jsonResponse.errors.includes('nameAlreadyTaken')) {
+					$('#registrationName').addClass('is-invalid');
+				}
+				if(jsonResponse.reason.includes('emailAlreadyTaken')) {
+					$('#registrationEmail').addClass('is-invalid');
+				}
 			} else if(jsonResponse.result === 'navigateRegistration') {
 				$('#content').load(window.location.pathname + '/content/registration.php', () => {
 					let dataArray = data.serializeArray();
@@ -72,3 +77,18 @@ function logout() {
 	});
 	return false;
 }
+
+function get(action, element) {
+	$.ajax({
+		type: "GET",
+		url: window.location.pathname + '/class/session.php',
+		data: {
+			action: action
+		},
+		success: function(response) {
+			let jsonResponse = JSON.parse(response);
+			element.html(jsonResponse.result);
+		}
+	}, 'html');
+}
+

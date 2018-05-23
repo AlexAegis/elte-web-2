@@ -3,9 +3,12 @@
     If it not worth maximum points I'll hang myself.
     I actually deal with crippling depression.
     Please help. This is serious.</p>
-
-<?php session_start();
-if(isset($_SESSION['db'])) {
-    echo 'db';
-}?>
+Felhasználók száma jelenleg: <span id="userCount"/>. Könyvek száma jelenleg: <span id="bookCount"></span>.
 <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+
+<script>
+	$(document).ready(function () {
+		get('userCount', $('#userCount'));
+		get('bookCount', $('#bookCount'));
+	});
+</script>

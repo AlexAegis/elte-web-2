@@ -46,6 +46,8 @@
 	$(document).ready(function () {
 		$('#loginForm').submit(function (e) {
 			e.preventDefault();
+			$('#password').removeClass('is-invalid');
+			$('#email').removeClass('is-invalid');
 			userController($(this), $('#mode').val());
 		});
 	});
