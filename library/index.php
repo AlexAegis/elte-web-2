@@ -15,7 +15,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="navbar-btn" onclick="init()">
+            <div class="navbar-btn noselect" onclick="init()">
                 <a class="navbar-brand text-white text-center" role="link">Library</a>
             </div>
 
