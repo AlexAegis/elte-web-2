@@ -3,4 +3,9 @@
     If it not worth maximum points I'll hang myself.
     I actually deal with crippling depression.
     Please help. This is serious.</p>
+
+<?php session_start();
+if(isset($_SESSION['db'])) {
+    echo 'db';
+}?>
 <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>

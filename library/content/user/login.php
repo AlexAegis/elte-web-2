@@ -1,30 +1,30 @@
 <form id="loginForm" method="post" class="form-inline my-2 my-lg-0" action="../../index.php">
-    <label id="emailLabel"
-           for="email"
-           class="text-white-50 control-label mr-1">
-        E-mail:
-    </label>
-    <input id="email"
-           name="username"
-           type="email"
-           placeholder="Enter email"
-           class="form-control"
-           required/>
-    <div class="fixed-bottom">
-        <h6 id="loginMessage" class="error form-inline">sdgfg</h6>
-
+    <div class="form-group">
+        <label id="emailLabel"
+               for="email"
+               class="text-white-50 control-label mr-1">
+            E-mail:
+        </label>
+        <input id="email"
+               name="username"
+               type="email"
+               placeholder="Enter email"
+               class="form-control"
+               required/>
     </div>
-    <label id="passwordLabel"
-           for="password"
-           class="text-white-50 control-label mr-1 ml-1">
-        Password:
-    </label>
-    <input id="password"
-           name="password"
-           type="password"
-           placeholder="Enter password"
-           class="form-control"
-           required/>
+    <div class="form-group">
+        <label id="passwordLabel"
+               for="password"
+               class="text-white-50 control-label mr-1 ml-1">
+            Password:
+        </label>
+        <input id="password"
+               name="password"
+               type="password"
+               placeholder="Enter password"
+               class="form-control"
+               required/>
+    </div>
     <button id="login"
             type="submit"
             class="form-control btn btn-outline-success my-2 my-sm-0 ml-2"

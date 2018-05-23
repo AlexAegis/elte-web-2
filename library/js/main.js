@@ -26,12 +26,17 @@ function userController(data, action) {
 		url: window.location.pathname + 'class/userController.php',
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
-			console.log("ASD");
+			$('#email').removeClass('is-invalid');
+			$('#password').removeClass('is-invalid');
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'loginSuccess') {
 				$('body').load(window.location.pathname + 'index.php');
 			} else if(jsonResponse.result === 'loginError') {
-				$('#loginMessage').html('Your Login Name or Password is invalid"');
+				if(jsonResponse.reason === 'invalidPassword') {
+					$('#password').addClass('is-invalid');
+				} else if(jsonResponse.reason === 'invalidUsername') {
+					$('#email').addClass('is-invalid');
+				}
 			} else if(jsonResponse.result === 'registrationError') {
 				$('#registrationMessage').html('Already taken');
 			} else if(jsonResponse.result === 'navigateRegistration') {

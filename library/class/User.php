@@ -1,4 +1,6 @@
-<?php class User
+<?php
+require_once ("config.php");
+class User
 {
     public $username = null;
     public $password = null;
@@ -25,17 +27,26 @@
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
         $this->name = $row;
-        $result = "loginError";
+        $result = "loginSuccess";
+        $reason = "LoggedIn";
         if ($count == 1) {
             session_start();
             session_regenerate_id();
             $_SESSION['login'] = $this;
-
-            $result = "loginSuccess";
-
+        } else {
+            $result = "loginError";
+            $userQuery = mysqli_query($this->db,
+                "select name from user where email = '$this->username'");
+            $userNoPassCount = mysqli_num_rows($userQuery);
+            if($userNoPassCount == 1) {
+                $reason = "invalidPassword";
+            } else {
+                $reason = "invalidUsername";
+            }
         }
         echo json_encode(array(
             'result' => $result,
+            'reason' => $reason,
             'name' => $this->name,
             'username' => $this->username,
             'password' => $this->password),
