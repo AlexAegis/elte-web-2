@@ -806,7 +806,7 @@
     <table id="201" parent="3" name="book">
       <Comment>Books for the library appliations</Comment>
     </table>
-    <table id="202" parent="3" name="book_category">
+    <table id="202" parent="3" name="bookcategory">
       <Comment>Categories of books</Comment>
     </table>
     <table id="203" parent="3" name="user">
@@ -895,12 +895,12 @@ title</ColNames>
       <ColNames>owner</ColNames>
       <RefSchemaName>wf2_aqv5ak</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>email</RefColNames>
+      <RefColNames>username</RefColNames>
     </foreign-key>
     <foreign-key id="217" parent="201" name="book_ibfk_2">
       <ColNames>category</ColNames>
       <RefSchemaName>wf2_aqv5ak</RefSchemaName>
-      <RefTableName>book_category</RefTableName>
+      <RefTableName>bookcategory</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="218" parent="202" name="id">
@@ -933,7 +933,7 @@ title</ColNames>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="223" parent="203" name="email">
+    <column id="223" parent="203" name="username">
       <Position>1</Position>
       <Comment>primary key, used as username</Comment>
       <DataType>varchar(60)|0s</DataType>
@@ -944,7 +944,7 @@ title</ColNames>
     <column id="224" parent="203" name="password">
       <Position>2</Position>
       <Comment>password, at least 6 char long stored with sha-256</Comment>
-      <DataType>varchar(60)|0s</DataType>
+      <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
@@ -959,7 +959,7 @@ title</ColNames>
     </column>
     <key id="226" parent="203" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>email</ColNames>
+      <ColNames>username</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

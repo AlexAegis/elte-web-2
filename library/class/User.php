@@ -7,26 +7,17 @@
 
     public function __construct($data = array())
     {
-        parent::__construct();
+        parent::__construct($data);
 
         if (isset($data['name'])) $this->name = stripslashes(strip_tags($data['name']));
         if (isset($data['username'])) $this->username = mysqli_real_escape_string($this->db, stripslashes(strip_tags($data['username'])));
         if (isset($data['password'])) $this->password = hash('sha256', mysqli_real_escape_string($this->db, stripslashes(strip_tags($data['password']))));
     }
 
-    public function storeFormValues($params)
-    {
-        $this->__construct($params);
-    }
-
-    public function __autoload() {
-
-    }
-
     public function login()
     {
         $result = mysqli_query($this->db,
-            "select name from user where email = '$this->username' and password = '$this->password'");
+            "select name from user where username = '$this->username' and password = '$this->password'");
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
         $this->name = $row;
@@ -39,7 +30,7 @@
         } else {
             $result = "loginError";
             $userQuery = mysqli_query($this->db,
-                "select name from user where email = '$this->username'");
+                "select name from user where username = '$this->username'");
             $userNoPassCount = mysqli_num_rows($userQuery);
             if($userNoPassCount == 1) {
                 array_push($errors,"invalidPassword");
@@ -58,7 +49,7 @@
 
     public function register() {
         $emailResult = mysqli_query($this->db,
-            "select name from user where email = '$this->username'");
+            "select name from user where username = '$this->username'");
 
         $nameResult = mysqli_query($this->db,
             "select name from user where name = '$this->name'");
@@ -79,7 +70,7 @@
         if($emailCount == 0 && $nameCount == 0) {
             $result = 'registrationSuccess';
             mysqli_query($this->db,
-                "insert into user (email, password, name) value ('$this->username', '$this->password', '$this->name')");
+                "insert into user (username, password, name) value ('$this->username', '$this->password', '$this->name')");
             //$this->login();
         }
 

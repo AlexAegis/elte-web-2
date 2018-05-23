@@ -1,6 +1,13 @@
 PHP beadandó – Könyvespolc
 ==========================
 
+Documentation
+-------------
+
+Propel, Bootstrap, Normalize
+
+
+
 Feladatleírás
 -------------
 

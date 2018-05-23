@@ -1,4 +1,4 @@
-<?php class Book
+<?php class Book extends Entity
 {
     public $owner;
     public $author;
@@ -11,6 +11,8 @@
 
     public function __construct($data = array())
     {
-
+        parent::__construct($data);
     }
+
+
 }
