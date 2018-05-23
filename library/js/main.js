@@ -10,16 +10,26 @@ function init() {
 		},
 		success: function(response) {
 			if (response === 'logged') {
-				$('#user').load(window.location.pathname + '/content/user/logout.php', response);
-				$('#navigation').load(window.location.pathname + '/content/navigation.php', response);
-				$('#content').load(window.location.pathname + '/content/main.php', response);
+				loadMainPage();
 			} else {
-				$('#user').load(window.location.pathname + '/content/user/login.php', response);
-				$('#navigation').html('');
-				$('#content').load(window.location.pathname + '/content/welcome.php', response);
+				loadWelcomePage(() => {
+					$('#email').focus();
+				});
 			}
 		}
 	});
+}
+
+function loadWelcomePage(callback) {
+	$('#user').load(window.location.pathname + '/content/user/login.php', callback);
+	$('#navigation').html('');
+	$('#content').load(window.location.pathname + '/content/welcome.php', callback);
+}
+
+function loadMainPage(callback) {
+	$('#user').load(window.location.pathname + '/content/user/logout.php', callback);
+	$('#navigation').load(window.location.pathname + '/content/navigation.php', callback);
+	$('#content').load(window.location.pathname + '/content/main.php', callback);
 }
 
 function userController(data, action) {
@@ -30,18 +40,24 @@ function userController(data, action) {
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'loginSuccess') {
-				$('body').load(window.location.pathname + 'index.php');
+				loadMainPage();
+				//$('body').load(window.location.pathname + 'index.php');
 			} else if(jsonResponse.result === 'loginError') {
 				if(jsonResponse.errors.includes('invalidPassword')) {
 					$('#password').addClass('is-invalid');
 				} else if(jsonResponse.errors.includes('invalidUsername')) {
 					$('#email').addClass('is-invalid');
 				}
+			} else if(jsonResponse.result === 'registrationSuccess') {
+				loadWelcomePage(() => {
+					$('#email').val(jsonResponse.username);
+					$('#password').focus();
+				});
 			} else if(jsonResponse.result === 'registrationError') {
 				if(jsonResponse.errors.includes('nameAlreadyTaken')) {
 					$('#registrationName').addClass('is-invalid');
 				}
-				if(jsonResponse.reason.includes('emailAlreadyTaken')) {
+				if(jsonResponse.errors.includes('emailAlreadyTaken')) {
 					$('#registrationEmail').addClass('is-invalid');
 				}
 			} else if(jsonResponse.result === 'navigateRegistration') {
@@ -59,7 +75,6 @@ function userController(data, action) {
 			}
 		}
 	});
-	return false;
 }
 
 function logout() {

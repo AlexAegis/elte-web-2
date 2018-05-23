@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['login'])) {
+?>
 <ul class="navbar-nav">
     <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -17,3 +21,10 @@
         </div>
     </li>
 </ul>
+<?php
+    } else {
+?>
+    <p>log in to access this feature!</p>
+<?php
+}
+?>

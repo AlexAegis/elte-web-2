@@ -63,6 +63,7 @@ class User
         $nameCount = mysqli_num_rows($nameResult);
 
         $errors = array();
+        $result = 'registrationError';
         if($emailCount > 0) {
             array_push($errors, "emailAlreadyTaken");
         }
@@ -72,13 +73,16 @@ class User
         }
 
         if($emailCount == 0 && $nameCount == 0) {
+            $result = 'registrationSuccess';
             mysqli_query($this->db,
                 "insert into user (email, password, name) value ('$this->username', '$this->password', '$this->name')");
-            $this->login();
+            //$this->login();
         }
 
-        if(count($errors) > 0) {
-            echo json_encode(array('result' => 'registrationError', 'errors' => $errors));
-        }
+        echo json_encode(array('result' => $result,
+            'errors' => $errors,
+            'username' => $this->username,
+            'password' => $this->password));
+
     }
 }
