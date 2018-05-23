@@ -17,7 +17,7 @@ if (isset($_POST['action'])) {
         } else {
             $_SESSION['login'] = $user;
         }
-        echo jsonResponse($result, '', $errors, array(
+        echo jsonResponse($result, $_POST['action'], $errors, array(
             'name' => $user != null ? $user->name : null,
             'email' => $user != null ? $user->email : null,
             'password' => $user != null ? $user->password : null));
@@ -42,12 +42,8 @@ if (isset($_POST['action'])) {
                 R::store($user);
             });
         }
-        echo json_encode(array('result' => $result,
-            'errors' => $errors,
-            'email' => $_POST['email'],
-            'password' => $_POST['password']));
+        echo jsonResponse($result, $_POST['action'], $errors, array('email' => $_POST['email'], 'password' => $_POST['password']));
     } else if ($_POST['action'] == "registrationStart") {
-        echo json_encode(
-            array("result" => "navigateRegistration"));
+        echo jsonResponse("navigateRegistration", $_POST['action']);
     }
 }

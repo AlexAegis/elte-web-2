@@ -1,7 +1,6 @@
 $(document).ready(init());
 
 function init() {
-	
 	$.ajax({
 		type: "POST",
 		url: window.location.pathname + '/class/session.php',
@@ -39,7 +38,6 @@ function userController(data, action) {
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
-			console.log(jsonResponse);
 			if (jsonResponse.result === 'loginSuccess') {
 				loadMainPage();
 			} else if(jsonResponse.result === 'loginError') {
@@ -106,7 +104,6 @@ function get(element, action, parameter = null) {
 			parameter: parameter
 		},
 		success: function(response) {
-			console.log(response);
 			element.html(JSON.parse(response).result);
 		}
 	});
