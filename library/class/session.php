@@ -11,10 +11,10 @@ try {
 session_start();
 
 if(isset($_POST["action"])) {
-    if($_POST["action"] === 'logout') {
+    if(isset($_SESSION['login']) and $_POST["action"] === 'logout') {
         unset($_SESSION['login']);
         R::close();
-        echo 'success';
+        echo jsonResponse('logout', $_POST["action"]);
     }
 }
 
@@ -23,14 +23,15 @@ if (isset($_GET["action"])) {
         echo jsonResponse($_SESSION['login']->email);
     } else if ($_GET["action"] === 'count') {
         echo jsonResponse(R::count($_GET["parameter"]), $_GET["parameter"]);
-    } else if($_GET['action'] === 'session') {
+    } else if ($_GET['action'] === 'session') {
         if (isset($_SESSION['login'])) {
-            echo jsonResponse('logged');
+            echo jsonResponse('logged', $_SESSION['login']->email);
         } else {
-            echo jsonResponse('not logged');
+            echo jsonResponse('not logged', 'no logged in user');
         }
     }
 }
+
 
 function jsonResponse($result, $reason = "", $errors = array(), $parameters = array()) {
     return json_encode(array_merge(array(

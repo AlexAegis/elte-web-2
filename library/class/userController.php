@@ -15,6 +15,7 @@ if (isset($_POST['action'])) {
             array_push($errors, "invalidPassword");
         } else {
             $result = "loginSuccess";
+            session_regenerate_id();
             $_SESSION['login'] = $user;
         }
         echo jsonResponse($result, $_POST['action'], $errors, array(

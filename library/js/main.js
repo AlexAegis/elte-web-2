@@ -2,15 +2,16 @@ $(document).ready(init());
 
 function init() {
 	$.ajax({
-		type: "POST",
+		type: "GET",
 		url: window.location.pathname + '/class/session.php',
 		data: {
-			action: 'login'
+			action: 'session'
 		},
 		success: function(response) {
-			if (response === 'logged') {
+			let jsonResponse = JSON.parse(response);
+			if (jsonResponse.result === 'logged') {
 				loadMainPage();
-			} else {
+			} else if(jsonResponse.result === 'not logged') {
 				loadWelcomePage(() => {
 					$('#email').focus();
 				});
@@ -88,25 +89,39 @@ function logout() {
 			parameter: ''
 		},
 		success: function(response) {
-			if (response === 'success') {
+			let jsonResponse = JSON.parse(response);
+			if (jsonResponse.result === 'logout') {
 				$('body').load(window.location.pathname + 'index.php', null, init());
 			}
 		}
 	});
-	return false;
 }
 
-function get(element, action, parameter = null) {
+function get(element, controller = 'session.php', action, parameter = null, modifyJson = null) {
 	$.ajax({
 		type: "GET",
-		url: window.location.pathname + '/class/session.php',
+		url: window.location.pathname + '/class/' + controller,
 		data: {
 			action: action,
 			parameter: parameter
 		},
 		success: function(response) {
-			element.html(JSON.parse(response).result);
+			let jsonResponse = JSON.parse(response);
+			if(modifyJson !== null) {
+				jsonResponse.result = modifyJson(jsonResponse);
+			}
 		}
 	});
 }
 
+function booksToList(jsonResponse) {
+	let data = JSON.parse(jsonResponse.result);
+	let shelf = $(document.createElement('div'));
+	data.forEach(function(item) {
+		let row = $(document.createElement('div'));
+		row.html(item.title);
+		shelf.append(row);
+	});
+	$('#books').append(shelf);
+	return shelf;
+}

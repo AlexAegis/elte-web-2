@@ -8,7 +8,7 @@ Number of users: <span id="userCount"></span>. Number of books in total: <span i
 <p><a class="btn btn-outline-secondary btn-lg mt-5" href="https://github.com/AlexAegis/elte-web-2/tree/master/library" target="_blank" role="button"><i class="fab fa-github mr-1"></i>/AlexAegis &raquo;</a></p>
 <script>
 	$(document).ready(function () {
-		get($('#userCount'), 'count', 'user');
-		get($('#bookCount'), 'count', 'book');
+		get($('#userCount'), 'session.php', 'count', 'user');
+		get($('#bookCount'), 'session.php', 'count', 'book');
 	});
 </script>
