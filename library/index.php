@@ -35,7 +35,7 @@
             </div>
         </main>
         <footer class="container">
-            <p>&copy; AlexAegis 2018</p>
+            <p><a href="https://github.com/AlexAegis/" target="_blank" role="link" class="text-black-50">&copy; AlexAegis 2018</a></p>
         </footer>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
