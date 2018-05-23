@@ -67,10 +67,16 @@ html, body {
     cursor: pointer;
 
     background-color: #717185;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
 }
 
 .navbar-btn:hover {
     background-color: #403e4b;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
 }
 
 .noselect {
