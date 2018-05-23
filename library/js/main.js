@@ -70,6 +70,7 @@ function userController(data, action) {
 					} else {
 						$('#registrationName').val(email);
 					}
+					$('#registrationName').focus();
 					$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0]);
 				});
 			}
