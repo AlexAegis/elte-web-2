@@ -38,7 +38,6 @@
                required/>
     </div>
     <div class="mt-4 col-sm-4 col-md-4 col-lg-4 col-12">
-
         <button id="register"
                 class="form-control btn btn-primary mt-2 mr-1"
                 type="submit"
@@ -46,13 +45,10 @@
             Register
         </button>
     </div>
-
-
     <h6 id="registrationMessage" class="error"></h6>
     <input id="registrationMode" hidden>
 </form>
 <script>
-
 	$(document).ready(function() {
 		$('#registrationForm').submit(function(e) {
 			e.preventDefault();
@@ -61,5 +57,4 @@
 			userController($(this), $('#registrationMode').val());
 		});
 	});
-
 </script>

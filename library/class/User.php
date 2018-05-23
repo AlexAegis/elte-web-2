@@ -1,6 +1,4 @@
-<?php
-require_once ("config.php");
-class User
+<?php class User extends Entity
 {
     public $username = null;
     public $password = null;
@@ -9,7 +7,8 @@ class User
 
     public function __construct($data = array())
     {
-        $this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+        parent::__construct();
+
         if (isset($data['name'])) $this->name = stripslashes(strip_tags($data['name']));
         if (isset($data['username'])) $this->username = mysqli_real_escape_string($this->db, stripslashes(strip_tags($data['username'])));
         if (isset($data['password'])) $this->password = hash('sha256', mysqli_real_escape_string($this->db, stripslashes(strip_tags($data['password']))));
@@ -18,6 +17,10 @@ class User
     public function storeFormValues($params)
     {
         $this->__construct($params);
+    }
+
+    public function __autoload() {
+
     }
 
     public function login()
@@ -51,6 +54,7 @@ class User
             'username' => $this->username,
             'password' => $this->password));
     }
+
 
     public function register() {
         $emailResult = mysqli_query($this->db,
