@@ -13,27 +13,29 @@ session_start();
 if(isset($_POST["action"])) {
     if($_POST["action"] === 'logout') {
         unset($_SESSION['login']);
+        R::close();
         echo 'success';
-    } else if($_POST['action'] === 'login') {
-        if (isset($_SESSION['login'])) {
-            echo 'logged';
-        } else {
-            echo 'not logged';
-        }
     }
 }
 
 if (isset($_GET["action"])) {
     if ($_GET["action"] === 'loggedInUser') {
-        echo json_encode(array(
-            'result' => $_SESSION['login']->username,
-            'reason' => ""),
-            JSON_FORCE_OBJECT);
+        echo jsonResponse($_SESSION['login']->email);
     } else if ($_GET["action"] === 'count') {
-        echo json_encode(array(
-            'result' => R::count($_GET["parameter"]),
-            'reason' => $_GET["parameter"]),
-            JSON_FORCE_OBJECT);
+        echo jsonResponse(R::count($_GET["parameter"]), $_GET["parameter"]);
+    } else if($_GET['action'] === 'session') {
+        if (isset($_SESSION['login'])) {
+            echo jsonResponse('logged');
+        } else {
+            echo jsonResponse('not logged');
+        }
     }
 }
 
+function jsonResponse($result, $reason = "", $errors = array(), $parameters = array()) {
+    return json_encode(array_merge(array(
+        'result' => $result,
+        'reason' => $reason,
+        'errors' => $errors),
+        $parameters));
+}

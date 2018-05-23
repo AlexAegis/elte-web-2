@@ -39,19 +39,20 @@ function userController(data, action) {
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
+			console.log(jsonResponse);
 			if (jsonResponse.result === 'loginSuccess') {
 				loadMainPage();
-				//$('body').load(window.location.pathname + 'index.php');
 			} else if(jsonResponse.result === 'loginError') {
 				if(jsonResponse.errors.includes('invalidPassword')) {
 					$('#password').addClass('is-invalid');
-				} else if(jsonResponse.errors.includes('invalidUsername')) {
+				} else if(jsonResponse.errors.includes('invalidEmail')) {
 					$('#email').addClass('is-invalid');
 				}
 			} else if(jsonResponse.result === 'registrationSuccess') {
 				loadWelcomePage(() => {
-					$('#email').val(jsonResponse.username);
-					$('#password').focus();
+					$('#email').val(jsonResponse.email);
+					$('#password').val(jsonResponse.password);
+					$('#login').focus();
 				});
 			} else if(jsonResponse.result === 'registrationError') {
 				if(jsonResponse.errors.includes('nameAlreadyTaken')) {
@@ -63,7 +64,7 @@ function userController(data, action) {
 			} else if(jsonResponse.result === 'navigateRegistration') {
 				$('#content').load(window.location.pathname + '/content/registration.php', () => {
 					let dataArray = data.serializeArray();
-					let email = dataArray.filter(e => e.name === 'username').map(e => e.value)[0];
+					let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0];
 					let regName = $('#registrationName');
 					if (email.indexOf('@') > -1) {
 						$('#registrationEmail').val(email);

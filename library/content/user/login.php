@@ -6,7 +6,7 @@
             E-mail:
         </label>
         <input id="email"
-               name="username"
+               name="email"
                type="email"
                placeholder="Enter email"
                class="form-control"

@@ -823,10 +823,9 @@
     <column id="205" parent="201" name="owner">
       <Position>2</Position>
       <Comment>owner of the book</Comment>
-      <DataType>varchar(60)|0s</DataType>
+      <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="206" parent="201" name="author">
       <Position>3</Position>
@@ -895,7 +894,7 @@ title</ColNames>
       <ColNames>owner</ColNames>
       <RefSchemaName>wf2_aqv5ak</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>username</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="217" parent="201" name="book_ibfk_2">
       <ColNames>category</ColNames>
@@ -941,7 +940,7 @@ title</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="224" parent="203" name="username">
+    <column id="224" parent="203" name="email">
       <Position>2</Position>
       <Comment>unique key, email, used as username</Comment>
       <DataType>varchar(60)|0s</DataType>
@@ -964,8 +963,8 @@ title</ColNames>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <index id="227" parent="203" name="username">
-      <ColNames>username</ColNames>
+    <index id="227" parent="203" name="email">
+      <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -974,9 +973,9 @@ title</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="229" parent="203" name="username">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username</UnderlyingIndexName>
+    <key id="229" parent="203" name="email">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

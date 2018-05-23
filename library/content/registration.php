@@ -12,16 +12,15 @@
                placeholder="Enter your name"
                class="form-control"
                required/>
-
         <label id="registrationEmailLabel"
                for="email"
                class="control-label mr-1">
             E-mail:
         </label>
         <input id="registrationEmail"
-               name="username"
+               name="email"
                type="email"
-               placeholder="Enter email"
+               placeholder="Enter your email"
                class="form-control"
                required/>
 
@@ -54,6 +53,7 @@
 			e.preventDefault();
 			$('#registrationName').removeClass('is-invalid');
 			$('#registrationEmail').removeClass('is-invalid');
+			console.log($(this).serializeArray());
 			userController($(this), $('#registrationMode').val());
 		});
 	});
