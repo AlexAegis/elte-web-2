@@ -2,7 +2,8 @@ drop table if exists book;
 drop table if exists bookcategory;
 drop table if exists user;
 create table if not exists user (
-  username nvarchar(60) primary key comment 'primary key, email, used as username',
+  id int(10) primary key not null auto_increment comment 'primary key, needed for proper database control',
+  username nvarchar(60) unique key comment 'unique key, email, used as username',
   password nvarchar(64) not null comment 'password, at least 6 char long stored with sha-256',
   name nvarchar(60) not null comment 'name of the user'
 ) comment 'Users of the application for the second web programming submission';

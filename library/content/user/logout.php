@@ -8,7 +8,7 @@ if (isset($_SESSION['login'])) {
     </form>
     <script type="text/javascript">
 		$(document).ready(function () {
-			get('loggedInUser', $('#loggedInUser'));
+			get($('#loggedInUser'), 'loggedInUser');
 			$('#logoutForm').submit(function (e) {
 				e.preventDefault();
 				logout($(this));

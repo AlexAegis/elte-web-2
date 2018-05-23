@@ -64,13 +64,14 @@ function userController(data, action) {
 				$('#content').load(window.location.pathname + '/content/registration.php', () => {
 					let dataArray = data.serializeArray();
 					let email = dataArray.filter(e => e.name === 'username').map(e => e.value)[0];
+					let regName = $('#registrationName');
 					if (email.indexOf('@') > -1) {
 						$('#registrationEmail').val(email);
-						$('#registrationName').val(email.split('@')[0]);
+						regName.val(email.split('@')[0]);
 					} else {
-						$('#registrationName').val(email);
+						regName.val(email);
 					}
-					$('#registrationName').focus();
+					regName.focus();
 					$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0]);
 				});
 			}
@@ -83,7 +84,8 @@ function logout() {
 		type: "POST",
 		url: window.location.pathname + '/class/session.php',
 		data: {
-			action: 'logout'
+			action: 'logout',
+			parameter: ''
 		},
 		success: function(response) {
 			if (response === 'success') {
@@ -94,17 +96,18 @@ function logout() {
 	return false;
 }
 
-function get(action, element) {
+function get(element, action, parameter = null) {
 	$.ajax({
 		type: "GET",
 		url: window.location.pathname + '/class/session.php',
 		data: {
-			action: action
+			action: action,
+			parameter: parameter
 		},
 		success: function(response) {
-			let jsonResponse = JSON.parse(response);
-			element.html(jsonResponse.result);
+			console.log(response);
+			element.html(JSON.parse(response).result);
 		}
-	}, 'html');
+	});
 }
 

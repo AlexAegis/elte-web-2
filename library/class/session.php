@@ -1,14 +1,14 @@
-<?php
-session_start();
-require_once "config.php";
-
-function __autoload($className) {
-    if (file_exists($className . '.php')) {
-        require_once $className . '.php';
-        return true;
+<?php require_once '../resources/rb-mysql.php';
+define('DB_KEY', 'library');
+try {
+    if(!R::testConnection()) {
+        R::addDatabase(DB_KEY, 'mysql:host=localhost;dbname=wf2_aqv5ak', 'aqv5ak', 'aqv5ak');
+        R::selectDatabase(DB_KEY);
     }
-    return false;
+} catch (\RedBeanPHP\RedException $e) {
+    echo $e;
 }
+session_start();
 
 if(isset($_POST["action"])) {
     if($_POST["action"] === 'logout') {
@@ -24,26 +24,15 @@ if(isset($_POST["action"])) {
 }
 
 if (isset($_GET["action"])) {
-    $db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
     if ($_GET["action"] === 'loggedInUser') {
         echo json_encode(array(
             'result' => $_SESSION['login']->username,
             'reason' => ""),
             JSON_FORCE_OBJECT);
-    } else if ($_GET["action"] === 'userCount') {
-        $result = mysqli_query($db, "select name from user");
-        $count = mysqli_num_rows($result);
+    } else if ($_GET["action"] === 'count') {
         echo json_encode(array(
-            'result' => $count,
-            'reason' => ""),
-            JSON_FORCE_OBJECT);
-    } else if ($_GET["action"] === 'bookCount') {
-        $result = mysqli_query($db, "select * from book");
-        $count = mysqli_num_rows($result);
-        echo json_encode(array(
-            'result' => $count,
-            'reason' => ""),
+            'result' => R::count($_GET["parameter"]),
+            'reason' => $_GET["parameter"]),
             JSON_FORCE_OBJECT);
     }
 }

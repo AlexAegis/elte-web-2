@@ -1,12 +1,10 @@
 PHP beadandó – Könyvespolc
 ==========================
 
-Documentation
--------------
+Libraries
+---------
 
-Propel, Bootstrap, Normalize
-
-
+RedBeans, Bootstrap, jQuery
 
 Feladatleírás
 -------------
