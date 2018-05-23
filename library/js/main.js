@@ -43,7 +43,8 @@ function userController(data, action) {
 			} else if(jsonResponse.result === 'loginError') {
 				if(jsonResponse.errors.includes('invalidPassword')) {
 					$('#password').addClass('is-invalid');
-				} else if(jsonResponse.errors.includes('invalidEmail')) {
+				}
+				if(jsonResponse.errors.includes('invalidEmail')) {
 					$('#email').addClass('is-invalid');
 				}
 			} else if(jsonResponse.result === 'registrationSuccess') {

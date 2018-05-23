@@ -4,5 +4,5 @@ if (isset($_SESSION['login'])) { ?>
         lol
     </form>
 <?php } else { ?>
-    <p>log in to access this feature!</p>
+    <p>Please log in to access this feature!</p>
 <?php } ?>

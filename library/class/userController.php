@@ -6,15 +6,15 @@ if (isset($_POST['action'])) {
         $countUsersByEmail = R::count('user', ' email = :email ', [':email' => $_POST['email'] ]);
         $user = R::findOne('user', ' email = :email and password = :password ',
             [':email' => $_POST['email'], ':password' => hash('sha256', $_POST['password'])]);
-        $result = "loginSuccess";
+        $result = "loginError";
         $errors = array();
-        if ($countUsersByEmail > 1) {
+        if ($countUsersByEmail == 0) {
             array_push($errors, "invalidEmail");
         }
         if ($user == null) {
             array_push($errors, "invalidPassword");
-            $result = "loginError";
         } else {
+            $result = "loginSuccess";
             $_SESSION['login'] = $user;
         }
         echo jsonResponse($result, $_POST['action'], $errors, array(
