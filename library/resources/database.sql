@@ -9,6 +9,7 @@ create table if not exists user (
 ) comment 'Users of the application for the second web programming submission';
 
 insert into user (email, password, name) value ('admin@admin.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin');
+insert into user (email, password, name) value ('adminbak@admin.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'adminbak');
 
 drop table if exists bookcategory;
 create table if not exists bookcategory (
@@ -38,21 +39,21 @@ create table if not exists book (
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'Jesus', 'The Bible', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'J. R. R. Tolkien', 'Lord of the rings', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aaaa', 'aaaa', (select id from bookcategory where name = 'fantasy'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabb', 'aabb', (select id from bookcategory where name = 'action'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabc', 'aabc', (select id from bookcategory where name = 'adventure'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabd', 'aabd', (select id from bookcategory where name = 'action'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabe', 'aabe', (select id from bookcategory where name = 'fantasy'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabf', 'aabf', (select id from bookcategory where name = 'adventure'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabg', 'aabg', (select id from bookcategory where name = 'fantasy'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabb', 'aabb', (select id from bookcategory where name = 'action'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabc', 'aabc', (select id from bookcategory where name = 'adventure'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabd', 'aabd', (select id from bookcategory where name = 'action'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabe', 'aabe', (select id from bookcategory where name = 'fantasy'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabf', 'aabf', (select id from bookcategory where name = 'adventure'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabg', 'aabg', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabh', 'aabh', (select id from bookcategory where name = 'action'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabi', 'aabi', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabj', 'aabj', (select id from bookcategory where name = 'action'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabk', 'aabk', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabl', 'aabl', (select id from bookcategory where name = 'fantasy'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'aabm', 'aabm', (select id from bookcategory where name = 'adventure'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'baaa', 'baaa', (select id from bookcategory where name = 'fantasy'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'babb', 'babb', (select id from bookcategory where name = 'fantasy'));
-insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'babc', 'babc', (select id from bookcategory where name = 'fantasy'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'aabm', 'aabm', (select id from bookcategory where name = 'adventure'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'baaa', 'baaa', (select id from bookcategory where name = 'fantasy'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'babb', 'babb', (select id from bookcategory where name = 'fantasy'));
+insert into book (owner, author, title, category) value ((select id from user where email = 'adminbak@admin.com'), 'babc', 'babc', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'babd', 'babd', (select id from bookcategory where name = 'adventure'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'babe', 'babe', (select id from bookcategory where name = 'fantasy'));
 insert into book (owner, author, title, category) value ((select id from user where email = 'admin@admin.com'), 'babf', 'babf', (select id from bookcategory where name = 'action'));

@@ -1,17 +1,28 @@
 <?php require_once '/home/hallgatok/alexaegis/www/library/class/session.php';
 require_once '/home/hallgatok/alexaegis/www/library/resources/datatables/ssp.rb.php';
-
-$columns = array(
-    array( 'db' => '`b`.`author`', 'dt' => 0 ,'field' => 'author'),
-    array( 'db' => '`b`.`title`',  'dt' => 1 , 'field' => 'title'),
-    array( 'db' => '`bc`.`name`',  'dt' => 2, 'field' => 'name')
-);
-
 $table = 'book';
+$joinTable = 'bookcategory';
+
 $primaryKey = 'id';
 
-$joinQuery = "FROM `book` AS `b` JOIN `bookcategory` AS `bc` ON (`bc`.`id` = `b`.`category`)";
-$extraWhere = NULL;
+// when using join
+$columns = array(
+    array( 'db' => '`'.$table.'`.`author`', 'dt' => 0 ,'field' => 'author'),
+    array( 'db' => '`'.$table.'`.`title`',  'dt' => 1 , 'field' => 'title'),
+    array( 'db' => '`'.$joinTable.'`.name',  'dt' => 2, 'field' => 'name')
+);
+
+// When using regular just make joinquery and extrawhere null
+/*
+$columns = array(
+    array( 'db' => 'author', 'dt' => 0),
+    array( 'db' => 'title',  'dt' => 1 ),
+    array( 'db' => 'category',  'dt' => 2)
+);
+*/
+
+$joinQuery = "FROM `$table` AS `$table` JOIN `$joinTable` AS `$joinTable` ON (`$joinTable`.`id` = `$table`.`category`)";
+$extraWhere = " `$table`.`owner` = ".$_SESSION['login']->id;
 $groupBy = NULL;
 $having = NULL;
 

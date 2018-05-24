@@ -141,7 +141,7 @@ class SSP {
      *
      *  @return string SQL where clause
      */
-    static function filter ( $request, $columns, &$bindings, $isJoin = false )
+    static function filter ( $request, $columns, &$bindings, $isJoin = false, $extraWhere = null)
     {
         $globalSearch = array();
         $columnSearch = array();
@@ -195,6 +195,11 @@ class SSP {
             $where = 'WHERE '.$where;
         }
 
+        // IF Extra where set then set and prepare query
+        if($extraWhere) {
+            $where = ($where) ? $where.' AND '.$extraWhere : $where.' WHERE '.$extraWhere;
+        }
+        //echo $where;
         return $where;
     }
 
@@ -227,11 +232,8 @@ class SSP {
         // Build the SQL query string from the request
         $limit = SSP::limit( $request, $columns );
         $order = SSP::order( $request, $columns, $joinQuery );
-        $where = SSP::filter( $request, $columns, $bindings, $joinQuery );
+        $where = SSP::filter( $request, $columns, $bindings, $joinQuery, $extraWhere);
 
-        // IF Extra where set then set and prepare query
-        if($extraWhere)
-            $extraWhere = ($where) ? ' AND '.$extraWhere : ' WHERE '.$extraWhere;
 
         $groupBy = ($groupBy) ? ' GROUP BY '.$groupBy .' ' : '';
 
@@ -243,7 +245,6 @@ class SSP {
             $query =  "SELECT SQL_CALC_FOUND_ROWS ".implode(", ", $col)."
 			 $joinQuery
 			 $where
-			 $extraWhere
 			 $groupBy
        $having
 			 $order
@@ -252,7 +253,6 @@ class SSP {
             $query =  "SELECT SQL_CALC_FOUND_ROWS `".implode("`, `", SSP::pluck($columns, 'db'))."`
 			 FROM `$table`
 			 $where
-			 $extraWhere
 			 $groupBy
        $having
 			 $order
@@ -261,20 +261,17 @@ class SSP {
 
         $data = SSP::sql_exec( $db, $bindings,$query);
 
-        // Data set length after filtering
-        $resFilterLength = self::sql_exec($db, $bindings,
-            "SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table`"
+        $resFilterLength = SSP::sql_exec( $db, $bindings,
+            "SELECT FOUND_ROWS()"
         );
         $recordsFiltered = $resFilterLength[0][0];
 
         // Total data set length
         $resTotalLength = self::sql_exec($db, $bindings,
-            "SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table` "
+            "SELECT COUNT($table.`{$primaryKey}`)
+			 FROM `$table` ". ($extraWhere ? " WHERE ".$extraWhere : "")
         );
-        $recordsTotal = $resTotalLength[0];
-
+        $recordsTotal = $resTotalLength[0][0];
 
         /*
          * Output
