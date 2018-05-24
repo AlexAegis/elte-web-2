@@ -1,5 +1,6 @@
 <?php session_start();
 if (isset($_SESSION['login'])) { ?>
+    <h1 class="display-3 mb-4">Books</h1>
     <table class="display" id="book" style="width:100%">
         <thead>
         <tr>
