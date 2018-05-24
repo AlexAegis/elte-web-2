@@ -1,5 +1,5 @@
-<?php require_once '../resources/rb-mysql.php';
-require_once '../class/session.php';
+<?php require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
+require_once '/home/hallgatok/alexaegis/www/library/class/session.php';
 
 if (isset($_POST['action'])) {
     if ($_POST['action'] == "login") {

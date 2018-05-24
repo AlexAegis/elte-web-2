@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/library/class/datatable/book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/class/bookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/bookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/class/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/class/userController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/userController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/content/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/main.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,9 +67,27 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.27893013">
+    <splitter split-orientation="horizontal" split-proportion="0.38843426">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="navigation.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/library/content/navigation.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="154">
+                  <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="registration.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/library/content/registration.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="490">
+                  <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="books.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/content/books.php">
               <provider selected="true" editor-type-id="text-editor" />
@@ -85,8 +105,8 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+                <state>
+                  <caret lean-forward="true" />
                 </state>
               </provider>
             </entry>
@@ -100,11 +120,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/content/main.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+                <state relative-caret-position="550">
+                  <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
                   <folding>
                     <element signature="e#132#150#0#HTML" expanded="true" />
                   </folding>
@@ -114,36 +134,23 @@
           </file>
           <file leaf-file-name="bookController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file leaf-file-name="book.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/library/class/datatable/book.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="3" selection-start-line="3" selection-end-line="3" />
+                <state relative-caret-position="44">
+                  <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="book" pinned="false" current-in-tab="false">
-            <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/book">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/library/resources/database.sql">
+          <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="434">
-                  <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user" pinned="false" current-in-tab="false">
-            <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/user">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
+                <state relative-caret-position="140">
+                  <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -155,8 +162,8 @@
           <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/class/session.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+                <state relative-caret-position="54">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -164,47 +171,17 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="606">
+                <state relative-caret-position="620">
                   <caret line="114" column="7" lean-forward="true" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="userController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="userController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/class/userController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="6" selection-start-column="6" selection-end-line="1" selection-end-column="36" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bookController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bookcategory" pinned="false" current-in-tab="false">
-            <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/bookcategory">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ssp.rb.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="329">
-                  <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
-                  <folding>
-                    <element signature="e#7#666#0#PHP" expanded="true" />
-                  </folding>
+                <state relative-caret-position="70">
+                  <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -241,13 +218,14 @@
       <find>docume</find>
       <find>Select-1.2</find>
       <find>json_encode</find>
-      <find>jquery</find>
       <find>join</find>
       <find>FROM `$table`</find>
       <find>$table</find>
       <find>R::findOne</find>
-      <find>babn</find>
       <find>comple</find>
+      <find>try</find>
+      <find>babn</find>
+      <find>jquery</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,7 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tictactoe/tictactoe.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f1086c00-e9d6-4363-95f9-c7796803c31e/console.sql" />
@@ -300,16 +277,17 @@
         <option value="$PROJECT_DIR$/library/content/registration.php" />
         <option value="$PROJECT_DIR$/library/test/test.php" />
         <option value="$PROJECT_DIR$/library/content/welcome.php" />
-        <option value="$PROJECT_DIR$/library/class/userController.php" />
-        <option value="$PROJECT_DIR$/library/class/session.php" />
         <option value="$PROJECT_DIR$/library/class/datatableresponse.php" />
         <option value="$PROJECT_DIR$/library/js/main.js" />
         <option value="$PROJECT_DIR$/library/content/user/logout.php" />
-        <option value="$PROJECT_DIR$/library/index.php" />
-        <option value="$PROJECT_DIR$/library/content/main.php" />
         <option value="$PROJECT_DIR$/library/resources/database.sql" />
-        <option value="$PROJECT_DIR$/library/class/bookController.php" />
         <option value="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" />
+        <option value="$PROJECT_DIR$/library/class/bookController.php" />
+        <option value="$PROJECT_DIR$/library/content/main.php" />
+        <option value="$PROJECT_DIR$/library/index.php" />
+        <option value="$PROJECT_DIR$/library/class/session.php" />
+        <option value="$PROJECT_DIR$/library/class/userController.php" />
+        <option value="$PROJECT_DIR$/library/class/datatable/book.php" />
       </list>
     </option>
   </component>
@@ -385,6 +363,13 @@
               <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
               <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="class" type="462c0819:PsiDirectoryNode" />
+              <item name="datatable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -437,11 +422,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Git\elte-web-2\library\class\datatable" />
       <recent name="D:\Work\Git\elte-web-2\library\resources\datatables" />
       <recent name="D:\Work\Git\elte-web-2\library\resources" />
       <recent name="D:\Work\Git\elte-web-2\library\test" />
       <recent name="D:\Work\Git\elte-web-2\library\class" />
-      <recent name="D:\Work\Git\elte-web-2\library\class\model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\Git\elte-web-2\library" />
@@ -489,14 +474,7 @@
       <workItem from="1527026697601" duration="14110000" />
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
-      <workItem from="1527179974609" duration="12548000" />
-    </task>
-    <task id="LOCAL-00037" summary="try redirect">
-      <created>1526895386234</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1526895386234</updated>
+      <workItem from="1527179974609" duration="13526000" />
     </task>
     <task id="LOCAL-00038" summary="try redirect">
       <created>1526895406186</created>
@@ -834,11 +812,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527191949635</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="joining, better query">
+      <created>1527194100222</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1527194100222</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134554000" />
+    <option name="totallyTimeSpent" value="135532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
@@ -849,11 +834,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" order="9" weight="0.20108695" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="9" weight="0.32919255" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17057654" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17057654" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.10059642" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296875" />
@@ -937,7 +922,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="login done" />
     <MESSAGE value="added header and content block" />
     <MESSAGE value="error emssage on login" />
     <MESSAGE value="added registration page prefill" />
@@ -962,7 +946,8 @@
     <MESSAGE value="added datatables package" />
     <MESSAGE value="added ssp" />
     <MESSAGE value="added datatable for books" />
-    <option name="LAST_COMMIT_MESSAGE" value="added datatable for books" />
+    <MESSAGE value="joining, better query" />
+    <option name="LAST_COMMIT_MESSAGE" value="joining, better query" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,13 +955,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/session/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/tictactoe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1070,20 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/navigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memory/js/memory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2632">
@@ -1108,9 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/books.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/resources/rb-mysql.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="699">
@@ -1118,34 +1079,6 @@
           <folding>
             <element signature="e#282238#282274#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="114" column="7" lean-forward="true" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1164,27 +1097,6 @@
         <state relative-caret-position="-9953" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/user/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SECOND">
@@ -1197,13 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -1211,20 +1116,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="e#132#150#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/book">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="162" column="9" lean-forward="true" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
+          <folding>
+            <element signature="e#7#666#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,19 +1147,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+    <entry file="das://f1086c00-e9d6-4363-95f9-c7796803c31e/schema/wf2_aqv5ak/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
+    <entry file="file://$PROJECT_DIR$/library/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+        <state relative-caret-position="620">
+          <caret line="114" column="7" lean-forward="true" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/books.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/user/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/navigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/datatable/book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding>
-            <element signature="e#7#666#0#PHP" expanded="true" />
+            <element signature="e#132#150#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

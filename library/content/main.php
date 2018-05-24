@@ -14,19 +14,16 @@ if (isset($_SESSION['login'])) { ?>
 
     <script>
         $(document).ready(function() {
-	        //$.noConflict(true);
-
-	        let bk = $('#book');
-			bk.dataTable({
+	        $('#book').dataTable({
 				scrollX: true,
 				pagingType: "numbers",
 				lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
 				pageLength: 5,
 				processing: true,
 				serverSide: true,
-				ajax: "class/bookController.php"
+				ajax: "class/datatable/book.php"
 			} );
-		} );
+		});
     </script>
 <?php } else { ?>
     <p>Please log in to access this feature!</p>
