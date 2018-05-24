@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/class/bookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/bookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/content/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,7 +58,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45414847">
+    <splitter split-orientation="horizontal" split-proportion="0.26146287">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="books.php" pinned="false" current-in-tab="false">
@@ -99,8 +96,8 @@
           <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/content/main.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+                <state relative-caret-position="462">
+                  <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
                   <folding>
                     <element signature="e#132#150#0#HTML" expanded="true" />
                   </folding>
@@ -175,20 +172,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bookController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="bookController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="720">
+                  <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ssp.rb.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ssp.rb.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5464">
-                  <caret line="273" column="20" selection-start-line="273" selection-start-column="20" selection-end-line="273" selection-end-column="20" />
+                <state relative-caret-position="493">
+                  <caret line="320" column="13" lean-forward="true" selection-start-line="320" selection-start-column="13" selection-end-line="320" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#7#666#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -227,6 +227,10 @@
       <find>json_encode</find>
       <find>babn</find>
       <find>jquery</find>
+      <find>join</find>
+      <find>FROM `$table`</find>
+      <find>$table</find>
+      <find>comple</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -282,13 +286,13 @@
         <option value="$PROJECT_DIR$/library/class/userController.php" />
         <option value="$PROJECT_DIR$/library/class/session.php" />
         <option value="$PROJECT_DIR$/library/class/datatableresponse.php" />
-        <option value="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" />
         <option value="$PROJECT_DIR$/library/js/main.js" />
         <option value="$PROJECT_DIR$/library/content/user/logout.php" />
         <option value="$PROJECT_DIR$/library/index.php" />
         <option value="$PROJECT_DIR$/library/resources/database.sql" />
         <option value="$PROJECT_DIR$/library/content/main.php" />
         <option value="$PROJECT_DIR$/library/class/bookController.php" />
+        <option value="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" />
       </list>
     </option>
   </component>
@@ -463,14 +467,7 @@
       <workItem from="1527026697601" duration="14110000" />
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
-      <workItem from="1527179974609" duration="8565000" />
-    </task>
-    <task id="LOCAL-00035" summary="ssh success, db next">
-      <created>1526895242268</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1526895242268</updated>
+      <workItem from="1527179974609" duration="10418000" />
     </task>
     <task id="LOCAL-00036" summary="ssh success, db next">
       <created>1526895312395</created>
@@ -808,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527186898403</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="added datatable for books">
+      <created>1527190099962</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1527190099962</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130571000" />
+    <option name="totallyTimeSpent" value="132424000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
@@ -911,7 +915,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="try" />
     <MESSAGE value="login done" />
     <MESSAGE value="added header and content block" />
     <MESSAGE value="error emssage on login" />
@@ -936,15 +939,15 @@
     <MESSAGE value="display error" />
     <MESSAGE value="added datatables package" />
     <MESSAGE value="added ssp" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ssp" />
+    <MESSAGE value="added datatable for books" />
+    <option name="LAST_COMMIT_MESSAGE" value="added datatable for books" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/library/session.php" />
     <entry file="file://$PROJECT_DIR$/library/logout.php" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/session/session.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1046,18 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="84">
-            <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/content/registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
@@ -1106,20 +1097,6 @@
           <folding>
             <element signature="e#282238#282274#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5464">
-          <caret line="273" column="20" selection-start-line="273" selection-start-column="20" selection-end-line="273" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1201,20 +1178,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="84">
+            <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/content/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="462">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="e#132#150#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="699" column="9" selection-start-line="699" selection-start-column="9" selection-end-line="699" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="720">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/resources/datatables/ssp.rb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="320" column="13" lean-forward="true" selection-start-line="320" selection-start-column="13" selection-end-line="320" selection-end-column="13" />
+          <folding>
+            <element signature="e#7#666#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

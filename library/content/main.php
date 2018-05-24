@@ -5,6 +5,7 @@ if (isset($_SESSION['login'])) { ?>
         <tr>
             <th>author</th>
             <th>title</th>
+            <th>category</th>
         </tr>
         </thead>
         <tbody>
