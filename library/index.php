@@ -12,6 +12,17 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/library.css">
         <link rel="stylesheet" type="text/css" href="resources/datatables/datatables.min.css"/>
+
+        <script type="text/javascript" src="js/vendor/modernizr-3.5.0.min.js"></script>
+
+        <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/utility.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="resources/datatables/datatables.min.js"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -40,15 +51,5 @@
         <footer class="container">
             <p><a href="https://github.com/AlexAegis/" target="_blank" role="link" class="text-black-50">&copy; AlexAegis 2018</a></p>
         </footer>
-        <script type="text/javascript" src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>');</script>
-        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/utility.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="resources/datatables/datatables.min.js"></script>
     </body>
 </html>

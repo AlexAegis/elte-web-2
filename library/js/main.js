@@ -110,18 +110,7 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 			if(modifyJson !== null) {
 				jsonResponse.result = modifyJson(jsonResponse);
 			}
+			element.html(jsonResponse.result);
 		}
 	});
-}
-
-function booksToList(jsonResponse) {
-	let data = JSON.parse(jsonResponse.result);
-	let shelf = $(document.createElement('div'));
-	data.forEach(function(item) {
-		let row = $(document.createElement('div'));
-		row.html(item.title);
-		shelf.append(row);
-	});
-	$('#books').append(shelf);
-	return shelf;
 }
