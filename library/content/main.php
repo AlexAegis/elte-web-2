@@ -3,28 +3,27 @@ if (isset($_SESSION['login'])) { ?>
     <div id="books">
     </div>
 
-    <div id="staticRow" class="row">
-        <div class="col-sm-1">
-            1.
-        </div>
-        <div class="col-sm-4">
-            Holy lord fuck no
-        </div>
-        <div class="col-sm-4">
-            - Abathur Roman
-        </div>
-        <div class="col-sm-2">
-            1999
-        </div>
-        <div class="col-sm-1">
-            C
-        </div>
-    </div>
+    <table class="display" id="example" style="width:100%">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>name</th>
+        </tr>
+        </thead>
+    </table>
 
     <script type="text/javascript">
-		$(document).ready(function () {
-			get($('#books'), 'bookController.php', 'listBooks', 'book', booksToList);
-		});
+
+        $(document).ready(function() {
+			$('#example-detail').dataTable({
+				scrollX: true,
+				pagingType: "numbers",
+				processing: true,
+				serverSide: true,
+				ajax: "../class/bookController.php"
+			} );
+		} );
     </script>
 <?php } else { ?>
     <p>Please log in to access this feature!</p>
