@@ -145,7 +145,7 @@ class SSP {
     {
         $globalSearch = array();
         $columnSearch = array();
-        $dtColumns = SSP::pluck( $columns, 'dt' );
+        $dtColumns = self::pluck( $columns, 'dt' );
 
         if ( isset($request['search']) && $request['search']['value'] != '' ) {
             $str = $request['search']['value'];
@@ -273,19 +273,19 @@ class SSP {
             "SELECT COUNT(`{$primaryKey}`)
 			 FROM   `$table` "
         );
-        $recordsTotal = $resTotalLength[0][0];
+        $recordsTotal = $resTotalLength[0];
 
 
         /*
          * Output
          */
         return array(
-            "draw" => isset ($request['draw']) ?
+            "draw"            => intval( isset ($request['draw']) ?
                 intval($request['draw']) :
-                0,
-            "recordsTotal" => intval($recordsTotal),
-            "recordsFiltered" => intval($recordsFiltered),
-            "data" => self::data_output($columns, $data)
+                0),
+            "recordsTotal"    => intval( $recordsTotal ),
+            "recordsFiltered" => intval( $recordsFiltered ),
+            "data"            => SSP::data_output( $columns, $data, $joinQuery )
         );
     }
 
@@ -360,9 +360,9 @@ class SSP {
      * @return string       Bound key to be used in the SQL where this parameter
      *   would be used.
      */
-    static function bind(&$a, $val, $type)
+    static function bind ( &$a, $val, $type )
     {
-        $key = ':binding_' . count($a);
+        $key = ':binding_'.count( $a );
 
         $a[] = array(
             'key' => $key,
@@ -392,23 +392,5 @@ class SSP {
         }
 
         return $out;
-    }
-
-
-    /**
-     * Return a string from an array or a string
-     *
-     * @param  array|string $a Array to join
-     * @param  string $join Glue for the concatenation
-     * @return string Joined string
-     */
-    static function _flatten($a, $join = ' AND ')
-    {
-        if (!$a) {
-            return '';
-        } else if ($a && is_array($a)) {
-            return implode($join, $a);
-        }
-        return $a;
     }
 }
