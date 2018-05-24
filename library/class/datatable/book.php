@@ -9,7 +9,10 @@ $primaryKey = 'id';
 $columns = array(
     array( 'db' => '`'.$table.'`.`author`', 'dt' => 0 ,'field' => 'author'),
     array( 'db' => '`'.$table.'`.`title`',  'dt' => 1 , 'field' => 'title'),
-    array( 'db' => '`'.$joinTable.'`.name',  'dt' => 2, 'field' => 'name')
+    array( 'db' => '`'.$joinTable.'`.name',  'dt' => 2, 'field' => 'name'),
+    array( 'db' => '`'.$table.'`.is_read',  'dt' => 3, 'field' => 'is_read','formatter' => function( $d, $row ) {
+        return $d;
+    })
 );
 
 // When using regular just make joinquery and extrawhere null

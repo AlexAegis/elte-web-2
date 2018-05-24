@@ -114,3 +114,4 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 		}
 	});
 }
+

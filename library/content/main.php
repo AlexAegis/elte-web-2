@@ -6,6 +6,7 @@ if (isset($_SESSION['login'])) { ?>
             <th>author</th>
             <th>title</th>
             <th>category</th>
+            <th>read</th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +22,12 @@ if (isset($_SESSION['login'])) { ?>
 				pageLength: 5,
 				processing: true,
 				serverSide: true,
-				ajax: "class/datatable/book.php"
+				ajax: "class/datatable/book.php",
+		        createdRow: function(row, data, index) {
+					let column = 3;
+			        let rowValue = data[column];
+                    $('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
+		        }
 			} );
 		});
     </script>
