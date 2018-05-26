@@ -1,4 +1,4 @@
-<?php require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
+<?php require_once '/home/hallgatok/alexaegis/www/library/resources/php/rb-mysql.php';
 require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
 
 // if your form for your object contains a select, always have a get with an action called the name of that select
@@ -27,12 +27,10 @@ if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'create':
             $book = R::dispense('book');
-            if(isset($_POST['id']) && $_POST['id'] != '') {
-                $book = R::findOne('book', ' id = :id ', [ 'id' => $_POST['id']]);
+            if (isset($_POST['id']) && $_POST['id'] != '') {
+                $book = R::findOne('book', ' id = :id ', ['id' => $_POST['id']]);
             }
-
             $errors = array();
-
             if ($_POST['isbn'] != null && !ctype_digit($_POST['isbn'])) {
                 array_push($errors, error('isbn', 'Must contain only digits'));
             }
@@ -40,32 +38,30 @@ if (isset($_POST['action'])) {
             if ($_POST['page'] != null && !ctype_digit($_POST['page'])) {
                 array_push($errors, error('page', 'Must contain only digits'));
             }
-
             if ($_POST['author'] == null) {
                 array_push($errors, error('author'));
             }
             if ($_POST['title'] == null) {
                 array_push($errors, error('title'));
             }
-
-            if($_POST['author'] != null
+            if ($_POST['author'] != null
                 && $_POST['title'] != null
                 && (!isset($_POST['id']) || $_POST['id'] == '')
-                    || (isset($_POST['id']) && $_POST['id'] != ''
+                || (isset($_POST['id']) && $_POST['id'] != ''
                     && $_POST['title']
                     != $book->title
                     && $_POST['author']
                     != $book->author)) {
                 $bookUnique = R::count('book', ' owner = :owner and author = :author and title = :title '
                     , [':owner' => $_SESSION['login']->id, ':author' => $_POST['author'], ':title' => $_POST['title']]);
-                if($bookUnique > 0) {
+                if ($bookUnique > 0) {
                     array_push($errors, error("author", "Must be unique"));
                     array_push($errors, error("title", "Must be unique"));
                 }
             }
             $result = "createSuccess";
             $other = array();
-            if(count($errors) > 0) {
+            if (count($errors) > 0) {
                 $result = "createError";
             } else {
                 $book->owner = $_SESSION['login']->id;
@@ -77,10 +73,10 @@ if (isset($_POST['action'])) {
                 $book->is_read = isset($_POST['is_read']) ? '1' : '0';
                 R::store($book);
                 $other['id'] = $book->id;
-                $newBooks = R::find('book', 'owner = :owner order by title asc ' , [':owner' => $_SESSION['login']->id]);
+                $newBooks = R::find('book', 'owner = :owner order by title asc ', [':owner' => $_SESSION['login']->id]);
                 $bookPos = 0;
                 foreach ($newBooks as &$b) {
-                    if($b->id == $book->id) {
+                    if ($b->id == $book->id) {
                         break;
                     } else {
                         $bookPos++;
@@ -88,13 +84,12 @@ if (isset($_POST['action'])) {
                 }
                 $bookOrderedNumber = R::count('book', ' owner = :owner and id <= :id '
                     , [':owner' => $_SESSION['login']->id, ':id' => $book->id]);
-                $other['truePage'] = intdiv ($bookPos + 1, 5); // default page size
-                $other['page'] = intdiv ($bookPos + 1, 5) * 5; // default page size
+                $other['truePage'] = intdiv($bookPos + 1, 5); // default page size
+                $other['page'] = intdiv($bookPos + 1, 5) * 5; // default page size
                 $other['globPos'] = $bookPos + 1;
                 $other['id'] = $book->id;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
-
     }
 }

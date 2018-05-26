@@ -4,15 +4,16 @@ if (isset($_SESSION['login'])) { ?>
         <label id="loggedInUser" class="text-white control-label"></label>
         <button id="logout"
                 onclick="$('.navbar-collapse').collapse('hide');"
-                class="btn btn-outline-secondary form-control my-2 my-sm-0 ml-2">Logout</button>
+                class="btn btn-outline-secondary form-control my-2 my-sm-0 ml-2">Logout
+        </button>
     </form>
     <script type="text/javascript">
 		$(document).ready(function () {
-			get($('#loggedInUser'), 'session', 'loggedInUser');
+			get($('#loggedInUser'), 'session', 'loggedInUser')
 			$('#logoutForm').submit(function (e) {
-				e.preventDefault();
-				logout($(this));
-			});
-		});
+				e.preventDefault()
+				logout($(this))
+			})
+		})
     </script>
 <?php } ?>

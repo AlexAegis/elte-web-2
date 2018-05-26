@@ -45,9 +45,9 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('#loginForm').submit(function (e) {
-			e.preventDefault();
-			$("#loginForm input").removeClass("is-invalid");
-			userController($(this), $('#mode').val());
-		});
-	});
+			e.preventDefault()
+			$('#loginForm input').removeClass('is-invalid')
+			userController($(this), $('#mode').val())
+		})
+	})
 </script>

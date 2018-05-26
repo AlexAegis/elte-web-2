@@ -1,10 +1,10 @@
-<?php require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
+<?php require_once '/home/hallgatok/alexaegis/www/library/resources/php/rb-mysql.php';
 require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
 
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'login':
-            $countUsersByEmail = R::count('user', ' email = :email ', [':email' => $_POST['email'] ]);
+            $countUsersByEmail = R::count('user', ' email = :email ', [':email' => $_POST['email']]);
             $user = R::findOne('user', ' email = :email and password = :password ',
                 [':email' => $_POST['email'], ':password' => hash('sha256', $_POST['password'])]);
             $result = "loginError";
@@ -37,7 +37,7 @@ if (isset($_POST['action'])) {
             }
             if ($countUsersByEmail == 0 && $countUsersByName == 0) {
                 $result = 'registrationSuccess';
-                R::transaction(function() { // do it with or without the transaction, it works without it too
+                R::transaction(function () { // do it with or without the transaction, it works without it too
                     $user = R::dispense('user');
                     $user->email = $_POST['email'];
                     $user->name = $_POST['name'];

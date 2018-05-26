@@ -48,13 +48,13 @@
     <input id="registrationMode" hidden>
 </form>
 <script>
-	$(document).ready(function() {
-		$('#registrationForm').submit(function(e) {
-			e.preventDefault();
-			$('#registrationName').removeClass('is-invalid');
-			$('#registrationEmail').removeClass('is-invalid');
-			console.log($(this).serializeArray());
-			userController($(this), $('#registrationMode').val());
-		});
-	});
+	$(document).ready(function () {
+		$('#registrationForm').submit(function (e) {
+			e.preventDefault()
+			$('#registrationName').removeClass('is-invalid')
+			$('#registrationEmail').removeClass('is-invalid')
+			console.log($(this).serializeArray())
+			userController($(this), $('#registrationMode').val())
+		})
+	})
 </script>

@@ -1,8 +1,8 @@
 <?php
-require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
+require_once '/home/hallgatok/alexaegis/www/library/resources/php/rb-mysql.php';
 define('DB_KEY', 'library');
 try {
-    if(!R::testConnection()) {
+    if (!R::testConnection()) {
         R::addDatabase(DB_KEY, 'mysql:host=localhost;dbname=wf2_aqv5ak', 'aqv5ak', 'aqv5ak');
         R::selectDatabase(DB_KEY);
     }
@@ -11,8 +11,8 @@ try {
 }
 session_start();
 
-if(isset($_POST["action"])) {
-    if(isset($_SESSION['login']) and $_POST["action"] === 'logout') {
+if (isset($_POST["action"])) {
+    if (isset($_SESSION['login']) and $_POST["action"] === 'logout') {
         unset($_SESSION['login']);
         R::close();
         echo jsonResponse('logout', $_POST["action"]);
