@@ -23,7 +23,8 @@ if (isset($_SESSION['login'])) { ?>
             </div>
             <div class="form-group row col-12 mt-2">
                 <label id="categoryLabel" for="category" class="control-label mr-4 col-2">Category</label>
-                <select id="category" name="category" type="text" class="form-control col-6" onchange="refreshCategoryEditButton()"></select>
+                <select id="category" name="category" type="text" class="form-control col-6"
+                        onchange="refreshCategoryEditButton()"></select>
                 <button id="addCategory" type="button" class="btn btn-outline-primary ml-3" data-toggle="modal"
                         data-target="#categoryModal" formnovalidate onclick="emptyCategoryModal();"><i
                             class="fas fa-plus"></i></button>
@@ -41,7 +42,8 @@ if (isset($_SESSION['login'])) { ?>
                 <label id="is_readLabel" for="is_read" class="control-label mr-4 col-2">Read</label>
 
                 <label>
-                    <input id="is_read" name="is_read" type="checkbox" value="" class="form-control chk custom-checkbox col-6"/>
+                    <input id="is_read" name="is_read" type="checkbox" value=""
+                           class="form-control chk custom-checkbox col-6"/>
                     <span></span>
                 </label>
 
@@ -79,7 +81,7 @@ if (isset($_SESSION['login'])) { ?>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" formnovalidate>Close
                         </button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -87,8 +89,6 @@ if (isset($_SESSION['login'])) { ?>
     </form>
     <script>
 		$(document).ready(function () {
-
-
 			let bookForm = $('#book')
 			get(bookForm, 'book', 'retrieve', getParam('id'))
 			$('#id').val(getParam('id'))
@@ -123,30 +123,32 @@ if (isset($_SESSION['login'])) { ?>
 				})
 			})
 
-			refreshCategoryEditButton();
+			refreshCategoryEditButton()
 		})
 
 		function fillCategoryModal() {
 			let bookFormCategory = $('#category')
 			let categoryFormName = $('#categoryName')
+			$('#categoryModalLabel').html('Edit Category')
+
 			$('#categoryId').val(bookFormCategory.val())
 			categoryFormName.val(bookFormCategory.find('option:selected').text())
 			categoryFormName.focus()
 		}
 
 		function emptyCategoryModal() {
+			$('#categoryModalLabel').html('Create Category')
 			$('#categoryId').val('')
 			$('#categoryName').val('')
 		}
 
 		function refreshCategoryEditButton() {
-			if($('#category').val() === null || $('#category').val() === '') {
-			    $('#editCategory').addClass('hidden');
-            } else {
-				$('#editCategory').removeClass('hidden');
-            }
-        }
-
+			if ($('#category').val() === null || $('#category').val() === '') {
+				$('#editCategory').addClass('hidden')
+			} else {
+				$('#editCategory').removeClass('hidden')
+			}
+		}
     </script>
 <?php } else { ?>
     <p>Please log in to access this feature!</p>
