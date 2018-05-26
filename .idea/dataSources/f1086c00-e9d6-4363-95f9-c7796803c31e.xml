@@ -806,7 +806,7 @@
     <table id="201" parent="3" name="book">
       <Comment>Books for the library appliations</Comment>
     </table>
-    <table id="202" parent="3" name="bookcategory">
+    <table id="202" parent="3" name="category">
       <Comment>Categories of books</Comment>
     </table>
     <table id="203" parent="3" name="user">
@@ -899,7 +899,7 @@ title</ColNames>
     <foreign-key id="217" parent="201" name="book_ibfk_2">
       <ColNames>category</ColNames>
       <RefSchemaName>wf2_aqv5ak</RefSchemaName>
-      <RefTableName>bookcategory</RefTableName>
+      <RefTableName>category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="218" parent="202" name="id">
@@ -910,29 +910,45 @@ title</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="202" name="name">
+    <column id="219" parent="202" name="owner">
       <Position>2</Position>
+      <Comment>owner of the category</Comment>
+      <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="220" parent="202" name="name">
+      <Position>3</Position>
       <Comment>name of the category</Comment>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <index id="220" parent="202" name="name">
-      <ColNames>name</ColNames>
+    <index id="221" parent="202" name="owner">
+      <Comment>one owner can only have one category once</Comment>
+      <ColNames>owner
+name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="221" parent="202" name="PRIMARY">
+    <key id="222" parent="202" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="222" parent="202" name="name">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>name</UnderlyingIndexName>
+    <key id="223" parent="202" name="owner">
+      <ColNames>owner
+name</ColNames>
+      <UnderlyingIndexName>owner</UnderlyingIndexName>
     </key>
-    <column id="223" parent="203" name="id">
+    <foreign-key id="224" parent="202" name="category_ibfk_1">
+      <ColNames>owner</ColNames>
+      <RefSchemaName>wf2_aqv5ak</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="225" parent="203" name="id">
       <Position>1</Position>
       <Comment>primary key, needed for proper database control</Comment>
       <DataType>int(10)|0s</DataType>
@@ -940,14 +956,14 @@ title</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="224" parent="203" name="email">
+    <column id="226" parent="203" name="email">
       <Position>2</Position>
       <Comment>unique key, email, used as username</Comment>
       <DataType>varchar(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="225" parent="203" name="password">
+    <column id="227" parent="203" name="password">
       <Position>3</Position>
       <Comment>password, at least 6 char long stored with sha-256</Comment>
       <DataType>varchar(64)|0s</DataType>
@@ -955,7 +971,7 @@ title</ColNames>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="226" parent="203" name="name">
+    <column id="228" parent="203" name="name">
       <Position>4</Position>
       <Comment>name of the user</Comment>
       <DataType>varchar(60)|0s</DataType>
@@ -963,17 +979,17 @@ title</ColNames>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <index id="227" parent="203" name="email">
+    <index id="229" parent="203" name="email">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="228" parent="203" name="PRIMARY">
+    <key id="230" parent="203" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="229" parent="203" name="email">
+    <key id="231" parent="203" name="email">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>

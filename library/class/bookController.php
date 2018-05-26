@@ -1,5 +1,5 @@
 <?php require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
-require_once '/home/hallgatok/alexaegis/www/library/class/session.php';
+require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
 
 // if your form for your object contains a select, always have a get with an action called the name of that select
 if (isset($_GET['action'])) {
@@ -19,12 +19,6 @@ if (isset($_GET['action'])) {
                 'category' => $book != null ? $book->category : null,
                 'isbn' => $book != null ? $book->isbn : null,
                 'is_read' => $book != null ? $book->is_read : null));
-            break;
-        case 'category':
-            $categories = array_values(R::findAll('bookcategory',' ORDER BY id '));
-            $errors = array();
-            echo jsonResponse('success', $_GET['action'], $errors,
-                array("options" => $categories));
             break;
     }
 }

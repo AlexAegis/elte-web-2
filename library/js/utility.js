@@ -88,10 +88,10 @@ function getUrlParameter(sParam) {
 	}
 }
 
-function get(element, controller = 'session.php', action, parameter = null, modifyJson = null, callback = null) {
+function get(element, controller = 'session', action, parameter = null, modifyJson = null, callback = null) {
 	return $.ajax({
 		type: "GET",
-		url: window.location.pathname + '/class/' + controller,
+		url: window.location.pathname + '/class/' + controller + 'Controller.php',
 		data: {
 			action: action,
 			parameter: parameter
@@ -108,7 +108,7 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 				});
 				element.find('select').each(function() {
 					let input = $(this);
-					get(input, controller, input.attr('name'), null, null, function ()  {
+					get(input, input.attr('name'), "retrieveAll", null, null, function ()  {
 						input.val(jsonResponse[input.attr('name')]);
 					});
 				});

@@ -22,6 +22,8 @@ if (isset($_SESSION['login'])) { ?>
         <div class="form-group row col-12 mt-2">
             <label id="categoryLabel" for="category" class="control-label mr-4 col-2">Category</label>
             <select id="category" name="category" type="text" class="form-control col-6"></select>
+            <button id="addCategory" type="button" class="btn btn-outline-primary ml-3"  data-toggle="modal" data-target="#categoryModal" formnovalidate onclick="emptyCategoryModal();"><i class="fas fa-plus"></i></button>
+            <button id="editCategory" type="button" class="btn btn-outline-secondary ml-3"  data-toggle="modal" data-target="#categoryModal" formnovalidate onclick="fillCategoryModal();"><i class="far fa-edit"></i></button>
             <label id="categoryError" class="error mdl-color-text--red ml-1 col-2"></label>
         </div>
         <div class="form-group row col-12 mt-2">
@@ -29,25 +31,55 @@ if (isset($_SESSION['login'])) { ?>
             <input id="isbn" name="isbn" type="text" value="" placeholder="Enter ISBN" class="form-control col-6"/>
             <label id="isbnError" class="error mdl-color-text--red ml-1 col-2"></label>
         </div>
-        <div class="form-group row col-12 mt-2">
+        <div class="form-group row col-12 mt-2 mb-lg-3">
             <label id="is_readLabel" for="is_read" class="control-label mr-4 col-2">Read</label>
             <input id="is_read" name="is_read" type="checkbox" value="" class="form-control col-6"/>
             <label id="is_readError" class="error mdl-color-text--red ml-1 col-2"></label>
         </div>
-        <div class="form-group row col-12 mt-lg-5">
+        <div class="form-group row col-12 mt-5 offset-0 offset-sm-8">
             <button id="submit"
                     type="submit"
-                    class="form-control btn btn-outline-dark my-2 my-sm-0 ml-2 btn-lg"
+                    class="form-control btn btn-outline-dark btn-lg mt-5"
                     onclick="$('#mode').val('login');">
                 Create
             </button>
         </div>
+
     </form>
 </div>
+
+
+    <!-- Modal -->
+<form id="categoryModalForm" method="post" autocomplete="off">
+    <div id="categoryModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">Add category</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row col-12 mt-2">
+                        <input id="categoryId" name="id" class="hidden">
+                        <label id="categoryLabel" for="category" class="control-label mr-4 col-2">Category</label>
+                        <input id="categoryName" name="name" type="text" value="" placeholder="Enter a category" autocomplete="new-password" class="form-control col-6"/>
+                        <label id="categoryError" class="error mdl-color-text--red ml-1 col-2"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" formnovalidate>Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
     <script>
 		$(document).ready(function() {
-			let form = $('#book');
-            get(form, "bookController.php", "retrieve", getParam('id'));
+			let bookForm = $('#book');
+            get(bookForm, "book", "retrieve", getParam('id'));
             $('#id').val(getParam('id'));
             if(getParam('id')) {
             	$('#bookPageTitle').html('Edit');
@@ -56,13 +88,45 @@ if (isset($_SESSION['login'])) { ?>
 	            $('#bookPageTitle').html('Create');
 	            $('#submit').html('Create');
             }
-			form.submit(function (e) {
+			bookForm.submit(function (e) {
 				e.preventDefault();
-				$("#book").find('input').removeClass("is-invalid");
-				$("#book").find('.error').html("");
-				bookController($(this), "create");
+				bookForm.find('input').removeClass("is-invalid");
+				bookForm.find('.error').html("");
+				formController($(this), 'book', 'create', null, function(response) {
+					navigateListPage(response);
+                });
 			});
+
+            let categoryForm = $('#categoryModalForm');
+			categoryForm.submit(function (e) {
+				e.preventDefault();
+				categoryForm.find('input').removeClass("is-invalid");
+				categoryForm.find('.error').html("");
+				formController($(this), 'category', 'create', null, function (response) {
+					let select = $('#category');
+					$('#categoryModal').modal('hide');
+					$('#category').html('');
+					get(select, 'category', "retrieveAll", null, null, function ()  {
+						select.val(response.id);
+					});
+				});
+			});
+
 		});
+
+		function fillCategoryModal() {
+			let bookFormCategory = $('#category');
+			let categoryFormName = $('#categoryName');
+            $('#categoryId').val(bookFormCategory.val());
+			categoryFormName.val(bookFormCategory.find("option:selected").text());
+			categoryFormName.focus();
+		}
+
+		function emptyCategoryModal() {
+			$('#categoryId').val('');
+			$('#categoryName').val('');
+        }
+
     </script>
 <?php } else { ?>
     <p>Please log in to access this feature!</p>

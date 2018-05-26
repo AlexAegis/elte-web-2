@@ -6,7 +6,7 @@ function init(removeParams = false) {
 	}
 	$.ajax({
 		type: "GET",
-		url: window.location.pathname + '/class/session.php',
+		url: window.location.pathname + '/class/sessionController.php',
 		data: {
 			action: 'session'
 		},
@@ -18,7 +18,10 @@ function init(removeParams = false) {
 						
 						navigateBookPage(getParam('id'));
 					} else if(getParam('page') === 'list') {
-						navigateListPage(getParam('number'), getParam('id'));
+						navigateListPage({
+							page: getParam('number'),
+							id: getParam('id')
+						});
 					}  else { // default landing page on login
 						navigateListPage();
 					}
@@ -81,15 +84,17 @@ function navigateBookPage(id) {
 	loadBookPage(id);
 }
 
-function navigateListPage(number, id) {
+function navigateListPage(response) {
 	history.pushState({},"",window.location.href);
 	removeParam();
 	setParam("page", "list");
-	if(number != null) {
-		setParam("number", number);
-	}
-	if(id != null) {
-		setParam("id", id);
+	if(response != null) {
+		if(response.page != null) {
+			setParam("number", response.page);
+		}
+		if(response.id != null) {
+			setParam("id", response.id);
+		}
 	}
 	loadListPage();
 }
@@ -148,23 +153,25 @@ function userController(data, action) {
 	});
 }
 
-
-function bookController(data, action, param = "") {
+function formController(data, controller, action, param = null, onSuccess = null) {
 	$.ajax({
 		type: "POST",
-		url: window.location.pathname + 'class/bookController.php',
-		data: data.serialize() + '&action=' + action + param,
+		url: window.location.pathname + 'class/' + controller + 'Controller.php',
+		data: data.serialize() + '&action=' + action,// + (param === null ? null : ""),
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
 				case 'createError':
 					jsonResponse.errors.forEach(function(error) {
-						$('#' + error.field).addClass('is-invalid');
-						$('#' + error.field + "Error").html(error.reason);
+						let field = data.find('[name=' + error.field + ']');
+						field.addClass('is-invalid');
+						field.next().html(error.reason);
 					});
 					break;
 				case 'createSuccess':
-					navigateListPage(jsonResponse.page, jsonResponse.id);
+					if(onSuccess !== null) {
+						onSuccess(jsonResponse);
+					}
 					break;
 			}
 		}
@@ -174,7 +181,7 @@ function bookController(data, action, param = "") {
 function logout() {
 	$.ajax({
 		type: "POST",
-		url: window.location.pathname + '/class/session.php',
+		url: window.location.pathname + '/class/sessionController.php',
 		data: {
 			action: 'logout',
 			parameter: ''

@@ -1,7 +1,7 @@
-<?php require_once '/home/hallgatok/alexaegis/www/library/class/session.php';
+<?php require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
 require_once '/home/hallgatok/alexaegis/www/library/resources/datatables/ssp.rb.php';
 $table = 'book';
-$joinTable = 'bookcategory';
+$joinTable = 'category';
 
 $primaryKey = 'id';
 

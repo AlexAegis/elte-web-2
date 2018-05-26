@@ -1,5 +1,5 @@
 <?php require_once '/home/hallgatok/alexaegis/www/library/resources/rb-mysql.php';
-require_once '/home/hallgatok/alexaegis/www/library/class/session.php';
+require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
 
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
