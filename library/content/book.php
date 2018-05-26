@@ -105,7 +105,7 @@ if (isset($_SESSION['login'])) { ?>
 				formController($(this), 'category', 'create', null, function (response) {
 					let select = $('#category');
 					$('#categoryModal').modal('hide');
-					$('#category').html('');
+					select.html('');
 					get(select, 'category', "retrieveAll", null, null, function ()  {
 						select.val(response.id);
 					});

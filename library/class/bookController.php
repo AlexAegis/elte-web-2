@@ -27,7 +27,7 @@ if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'create':
             $book = R::dispense('book');
-            if(isset($_POST['id'])) {
+            if(isset($_POST['id']) && $_POST['id'] != '') {
                 $book = R::findOne('book', ' id = :id ', [ 'id' => $_POST['id']]);
             }
 
@@ -38,8 +38,14 @@ if (isset($_POST['action'])) {
             if ($_POST['title'] == null) {
                 array_push($errors, error('title'));
             }
-            if($_POST['author'] != null && $_POST['title'] != null
-                && (!isset($_POST['id']) || isset($_POST['id']) && $_POST['title'] != $book->title && $_POST['author'] != $book->author)) {
+            if($_POST['author'] != null
+                && $_POST['title'] != null
+                && (!isset($_POST['id']) || $_POST['id'] == '')
+                    || (isset($_POST['id']) && $_POST['id'] != ''
+                    && $_POST['title']
+                    != $book->title
+                    && $_POST['author']
+                    != $book->author)) {
                 $bookUnique = R::count('book', ' owner = :owner and author = :author and title = :title '
                     , [':owner' => $_SESSION['login']->id, ':author' => $_POST['author'], ':title' => $_POST['title']]);
                 if($bookUnique > 0) {
