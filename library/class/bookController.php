@@ -59,10 +59,10 @@ if (isset($_POST['action'])) {
                     array_push($errors, error("title", "Must be unique"));
                 }
             }
-            $result = "createSuccess";
+            $result = "success";
             $other = array();
             if (count($errors) > 0) {
-                $result = "createError";
+                $result = "error";
             } else {
                 $book->owner = $_SESSION['login']->id;
                 $book->author = $_POST['author'];

@@ -45,16 +45,21 @@
         </button>
     </div>
     <h6 id="registrationMessage" class="error"></h6>
-    <input id="registrationMode" hidden>
 </form>
 <script>
 	$(document).ready(function () {
 		$('#registrationForm').submit(function (e) {
 			e.preventDefault()
-			$('#registrationName').removeClass('is-invalid')
-			$('#registrationEmail').removeClass('is-invalid')
-			console.log($(this).serializeArray())
-			userController($(this), $('#registrationMode').val())
+            let form = $('#registrationForm');
+			form.find('input').removeClass('is-invalid')
+			form.find('.error').html('')
+			formController($(this), 'user', 'register', null, function (response) {
+				loadWelcomePage(() => {
+					$('#email').val(response.email)
+					$('#password').val(response.password)
+					$('#login').focus()
+				})
+			})
 		})
 	})
 </script>

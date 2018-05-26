@@ -7,18 +7,29 @@ if (isset($_POST['action'])) {
             $countUsersByEmail = R::count('user', ' email = :email ', [':email' => $_POST['email']]);
             $user = R::findOne('user', ' email = :email and password = :password ',
                 [':email' => $_POST['email'], ':password' => hash('sha256', $_POST['password'])]);
-            $result = "loginError";
+            $result = 'error';
             $errors = array();
-            if ($countUsersByEmail == 0) {
-                array_push($errors, "invalidEmail");
+
+            if ($_POST['email'] == null || $_POST['email'] == '') {
+                array_push($errors, error('email'));
             }
+
+            if ($_POST['password'] == null || $_POST['password'] == '') {
+                array_push($errors, error('password'));
+            }
+
+            if ($countUsersByEmail == 0) {
+                array_push($errors, error('email', 'Not registered'));
+            }
+
             if ($user == null) {
-                array_push($errors, "invalidPassword");
+                array_push($errors,  error('password', 'Invalid password'));
             } else {
-                $result = "loginSuccess";
+                $result = "success";
                 session_regenerate_id();
                 $_SESSION['login'] = $user;
             }
+
             echo jsonResponse($result, $_POST['action'], $errors, array(
                 'name' => $user != null ? $user->name : null,
                 'email' => $user != null ? $user->email : null,
@@ -29,11 +40,18 @@ if (isset($_POST['action'])) {
             $countUsersByName = R::count('user', ' name = :name ', [':name' => $_POST['name']]);
             $errors = array();
             $result = 'registrationError';
+
+            if ($_POST['email'] == null || $_POST['email'] == '') {
+                array_push($errors, error('email'));
+            }
+            if ($_POST['name'] == null || $_POST['name'] == '') {
+                array_push($errors, error('name'));
+            }
             if ($countUsersByEmail > 0) {
-                array_push($errors, "emailAlreadyTaken");
+                array_push($errors, error('email', 'Already taken'));
             }
             if ($countUsersByName > 0) {
-                array_push($errors, "nameAlreadyTaken");
+                array_push($errors, error('name', 'Already taken'));
             }
             if ($countUsersByEmail == 0 && $countUsersByName == 0) {
                 $result = 'registrationSuccess';

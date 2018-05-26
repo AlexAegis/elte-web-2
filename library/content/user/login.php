@@ -9,8 +9,7 @@
                name="email"
                type="email"
                placeholder="Enter email"
-               class="form-control"
-               required/>
+               class="form-control"/>
     </div>
     <div class="form-group">
         <label id="passwordLabel"
@@ -22,24 +21,19 @@
                name="password"
                type="password"
                placeholder="Enter password"
-               class="form-control"
-               required/>
+               class="form-control"/>
     </div>
     <button id="login"
             type="submit"
-            class="form-control btn btn-outline-success my-2 my-sm-0 ml-2"
-            onclick="$('#mode').val('login');">
+            class="form-control btn btn-outline-success my-2 my-sm-0 ml-2">
         Login
     </button>
     <button id="navigateRegistration"
-            type="submit"
-            formnovalidate
+            type="button"
             class="form-control btn btn-outline-light my-2 my-sm-0 ml-2"
-            onclick="$('.navbar-collapse').collapse('hide'); $('#mode').val('registrationStart');">
+            onclick="navigateRegistration();">
         Register
     </button>
-    <input id="mode" type="hidden">
-
 </form>
 
 <script type="text/javascript">
@@ -47,7 +41,8 @@
 		$('#loginForm').submit(function (e) {
 			e.preventDefault()
 			$('#loginForm input').removeClass('is-invalid')
-			userController($(this), $('#mode').val())
+			formController($(this), 'user', 'login', null, navigateListPage(response))
 		})
 	})
+
 </script>

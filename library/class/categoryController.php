@@ -37,10 +37,10 @@ if (isset($_POST['action'])) {
                     array_push($errors, error("name", "Must be unique"));
                 }
             }
-            $result = "createSuccess";
+            $result = "success";
             $other = array();
             if (count($errors) > 0) {
-                $result = "createError";
+                $result = "error";
             } else {
                 $category->owner = $_SESSION['login']->id;
                 $category->name = $_POST['name'];

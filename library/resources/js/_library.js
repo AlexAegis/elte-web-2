@@ -99,6 +99,25 @@ function navigateListPage(response) {
 	loadListPage()
 }
 
+function navigateRegistration() {
+	history.pushState({}, '', window.location.href)
+	removeParam()
+	$('#content').load(window.location.pathname + '/content/registration.php', () => {
+		let dataArray = data.serializeArray()
+		let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0]
+		let regName = $('#registrationName')
+		if (email.indexOf('@') > -1) {
+			$('#registrationEmail').val(email)
+			regName.val(email.split('@')[0])
+		} else {
+			regName.val(email)
+		}
+		regName.focus()
+		$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0])
+	})
+	$('.navbar-collapse').collapse('hide')
+}
+
 function userController(data, action) {
 	$.ajax({
 		type: 'POST',
@@ -106,49 +125,7 @@ function userController(data, action) {
 		data: data.serialize() + '&action=' + action,
 		success: function (response) {
 			let jsonResponse = JSON.parse(response)
-			switch (jsonResponse.result) {
-				case 'loginSuccess':
-					navigateListPage()
-					break
-				case 'loginError':
-					if (jsonResponse.errors.includes('invalidPassword')) {
-						$('#password').addClass('is-invalid')
-					}
-					if (jsonResponse.errors.includes('invalidEmail')) {
-						$('#email').addClass('is-invalid')
-					}
-					break
-				case 'registrationSuccess':
-					loadWelcomePage(() => {
-						$('#email').val(jsonResponse.email)
-						$('#password').val(jsonResponse.password)
-						$('#login').focus()
-					})
-					break
-				case 'registrationError':
-					if (jsonResponse.errors.includes('nameAlreadyTaken')) {
-						$('#registrationName').addClass('is-invalid')
-					}
-					if (jsonResponse.errors.includes('emailAlreadyTaken')) {
-						$('#registrationEmail').addClass('is-invalid')
-					}
-					break
-				case 'navigateRegistration':
-					$('#content').load(window.location.pathname + '/content/registration.php', () => {
-						let dataArray = data.serializeArray()
-						let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0]
-						let regName = $('#registrationName')
-						if (email.indexOf('@') > -1) {
-							$('#registrationEmail').val(email)
-							regName.val(email.split('@')[0])
-						} else {
-							regName.val(email)
-						}
-						regName.focus()
-						$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0])
-					})
-					break
-			}
+			
 		}
 	})
 }
@@ -161,14 +138,14 @@ function formController(data, controller, action, param = null, onSuccess = null
 		success: function (response) {
 			let jsonResponse = JSON.parse(response)
 			switch (jsonResponse.result) {
-				case 'createError':
+				case 'error':
 					jsonResponse.errors.forEach(function (error) {
 						let field = data.find('[name=' + error.field + ']')
 						field.addClass('is-invalid')
 						field.next().html(error.reason)
 					})
 					break
-				case 'createSuccess':
+				case 'success':
 					if (onSuccess !== null) {
 						onSuccess(jsonResponse)
 					}
