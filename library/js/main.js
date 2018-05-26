@@ -1,32 +1,4 @@
-$(document).ready(function () {
-	
-	$(document).on('click', 'a', function () {
-		openURL($(this).attr("href"));
-		return false; //intercept the link
-	});
-	
-	window.addEventListener('popstate', function(e){
-		if(e.state)
-			openURL(e.state.href);
-	});
-	
-	init();
-});
-
-function openURL(href){
-	let link = href;  //$(this).attr('href');
-	$.ajax({
-		url: link,
-		type: 'POST',
-		cache: false,
-		success: function (result) {
-			$('#target').html(result);
-			$.validator.unobtrusive.parse($("form#ValidateForm"));
-		}
-	});
-	window.history.pushState({href: href}, '', href);
-}
-
+$(document).ready(init());
 
 function init(removeParams = false) {
 	if(removeParams) {

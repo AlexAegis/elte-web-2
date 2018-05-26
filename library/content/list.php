@@ -18,14 +18,17 @@ if (isset($_SESSION['login'])) { ?>
     <script>
         $(document).ready(function() {
         	let table = $('#book');
+
 	        table.dataTable({
 				pagingType: "numbers",
 				lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+		        displayStart: getParam('number') ? parseInt(getParam('number')) - 1 : 0,
 				pageLength: 5,
 				processing: true,
 				serverSide: true,
 				ajax: "class/datatable/book.php",
 		        order: [[ 2, 'asc' ]],
+
 		        columnDefs: [
 			        {
 				        targets: [ 1, 2, 3, 4 ],
@@ -49,9 +52,13 @@ if (isset($_SESSION['login'])) { ?>
 		        }
 			} );
 	        let dataTable = table.DataTable();
+
 	        $('#book tbody').on('click', 'tr', function () {
 	        	navigateBookPage(dataTable.row(this).data()[0]);
 	        } );
+/*
+	        dataTable.page(2);
+	        dataTable.draw('page');*/
 		});
     </script>
 <?php } else { ?>
