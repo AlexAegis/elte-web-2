@@ -14,6 +14,7 @@
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="resources/css/datatables.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/materialize.min.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/_library.css">
 
@@ -21,6 +22,7 @@
     <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="resources/js/plugins.js"></script>
     <script type="text/javascript" src="resources/js/material.min.js"></script>
+    <script type="text/javascript" src="resources/js/materialize.min.js"></script>
     <script type="text/javascript" src="resources/js/datatables.js"></script>
     <script type="text/javascript" src="resources/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>

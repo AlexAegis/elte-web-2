@@ -5,7 +5,9 @@
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
+.row.content {
+    height: 450px
+}
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -26,7 +28,10 @@ footer {
         height: auto;
         padding: 15px;
     }
-    .row.content {height:auto;}
+
+    .row.content {
+        height: auto;
+    }
 }
 
 html, body {
@@ -38,16 +43,16 @@ html, body {
 }
 
 #main {
-    overflow:auto;
-    padding-bottom:150px; /* this needs to be bigger than footer height*/
+    overflow: auto;
+    padding-bottom: 150px; /* this needs to be bigger than footer height*/
 }
 
 .footer {
     position: relative;
     margin-top: -150px; /* negative value of footer height */
     height: 150px;
-    clear:both;
-    padding-top:20px;
+    clear: both;
+    padding-top: 20px;
 }
 
 .flex-container {
@@ -85,8 +90,9 @@ html, body {
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome and Opera */
 }
 
 .highlight {
@@ -97,7 +103,7 @@ html, body {
     background-color: #eeecdd;
 }
 
-table.dataTable  {
+table.dataTable {
     border-spacing: 0 !important;
 }
 
@@ -107,49 +113,21 @@ table.dataTable  {
 }
 
 .mdl-data-table__cell--non-numeric {
-    text-align:left !important;
+    text-align: left !important;
     height: 4vh !important;
 }
 
 .mdl-data-table__cell--non-numeric:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .pointer {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .error {
     color: red !important;
 }
-/*
-.newRow {
-    border: 2px solid #57a3ff;
-    background-color: #d4dde8;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
-}
-*//*
-.newRow{
-    background-color: rgba(255, 0, 0, 0.83);
-    border-radius: 8px;
-    box-shadow: silver 3px 3px 5px 0px;
-    border: 2px dashed yellow;
-    padding: 3px;
-}
-.newRow.end{
-    transition: all 1s ease-in-out;
-    background-color: rgba(255, 0, 0, 0.0);
-    box-shadow: none;
-    border: 0px dashed yellow;
-    border-radius: 0px;
-}
-*/
-
-
-
 
 .newRow {
     -webkit-animation: selectFlash 2.5s; /* Safari and Chrome */
@@ -165,7 +143,7 @@ table.dataTable  {
         border: 2px solid #57a3ff;
         background-color: #d4dde8;
     }
-    to   {
+    to {
         border: 2px solid #c5c7cc;
         background-color: #e0e3e8;
     }
@@ -177,7 +155,7 @@ table.dataTable  {
         border: 2px solid #57a3ff;
         background-color: #d4dde8;
     }
-    to   {
+    to {
         border: 2px solid #c5c7cc;
         background-color: #e0e3e8;
     }
@@ -189,7 +167,7 @@ table.dataTable  {
         border: 2px solid #57a3ff;
         background-color: #d4dde8;
     }
-    to   {
+    to {
         border: 2px solid #c5c7cc;
         background-color: #e0e3e8;
     }
@@ -201,11 +179,13 @@ table.dataTable  {
         border: 2px solid #57a3ff;
         background-color: #d4dde8;
     }
-    to   {
+    to {
         border: 2px solid #c5c7cc;
         background-color: #e0e3e8;
     }
-}​
+}
+
+​
 
 /* Opera */
 @-o-keyframes selectFlash {
@@ -213,8 +193,26 @@ table.dataTable  {
         border: 2px solid #57a3ff;
         background-color: #d4dde8;
     }
-    to   {
+    to {
         border: 2px solid #c5c7cc;
         background-color: #e0e3e8;
     }
-}​
+}
+
+
+.fancy-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.fancy-checkbox span:before {
+    font-family: "FontAwesome";
+    font-style: normal;
+    width: 1em;
+    height: 1em;
+    content: '\f10c';
+    margin-right: .3em;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ span:before {
+    content: '\f05d';
+}

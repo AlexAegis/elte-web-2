@@ -1,197 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="code reformat and resource rearrange">
-      <change afterPath="$PROJECT_DIR$/library/resources/js/_library.js" afterDir="false" />
+    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/library/resources/css/materialize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/resources/css/materialize.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/resources/js/materialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/resources/js/materialize.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/bookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/bookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/categoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/categoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/datatable/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/datatable/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/sessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/sessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/userController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/userController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/library/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/content/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/user/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/user/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/user/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-grid.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/library.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/_library.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/normalize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/_utility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/vendor/jquery-3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/jquery-3.2.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/js/vendor/modernizr-3.5.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/modernizr-3.5.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/book.png" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/icon/book.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/sql/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/buttons.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/common.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/css/mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.bootstrap4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.colVis.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.colVis.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.flash.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.flash.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.foundation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.foundation.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.html5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.html5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.jqueryui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.jqueryui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.print.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.print.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.semanticui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/buttons.semanticui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/dataTables.buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/js/dataTables.buttons.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Buttons-1.5.1/swf/flashExport.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/dataTables.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/jquery.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/css/jquery.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/images/sort_asc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/images/sort_asc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/images/sort_both.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/images/sort_desc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/images/sort_desc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.foundation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.foundation.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.jqueryui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.jqueryui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.semanticui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/dataTables.semanticui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/jquery.dataTables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/css/keyTable.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/js/dataTables.keyTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/KeyTable-2.3.2/js/dataTables.keyTable.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/css/responsive.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/dataTables.responsive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/dataTables.responsive.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.bootstrap4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.foundation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.foundation.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.jqueryui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.jqueryui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.semanticui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Responsive-2.2.1/js/responsive.semanticui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/css/scroller.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/js/dataTables.scroller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Scroller-1.4.4/js/dataTables.scroller.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.dataTables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.foundation.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.jqueryui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.jqueryui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.semanticui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/css/select.semanticui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/js/dataTables.select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/Select-1.2.5/js/dataTables.select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/datatables.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/datatables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/datatables.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/datatables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/datatables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/datatables.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/datatables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/php/ssp.rb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/php/license.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/material.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/material.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/material.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/material.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/material.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/material.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/material.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/material/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/rb-mysql.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/php/rb-mysql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/resources/css/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/resources/css/_library.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/_library.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -245,11 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="262">
+              <caret line="23" column="79" lean-forward="true" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
               <folding>
                 <element signature="e#2748#2754#0#HTML" expanded="true" />
               </folding>
@@ -266,10 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categoryController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/class/userController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="43" column="72" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="categoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/class/categoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="216">
               <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
             </state>
           </provider>
@@ -293,34 +122,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="182">
-                <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_utility.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/resources/js/_utility.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="plugins.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/resources/js/plugins.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
               <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_library.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/resources/css/_library.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="932">
+              <caret line="217" column="1" lean-forward="true" selection-start-line="217" selection-start-column="1" selection-end-line="217" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="book.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/content/book.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -377,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/library/login.php" />
         <option value="$PROJECT_DIR$/library/main.php" />
         <option value="$PROJECT_DIR$/library/js/login.js" />
         <option value="$PROJECT_DIR$/library/class/logout.php" />
@@ -407,7 +230,6 @@
         <option value="$PROJECT_DIR$/library/class/datatableresponse.php" />
         <option value="$PROJECT_DIR$/library/resources/datatables/ssp.rb.php" />
         <option value="$PROJECT_DIR$/library/resources/datatables/datatables.css" />
-        <option value="$PROJECT_DIR$/library/README.md" />
         <option value="$PROJECT_DIR$/library/content/main.php" />
         <option value="$PROJECT_DIR$/library/content/navigation.php" />
         <option value="$PROJECT_DIR$/library/class/session.php" />
@@ -416,7 +238,6 @@
         <option value="$PROJECT_DIR$/library/resources/database.sql" />
         <option value="$PROJECT_DIR$/library/content/user/login.php" />
         <option value="$PROJECT_DIR$/library/content/user/logout.php" />
-        <option value="$PROJECT_DIR$/library/content/book.php" />
         <option value="$PROJECT_DIR$/library/content/list.php" />
         <option value="$PROJECT_DIR$/library/content/registration.php" />
         <option value="$PROJECT_DIR$/library/content/welcome.php" />
@@ -426,8 +247,11 @@
         <option value="$PROJECT_DIR$/library/class/sessionController.php" />
         <option value="$PROJECT_DIR$/library/class/bookController.php" />
         <option value="$PROJECT_DIR$/library/class/datatable/book.php" />
-        <option value="$PROJECT_DIR$/library/index.php" />
         <option value="$PROJECT_DIR$/library/class/categoryController.php" />
+        <option value="$PROJECT_DIR$/library/resources/css/_library.css" />
+        <option value="$PROJECT_DIR$/library/content/book.php" />
+        <option value="$PROJECT_DIR$/library/index.php" />
+        <option value="$PROJECT_DIR$/library/README.md" />
       </list>
     </option>
   </component>
@@ -532,7 +356,30 @@
               <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="materialize.css" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elte-web-2" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="materialize.js" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="elte-web-2" type="b2602c69:ProjectViewProjectNode" />
@@ -623,14 +470,7 @@
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
       <workItem from="1527179974609" duration="18094000" />
-      <workItem from="1527333050513" duration="36392000" />
-    </task>
-    <task id="LOCAL-00061" summary="favicon added">
-      <created>1527025548638</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1527025548638</updated>
+      <workItem from="1527333050513" duration="38105000" />
     </task>
     <task id="LOCAL-00062" summary="favicon added">
       <created>1527029459283</created>
@@ -968,11 +808,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527371745530</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="rearranged resources and reformatted code">
+      <created>1527373339642</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1527373339642</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176492000" />
+    <option name="totallyTimeSpent" value="178205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
@@ -986,9 +833,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="9" visible="true" weight="0.15372671" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -1071,7 +918,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added datatables package" />
     <MESSAGE value="added ssp" />
     <MESSAGE value="added datatable for books" />
     <MESSAGE value="joining, better query" />
@@ -1096,7 +942,8 @@
     <MESSAGE value="added category editing" />
     <MESSAGE value="fixed book creation" />
     <MESSAGE value="added book only number validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added book only number validation" />
+    <MESSAGE value="rearranged resources and reformatted code" />
+    <option name="LAST_COMMIT_MESSAGE" value="rearranged resources and reformatted code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1222,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/resources/css/_library.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="202" column="5" lean-forward="true" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/resources/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1274,13 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/content/navigation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1306,13 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="72" selection-start-column="72" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1357,39 +1183,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/class/datatable/book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/resources/php/license.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="182">
-            <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#2748#2754#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1425,8 +1222,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/class/categoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="216">
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/userController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="43" column="72" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/resources/css/_library.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="932">
+          <caret line="217" column="1" lean-forward="true" selection-start-line="217" selection-start-column="1" selection-end-line="217" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="126">
+            <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/class/datatable/book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="23" column="79" lean-forward="true" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+          <folding>
+            <element signature="e#2748#2754#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
