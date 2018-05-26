@@ -25,6 +25,7 @@ if (isset($_SESSION['login'])) { ?>
 				processing: true,
 				serverSide: true,
 				ajax: "class/datatable/book.php",
+		        order: [[ 2, 'asc' ]],
 		        columnDefs: [
 			        {
 				        targets: [ 1, 2, 3, 4 ],

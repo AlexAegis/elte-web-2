@@ -44,3 +44,7 @@ function jsonResponse($result, $reason = "", $errors = array(), $parameters = ar
         'errors' => $errors),
         $parameters));
 }
+
+function error($field, $reason = 'Mandatory') {
+    return array("field" => $field, "reason" => $reason);
+}

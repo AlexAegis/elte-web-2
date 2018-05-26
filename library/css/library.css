@@ -118,3 +118,7 @@ table.dataTable  {
 .pointer {
     cursor:pointer;
 }
+
+.error {
+    color: red !important;
+}

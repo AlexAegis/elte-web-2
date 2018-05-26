@@ -174,7 +174,7 @@ function userController(data, action) {
 }
 
 
-function bookController(data, action, param) {
+function bookController(data, action, param = "") {
 	$.ajax({
 		type: "POST",
 		url: window.location.pathname + 'class/bookController.php',
@@ -182,8 +182,14 @@ function bookController(data, action, param) {
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
-				case '':
-					
+				case 'createError':
+					jsonResponse.errors.forEach(function(error) {
+						$('#' + error.field).addClass('is-invalid');
+						$('#' + error.field + "Error").html(error.reason);
+					});
+					break;
+				case 'createSuccess':
+					navigateListPage(jsonResponse.page);
 					break;
 			}
 		}

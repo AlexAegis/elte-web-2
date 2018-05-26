@@ -120,11 +120,9 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 			} else {
 				element.html(jsonResponse.result);
 			}
-			
 			if(callback != null) {
 				callback();
 			}
 		}
 	});
-
 }

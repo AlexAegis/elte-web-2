@@ -25,7 +25,7 @@ $columns = array(
 );
 */
 
-$joinQuery = "FROM `$table` AS `$table` JOIN `$joinTable` AS `$joinTable` ON (`$joinTable`.`id` = `$table`.`category`)";
+$joinQuery = "FROM `$table` AS `$table` LEFT OUTER JOIN `$joinTable` AS `$joinTable` ON (`$joinTable`.`id` = `$table`.`category`)";
 $extraWhere = " `$table`.`owner` = ".$_SESSION['login']->id;
 $groupBy = NULL;
 $having = NULL;
