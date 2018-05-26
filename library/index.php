@@ -26,18 +26,20 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="navbar-btn noselect" onclick="init()">
+            <div class="navbar-btn noselect" onclick="$('.navbar-collapse').collapse('hide'); init()">
                 <a class="navbar-brand text-white text-center" role="link">Library</a>
             </div>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="navbar" class="collapse navbar-collapse">
-                <div id="navigation" class="mr-auto"></div>
-                <div >
-                    <div id="user"></div>
+            <div id="navbar" class="collapse navbar-collapse mr-auto">
+                <div>
+                    <div id="navigation" class=""></div>
+                    <div >
+                        <div id="user"></div>
+                    </div>
                 </div>
+
             </div>
         </nav>
         <main role="main">

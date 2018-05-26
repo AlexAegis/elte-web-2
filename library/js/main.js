@@ -21,17 +21,26 @@ function init() {
 			}
 		}
 	});
+	
+	$(document).click(function (event) {
+		let clickover = $(event.target);
+		let _opened = $(".navbar-collapse").hasClass("navbar-collapse in");
+		if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+			$("button.navbar-toggle").click();
+		}
+	});
 }
 
 function loadWelcomePage(callback) {
 	$('#user').load(window.location.pathname + '/content/user/login.php', callback);
 	$('#navigation').html('');
+	//$('#navigation').load(window.location.pathname + '/content/navigation.php');
 	$('#content').load(window.location.pathname + '/content/welcome.php', callback);
 }
 
 function loadMainPage(callback) {
 	$('#user').load(window.location.pathname + '/content/user/logout.php', callback);
-	$('#navigation').load(window.location.pathname + '/content/navigation.php', callback);
+	$('#navigation').load(window.location.pathname + '/content/navigation.php');
 	$('#content').load(window.location.pathname + '/content/main.php', callback);
 }
 
@@ -100,7 +109,9 @@ function logout() {
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'logout') {
-				$('body').load(window.location.pathname + 'index.php', null, init());
+				init();
+				
+				//$('body').load(window.location.pathname + 'index.php', null, );
 			}
 		}
 	});

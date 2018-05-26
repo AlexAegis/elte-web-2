@@ -1,4 +1,4 @@
-<form id="loginForm" method="post" class="form-inline my-2 my-lg-0" action="../../index.php">
+<form id="loginForm" method="post" class="form-inline my-2 my-lg-0">
     <div class="form-group">
         <label id="emailLabel"
                for="email"
@@ -28,14 +28,14 @@
     <button id="login"
             type="submit"
             class="form-control btn btn-outline-success my-2 my-sm-0 ml-2"
-            onclick="$('#mode').val('login')">
+            onclick="$('.navbar-collapse').collapse('hide'); $('#mode').val('login');">
         Login
     </button>
     <button id="navigateRegistration"
             type="submit"
             formnovalidate
             class="form-control btn btn-outline-light my-2 my-sm-0 ml-2"
-            onclick="$('#mode').val('registrationStart')">
+            onclick="$('.navbar-collapse').collapse('hide'); $('#mode').val('registrationStart');">
         Register
     </button>
     <input id="mode" type="hidden">
