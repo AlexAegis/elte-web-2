@@ -10,6 +10,10 @@ function removeParam(param) {
 	window.history.replaceState('', '', removeURLParameter(window.location.href, param))
 }
 
+function removeParam() {
+	window.history.replaceState('', '', window.location.href.split('?')[0])
+}
+
 function removeURLParameter(url, parameter) {
 	let urlParts = url.split('?');
 	if (urlParts.length >= 2) {
@@ -82,4 +86,29 @@ function getUrlParameter(sParam) {
 			return sParameterName[1] === undefined ? true : sParameterName[1]
 		}
 	}
+}
+
+function get(element, controller = 'session.php', action, parameter = null, modifyJson = null) {
+	$.ajax({
+		type: "GET",
+		url: window.location.pathname + '/class/' + controller,
+		data: {
+			action: action,
+			parameter: parameter
+		},
+		success: function(response) {
+			let jsonResponse = JSON.parse(response);
+			if(modifyJson !== null) {
+				jsonResponse.result = modifyJson(jsonResponse);
+			}
+			if (element.is('form')) {
+				$("form#book :input").each(function(){
+					let input = $(this);
+					input.val(jsonResponse[input.attr('name')]);
+				});
+			} else {
+				element.html(jsonResponse.result);
+			}
+		}
+	});
 }

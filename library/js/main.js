@@ -1,6 +1,9 @@
 $(document).ready(init());
 
-function init() {
+function init(removeParams = false) {
+	if(removeParams) {
+		removeParam();
+	}
 	$.ajax({
 		type: "GET",
 		url: window.location.pathname + '/class/session.php',
@@ -11,7 +14,11 @@ function init() {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
 				case 'logged':
-					loadMainPage();
+					if (getParam('page') === 'book') {
+						loadBookPage();
+					} else {
+						loadMainPage();
+					}
 					break;
 				case 'not logged':
 					loadWelcomePage(() => {
@@ -44,13 +51,10 @@ function loadMainPage(callback) {
 	$('#content').load(window.location.pathname + '/content/main.php', callback);
 }
 
-function loadBookPage(id) {
-	$('#content').load({
-		url: window.location.pathname + '/content/book.php',
-		
-		data: "&asd=1"
-	});
-	
+function loadBookPage() {
+	$('#content').load(
+		window.location.pathname + '/content/book.php'
+	);
 }
 
 function userController(data, action) {
@@ -107,6 +111,23 @@ function userController(data, action) {
 	});
 }
 
+
+function bookController(data, action) {
+	$.ajax({
+		type: "POST",
+		url: window.location.pathname + 'class/bookController.php',
+		data: data.serialize() + '&action=' + action,
+		success: function(response) {
+			let jsonResponse = JSON.parse(response);
+			switch (jsonResponse.result) {
+				case 'loginSuccess':
+					
+					break;
+			}
+		}
+	});
+}
+
 function logout() {
 	$.ajax({
 		type: "POST",
@@ -118,29 +139,8 @@ function logout() {
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			if (jsonResponse.result === 'logout') {
-				init();
-				
-				//$('body').load(window.location.pathname + 'index.php', null, );
+				init(true);
 			}
 		}
 	});
 }
-
-function get(element, controller = 'session.php', action, parameter = null, modifyJson = null) {
-	$.ajax({
-		type: "GET",
-		url: window.location.pathname + '/class/' + controller,
-		data: {
-			action: action,
-			parameter: parameter
-		},
-		success: function(response) {
-			let jsonResponse = JSON.parse(response);
-			if(modifyJson !== null) {
-				jsonResponse.result = modifyJson(jsonResponse);
-			}
-			element.html(jsonResponse.result);
-		}
-	});
-}
-

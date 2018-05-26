@@ -49,8 +49,9 @@ if (isset($_SESSION['login'])) { ?>
 			} );
 	        let dataTable = table.DataTable();
 	        $('#book tbody').on('click', 'tr', function () {
-		        let data = dataTable.row(this).data();
-		        loadBookPage(data[0]);
+		        setParam("page", "book");
+		        setParam("id", dataTable.row(this).data()[0]);
+		        loadBookPage();
 	        } );
 		});
     </script>

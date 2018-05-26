@@ -17,16 +17,16 @@
         <script type="text/javascript" src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/utility.js"></script>
         <script type="text/javascript" src="resources/material/material.min.js"></script>
         <script type="text/javascript" src="resources/datatables/datatables.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/utility.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="navbar-btn noselect" onclick="$('.navbar-collapse').collapse('hide'); init()">
+            <div class="navbar-btn noselect" onclick="$('.navbar-collapse').collapse('hide'); init(true)">
                 <a class="navbar-brand text-white text-center" role="link">Library</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
