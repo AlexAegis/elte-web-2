@@ -4,7 +4,7 @@ PHP beadandó – Könyvespolc
 Libraries
 ---------
 
-Datatables, Bootstrap, Material Design, jQuery, BBQ
+Datatables, Bootstrap, Material Design, jQuery
 RedBeans
 
 Feladatleírás
