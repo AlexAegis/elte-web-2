@@ -88,8 +88,8 @@ function getUrlParameter(sParam) {
 	}
 }
 
-function get(element, controller = 'session.php', action, parameter = null, modifyJson = null) {
-	$.ajax({
+function get(element, controller = 'session.php', action, parameter = null, modifyJson = null, callback = null) {
+	return $.ajax({
 		type: "GET",
 		url: window.location.pathname + '/class/' + controller,
 		data: {
@@ -102,13 +102,29 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 				jsonResponse.result = modifyJson(jsonResponse);
 			}
 			if (element.is('form')) {
-				$("form#book :input").each(function(){
+				element.find('input').each(function(){
+					console.log("INPUT");
 					let input = $(this);
 					input.val(jsonResponse[input.attr('name')]);
+				});
+				element.find('select').each(function() {
+					let input = $(this);
+					get(input, controller, input.attr('name'), null, null, function ()  {
+						input.val(jsonResponse[input.attr('name')]);
+					});
+				});
+			} else if(element.is('select')) {
+				jsonResponse.options.forEach(function(option) {
+					element.append('<option value=' + option.id + '>' + option.name + '</option>');
 				});
 			} else {
 				element.html(jsonResponse.result);
 			}
+			
+			if(callback != null) {
+				callback();
+			}
 		}
 	});
+
 }

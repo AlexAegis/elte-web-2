@@ -1,4 +1,32 @@
-$(document).ready(init());
+$(document).ready(function () {
+	
+	$(document).on('click', 'a', function () {
+		openURL($(this).attr("href"));
+		return false; //intercept the link
+	});
+	
+	window.addEventListener('popstate', function(e){
+		if(e.state)
+			openURL(e.state.href);
+	});
+	
+	init();
+});
+
+function openURL(href){
+	let link = href;  //$(this).attr('href');
+	$.ajax({
+		url: link,
+		type: 'POST',
+		cache: false,
+		success: function (result) {
+			$('#target').html(result);
+			$.validator.unobtrusive.parse($("form#ValidateForm"));
+		}
+	});
+	window.history.pushState({href: href}, '', href);
+}
+
 
 function init(removeParams = false) {
 	if(removeParams) {
@@ -14,7 +42,6 @@ function init(removeParams = false) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
 				case 'logged':
-					
 					if (getParam('page') === 'book') {
 						
 						navigateBookPage(getParam('id'));
@@ -43,6 +70,7 @@ function init(removeParams = false) {
 }
 
 function loadWelcomePage(callback) {
+	history.pushState({},"", window.location.href);
 	$('#user').load(window.location.pathname + '/content/user/login.php', callback);
 	$('#navigation').html('');
 	$('#content').load(window.location.pathname + '/content/welcome.php', callback);
@@ -72,6 +100,7 @@ function loadBookPage(id) {
 }
 
 function navigateBookPage(id) {
+	history.pushState({},"",window.location.href);
 	removeParam();
 	setParam("page", "book");
 	if(id != null) {
@@ -81,6 +110,7 @@ function navigateBookPage(id) {
 }
 
 function navigateListPage(number) {
+	history.pushState({},"",window.location.href);
 	removeParam();
 	setParam("page", "list");
 	if(number != null) {
@@ -144,11 +174,11 @@ function userController(data, action) {
 }
 
 
-function bookController(data, action) {
+function bookController(data, action, param) {
 	$.ajax({
 		type: "POST",
 		url: window.location.pathname + 'class/bookController.php',
-		data: data.serialize() + '&action=' + action,
+		data: data.serialize() + '&action=' + action + param,
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
