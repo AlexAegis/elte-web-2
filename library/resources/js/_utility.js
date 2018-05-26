@@ -119,6 +119,7 @@ function get(element, controller = 'session', action, parameter = null, modifyJs
 					}
 				})
 			} else if (element.is('select')) {
+				element.append('<option value=""></option>') // noselectoption
 				jsonResponse.options.forEach(function (option) {
 					element.append('<option value=' + option.id + '>' + option.name + '</option>')
 				})

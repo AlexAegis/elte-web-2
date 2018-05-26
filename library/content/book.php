@@ -23,7 +23,7 @@ if (isset($_SESSION['login'])) { ?>
             </div>
             <div class="form-group row col-12 mt-2">
                 <label id="categoryLabel" for="category" class="control-label mr-4 col-2">Category</label>
-                <select id="category" name="category" type="text" class="form-control col-6"></select>
+                <select id="category" name="category" type="text" class="form-control col-6" onchange="refreshCategoryEditButton()"></select>
                 <button id="addCategory" type="button" class="btn btn-outline-primary ml-3" data-toggle="modal"
                         data-target="#categoryModal" formnovalidate onclick="emptyCategoryModal();"><i
                             class="fas fa-plus"></i></button>
@@ -87,6 +87,8 @@ if (isset($_SESSION['login'])) { ?>
     </form>
     <script>
 		$(document).ready(function () {
+
+
 			let bookForm = $('#book')
 			get(bookForm, 'book', 'retrieve', getParam('id'))
 			$('#id').val(getParam('id'))
@@ -121,6 +123,7 @@ if (isset($_SESSION['login'])) { ?>
 				})
 			})
 
+			refreshCategoryEditButton();
 		})
 
 		function fillCategoryModal() {
@@ -135,6 +138,14 @@ if (isset($_SESSION['login'])) { ?>
 			$('#categoryId').val('')
 			$('#categoryName').val('')
 		}
+
+		function refreshCategoryEditButton() {
+			if($('#category').val() === null || $('#category').val() === '') {
+			    $('#editCategory').addClass('hidden');
+            } else {
+				$('#editCategory').removeClass('hidden');
+            }
+        }
 
     </script>
 <?php } else { ?>

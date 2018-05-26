@@ -68,7 +68,7 @@ if (isset($_POST['action'])) {
                 $book->author = $_POST['author'];
                 $book->title = $_POST['title'];
                 $book->page = $_POST['page'] == null ? null : $_POST['page'];
-                $book->category = isset($_POST['category']) ? $_POST['category'] : null;
+                $book->category = isset($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : null;
                 $book->isbn = $_POST['isbn'] == null ? null : $_POST['isbn'];
                 $book->is_read = isset($_POST['is_read']) ? '1' : '0';
                 R::store($book);
