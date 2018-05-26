@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="resources/css/datatables.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/material.min.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/_library.css">
 
     <script type="text/javascript" src="resources/js/modernizr-3.5.0.min.js"></script>
@@ -24,6 +26,7 @@
     <script type="text/javascript" src="resources/js/datatables.js"></script>
     <script type="text/javascript" src="resources/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="resources/js/_utility.js"></script>
     <script type="text/javascript" src="resources/js/_library.js"></script>
 </head>

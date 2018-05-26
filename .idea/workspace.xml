@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="" />
+    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/resources/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/bootstrap-select.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -63,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="565">
+              <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
               <folding>
                 <element signature="e#2748#2754#0#HTML" expanded="true" />
               </folding>
@@ -138,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="book.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="book.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/content/book.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="910">
-              <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state relative-caret-position="685">
+              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -247,9 +251,9 @@
         <option value="$PROJECT_DIR$/library/class/categoryController.php" />
         <option value="$PROJECT_DIR$/library/README.md" />
         <option value="$PROJECT_DIR$/library/resources/css/materialize.css" />
-        <option value="$PROJECT_DIR$/library/index.php" />
         <option value="$PROJECT_DIR$/library/resources/css/_library.css" />
         <option value="$PROJECT_DIR$/library/content/book.php" />
+        <option value="$PROJECT_DIR$/library/index.php" />
       </list>
     </option>
   </component>
@@ -452,14 +456,7 @@
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
       <workItem from="1527179974609" duration="18094000" />
-      <workItem from="1527333050513" duration="38662000" />
-    </task>
-    <task id="LOCAL-00064" summary="nav control only seeable when the user logged in">
-      <created>1527031839324</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1527031839324</updated>
+      <workItem from="1527333050513" duration="38802000" />
     </task>
     <task id="LOCAL-00065" summary="responsive registration screen">
       <created>1527033351271</created>
@@ -797,11 +794,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527375248813</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="b select">
+      <created>1527375572065</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1527375572065</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178762000" />
+    <option name="totallyTimeSpent" value="178902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
@@ -815,9 +819,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="9" visible="true" weight="0.15372671" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -900,7 +904,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added datatable for books" />
     <MESSAGE value="joining, better query" />
     <MESSAGE value="using static requireds for stability" />
     <MESSAGE value="finished datatable" />
@@ -925,7 +928,8 @@
     <MESSAGE value="added book only number validation" />
     <MESSAGE value="rearranged resources and reformatted code" />
     <MESSAGE value="added fancy checkboxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fancy checkboxes" />
+    <MESSAGE value="b select" />
+    <option name="LAST_COMMIT_MESSAGE" value="b select" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1227,16 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#2748#2754#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/class/categoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1260,8 +1254,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/content/book.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="685">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
+          <folding>
+            <element signature="e#2748#2754#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
