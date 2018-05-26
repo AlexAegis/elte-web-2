@@ -78,6 +78,7 @@ if (isset($_POST['action'])) {
                 $other['truePage'] = intdiv ($bookPos + 1, 5); // default page size
                 $other['page'] = intdiv ($bookPos + 1, 5) * 5; // default page size
                 $other['globPos'] = $bookPos + 1;
+                $other['id'] = $book->id;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;

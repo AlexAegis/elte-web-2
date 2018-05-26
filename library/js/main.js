@@ -18,7 +18,7 @@ function init(removeParams = false) {
 						
 						navigateBookPage(getParam('id'));
 					} else if(getParam('page') === 'list') {
-						navigateListPage(getParam('number'));
+						navigateListPage(getParam('number'), getParam('id'));
 					}  else { // default landing page on login
 						navigateListPage();
 					}
@@ -81,12 +81,15 @@ function navigateBookPage(id) {
 	loadBookPage(id);
 }
 
-function navigateListPage(number) {
+function navigateListPage(number, id) {
 	history.pushState({},"",window.location.href);
 	removeParam();
 	setParam("page", "list");
 	if(number != null) {
 		setParam("number", number);
+	}
+	if(id != null) {
+		setParam("id", id);
 	}
 	loadListPage();
 }
@@ -161,7 +164,7 @@ function bookController(data, action, param = "") {
 					});
 					break;
 				case 'createSuccess':
-					navigateListPage(jsonResponse.page);
+					navigateListPage(jsonResponse.page, jsonResponse.id);
 					break;
 			}
 		}

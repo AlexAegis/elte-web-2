@@ -1,7 +1,7 @@
 <?php session_start();
 if (isset($_SESSION['login'])) { ?>
     <h1 class="display-3 mb-4">Books</h1>
-    <table class="display mdl-data-table noBorderSpacing" id="book" style="width:100%">
+    <table id="book" class="display mdl-data-table noBorderSpacing w-100">
         <thead>
             <tr>
                 <th class="hidden">id</th>
@@ -28,7 +28,6 @@ if (isset($_SESSION['login'])) { ?>
 				serverSide: true,
 				ajax: "class/datatable/book.php",
 		        order: [[ 2, 'asc' ]],
-
 		        columnDefs: [
 			        {
 				        targets: [ 1, 2, 3, 4 ],
@@ -47,9 +46,15 @@ if (isset($_SESSION['login'])) { ?>
 		        createdRow: function(row, data, index) {
 					let column = 3;
 			        let rowValue = data[column];
-			        //row.addClass('clickable');
+			        if(getParam('id') && data[0] === getParam('id')) {
+                        console.log("ITS HERE!!!!!!!!!!" + index);
+				        $(row).addClass('newRow');
+                    }
                     $('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
-		        }
+		        },
+		        drawCallback: function( settings ) {
+
+                }
 			} );
 	        let dataTable = table.DataTable();
 
