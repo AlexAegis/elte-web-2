@@ -102,7 +102,7 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 				jsonResponse.result = modifyJson(jsonResponse);
 			}
 			if (element.is('form')) {
-				element.find('input').each(function(){
+				element.find(':input:not(:checkbox):not(:button)').each(function(){
 					let input = $(this);
 					input.val(jsonResponse[input.attr('name')]);
 				});
@@ -111,6 +111,12 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 					get(input, controller, input.attr('name'), null, null, function ()  {
 						input.val(jsonResponse[input.attr('name')]);
 					});
+				});
+				element.find(':input:checkbox').each(function(){
+					let input = $(this);
+					if(jsonResponse[input.attr('name')] === '1') {
+						input.prop('checked', true);
+					}
 				});
 			} else if(element.is('select')) {
 				jsonResponse.options.forEach(function(option) {

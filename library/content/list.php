@@ -44,12 +44,12 @@ if (isset($_SESSION['login'])) { ?>
 			        }
 		        ],
 		        createdRow: function(row, data, index) {
-					let column = 3;
+					let column = 4;
 			        let rowValue = data[column];
+                    $('td', row).eq(column - 1).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>'); // added an offset because of the hidden column
 			        if(getParam('id') && data[0] === getParam('id')) {
 				        $(row).addClass('newRow');
                     }
-                    $('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
 		        }
 			} );
 	        $('#book tbody').on('click', 'tr', function () {

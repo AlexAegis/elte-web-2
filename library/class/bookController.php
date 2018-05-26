@@ -64,7 +64,7 @@ if (isset($_POST['action'])) {
                 $book->page = $_POST['page'] == null ? null : $_POST['page'];
                 $book->category = isset($_POST['category']) ? $_POST['category'] : null;
                 $book->isbn = $_POST['isbn'] == null ? null : $_POST['isbn'];
-                $book->is_read = isset($_POST['is_read']) ? 1 : 0;
+                $book->is_read = isset($_POST['is_read']) ? '1' : '0';
                 R::store($book);
                 $other['id'] = $book->id;
                 $newBooks = R::find('book', 'owner = :owner order by title asc ' , [':owner' => $_SESSION['login']->id]);
