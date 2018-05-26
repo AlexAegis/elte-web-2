@@ -103,7 +103,6 @@ function get(element, controller = 'session.php', action, parameter = null, modi
 			}
 			if (element.is('form')) {
 				element.find('input').each(function(){
-					console.log("INPUT");
 					let input = $(this);
 					input.val(jsonResponse[input.attr('name')]);
 				});

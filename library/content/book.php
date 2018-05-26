@@ -3,6 +3,7 @@ if (isset($_SESSION['login'])) { ?>
 <h1 id="bookPageTitle" class="display-3 mb-4">Book</h1>
 <div>
     <form id="book" method="post" class="form-inline my-2 my-lg-0 text-left">
+        <input id="id" name="id" class="hidden">
         <div class="form-group row col-12">
             <label id="authorLabel" for="author" class="control-label mr-4 col-2">Author</label>
             <input id="author" name="author" type="text" value="" placeholder="Enter author" class="form-control col-6"/>
@@ -47,6 +48,7 @@ if (isset($_SESSION['login'])) { ?>
 		$(document).ready(function() {
 			let form = $('#book');
             get(form, "bookController.php", "retrieve", getParam('id'));
+            $('#id').val(getParam('id'));
             if(getParam('id')) {
             	$('#bookPageTitle').html('Edit');
             	$('#submit').html('Edit');
@@ -56,13 +58,9 @@ if (isset($_SESSION['login'])) { ?>
             }
 			form.submit(function (e) {
 				e.preventDefault();
-				let mode = "create";
-				if(getParam('id')) {
-					mode = "edit";
-				}
 				$("#book").find('input').removeClass("is-invalid");
 				$("#book").find('.error').html("");
-				bookController($(this), mode, mode === 'edit' ? getParam('id') : "");
+				bookController($(this), "create");
 			});
 		});
     </script>

@@ -47,23 +47,14 @@ if (isset($_SESSION['login'])) { ?>
 					let column = 3;
 			        let rowValue = data[column];
 			        if(getParam('id') && data[0] === getParam('id')) {
-                        console.log("ITS HERE!!!!!!!!!!" + index);
 				        $(row).addClass('newRow');
                     }
                     $('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
-		        },
-		        drawCallback: function( settings ) {
-
-                }
+		        }
 			} );
-	        let dataTable = table.DataTable();
-
 	        $('#book tbody').on('click', 'tr', function () {
-	        	navigateBookPage(dataTable.row(this).data()[0]);
+	        	navigateBookPage(table.DataTable().row(this).data()[0]);
 	        } );
-/*
-	        dataTable.page(2);
-	        dataTable.draw('page');*/
 		});
     </script>
 <?php } else { ?>

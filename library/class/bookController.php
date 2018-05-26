@@ -32,6 +32,11 @@ if (isset($_GET['action'])) {
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'create':
+            $book = R::dispense('book');
+            if(isset($_POST['id'])) {
+                $book = R::findOne('book', ' id = :id ', [ 'id' => $_POST['id']]);
+            }
+
             $errors = array();
             if ($_POST['author'] == null) {
                 array_push($errors, error('author'));
@@ -39,7 +44,8 @@ if (isset($_POST['action'])) {
             if ($_POST['title'] == null) {
                 array_push($errors, error('title'));
             }
-            if($_POST['author'] != null && $_POST['title'] != null) {
+            if($_POST['author'] != null && $_POST['title'] != null
+                && (!isset($_POST['id']) || isset($_POST['id']) && $_POST['title'] != $book->title && $_POST['author'] != $book->author)) {
                 $bookUnique = R::count('book', ' owner = :owner and author = :author and title = :title '
                     , [':owner' => $_SESSION['login']->id, ':author' => $_POST['author'], ':title' => $_POST['title']]);
                 if($bookUnique > 0) {
@@ -52,17 +58,15 @@ if (isset($_POST['action'])) {
             if(count($errors) > 0) {
                 $result = "createError";
             } else {
-                $book = R::dispense('book');
                 $book->owner = $_SESSION['login']->id;
                 $book->author = $_POST['author'];
                 $book->title = $_POST['title'];
                 $book->page = $_POST['page'] == null ? null : $_POST['page'];
                 $book->category = isset($_POST['category']) ? $_POST['category'] : null;
                 $book->isbn = $_POST['isbn'] == null ? null : $_POST['isbn'];
-                $book->is_read = isset($_POST['is_read']);
+                $book->is_read = isset($_POST['is_read']) ? 1 : 0;
                 R::store($book);
                 $other['id'] = $book->id;
-
                 $newBooks = R::find('book', 'owner = :owner order by title asc ' , [':owner' => $_SESSION['login']->id]);
                 $bookPos = 0;
                 foreach ($newBooks as &$b) {
@@ -72,7 +76,6 @@ if (isset($_POST['action'])) {
                         $bookPos++;
                     }
                 }
-
                 $bookOrderedNumber = R::count('book', ' owner = :owner and id <= :id '
                     , [':owner' => $_SESSION['login']->id, ':id' => $book->id]);
                 $other['truePage'] = intdiv ($bookPos + 1, 5); // default page size
@@ -82,10 +85,6 @@ if (isset($_POST['action'])) {
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
-        case 'edit':
-            echo 'edit';
 
-
-            break;
     }
 }
