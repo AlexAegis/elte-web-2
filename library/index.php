@@ -35,7 +35,9 @@
             </button>
             <div id="navbar" class="collapse navbar-collapse">
                 <div id="navigation" class="mr-auto"></div>
-                <div id="user"></div>
+                <div >
+                    <div id="user"></div>
+                </div>
             </div>
         </nav>
         <main role="main">

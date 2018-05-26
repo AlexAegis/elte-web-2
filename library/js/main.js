@@ -9,12 +9,15 @@ function init() {
 		},
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
-			if (jsonResponse.result === 'logged') {
-				loadMainPage();
-			} else if(jsonResponse.result === 'not logged') {
-				loadWelcomePage(() => {
-					$('#email').focus();
-				});
+			switch (jsonResponse.result) {
+				case 'logged':
+					loadMainPage();
+					break;
+				case 'not logged':
+					loadWelcomePage(() => {
+						$('#email').focus();
+					});
+					break;
 			}
 		}
 	});
@@ -39,42 +42,48 @@ function userController(data, action) {
 		data: data.serialize() + '&action=' + action,
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
-			if (jsonResponse.result === 'loginSuccess') {
-				loadMainPage();
-			} else if(jsonResponse.result === 'loginError') {
-				if(jsonResponse.errors.includes('invalidPassword')) {
-					$('#password').addClass('is-invalid');
-				}
-				if(jsonResponse.errors.includes('invalidEmail')) {
-					$('#email').addClass('is-invalid');
-				}
-			} else if(jsonResponse.result === 'registrationSuccess') {
-				loadWelcomePage(() => {
-					$('#email').val(jsonResponse.email);
-					$('#password').val(jsonResponse.password);
-					$('#login').focus();
-				});
-			} else if(jsonResponse.result === 'registrationError') {
-				if(jsonResponse.errors.includes('nameAlreadyTaken')) {
-					$('#registrationName').addClass('is-invalid');
-				}
-				if(jsonResponse.errors.includes('emailAlreadyTaken')) {
-					$('#registrationEmail').addClass('is-invalid');
-				}
-			} else if(jsonResponse.result === 'navigateRegistration') {
-				$('#content').load(window.location.pathname + '/content/registration.php', () => {
-					let dataArray = data.serializeArray();
-					let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0];
-					let regName = $('#registrationName');
-					if (email.indexOf('@') > -1) {
-						$('#registrationEmail').val(email);
-						regName.val(email.split('@')[0]);
-					} else {
-						regName.val(email);
+			switch (jsonResponse.result) {
+				case 'loginSuccess':
+					loadMainPage();
+					break;
+				case 'loginError':
+					if(jsonResponse.errors.includes('invalidPassword')) {
+						$('#password').addClass('is-invalid');
 					}
-					regName.focus();
-					$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0]);
-				});
+					if(jsonResponse.errors.includes('invalidEmail')) {
+						$('#email').addClass('is-invalid');
+					}
+					break;
+				case 'registrationSuccess':
+					loadWelcomePage(() => {
+						$('#email').val(jsonResponse.email);
+						$('#password').val(jsonResponse.password);
+						$('#login').focus();
+					});
+					break;
+				case 'registrationError':
+					if(jsonResponse.errors.includes('nameAlreadyTaken')) {
+						$('#registrationName').addClass('is-invalid');
+					}
+					if(jsonResponse.errors.includes('emailAlreadyTaken')) {
+						$('#registrationEmail').addClass('is-invalid');
+					}
+					break;
+				case 'navigateRegistration':
+					$('#content').load(window.location.pathname + '/content/registration.php', () => {
+						let dataArray = data.serializeArray();
+						let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0];
+						let regName = $('#registrationName');
+						if (email.indexOf('@') > -1) {
+							$('#registrationEmail').val(email);
+							regName.val(email.split('@')[0]);
+						} else {
+							regName.val(email);
+						}
+						regName.focus();
+						$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0]);
+					});
+					break;
 			}
 		}
 	});
