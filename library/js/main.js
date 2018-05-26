@@ -44,6 +44,15 @@ function loadMainPage(callback) {
 	$('#content').load(window.location.pathname + '/content/main.php', callback);
 }
 
+function loadBookPage(id) {
+	$('#content').load({
+		url: window.location.pathname + '/content/book.php',
+		
+		data: "&asd=1"
+	});
+	
+}
+
 function userController(data, action) {
 	$.ajax({
 		type: "POST",

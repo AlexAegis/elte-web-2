@@ -50,7 +50,7 @@ if (isset($_SESSION['login'])) { ?>
 	        let dataTable = table.DataTable();
 	        $('#book tbody').on('click', 'tr', function () {
 		        let data = dataTable.row(this).data();
-		        alert( 'You clicked on '+data[0]+'\'s row' );
+		        loadBookPage(data[0]);
 	        } );
 		});
     </script>
