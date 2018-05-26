@@ -18,8 +18,8 @@
         <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/utility.js"></script>
-        <script type="text/javascript" src="resources/datatables/datatables.js"></script>
         <script type="text/javascript" src="resources/material/material.min.js"></script>
+        <script type="text/javascript" src="resources/datatables/datatables.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>

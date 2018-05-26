@@ -4,6 +4,7 @@ if (isset($_SESSION['login'])) { ?>
     <table class="display mdl-data-table noBorderSpacing" id="book" style="width:100%">
         <thead>
             <tr>
+                <th class="hidden">id</th>
                 <th>author</th>
                 <th>title</th>
                 <th>category</th>
@@ -16,8 +17,8 @@ if (isset($_SESSION['login'])) { ?>
 
     <script>
         $(document).ready(function() {
-	        $('#book').dataTable({
-
+        	let table = $('#book');
+	        table.dataTable({
 				pagingType: "numbers",
 				lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
 				pageLength: 5,
@@ -26,17 +27,31 @@ if (isset($_SESSION['login'])) { ?>
 				ajax: "class/datatable/book.php",
 		        columnDefs: [
 			        {
-				        targets: [ 0, 1, 2, 3 ],
+				        targets: [ 1, 2, 3, 4 ],
 				        className: 'mdl-data-table__cell--non-numeric'
+			        },
+			        {
+				        targets: [ 0 ],
+				        visible: false,
+				        searchable: false
+			        },
+			        {
+				        targets: [ 4 ],
+				        searchable: false
 			        }
 		        ],
 		        createdRow: function(row, data, index) {
 					let column = 3;
 			        let rowValue = data[column];
 			        //row.addClass('clickable');
-                    //$('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
+                    $('td', row).eq(column).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>');
 		        }
 			} );
+	        let dataTable = table.DataTable();
+	        $('#book tbody').on('click', 'tr', function () {
+		        let data = dataTable.row(this).data();
+		        alert( 'You clicked on '+data[0]+'\'s row' );
+	        } );
 		});
     </script>
 <?php } else { ?>

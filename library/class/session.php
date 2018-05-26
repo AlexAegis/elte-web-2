@@ -20,19 +20,22 @@ if(isset($_POST["action"])) {
 }
 
 if (isset($_GET["action"])) {
-    if ($_GET["action"] === 'loggedInUser') {
-        echo jsonResponse($_SESSION['login']->email);
-    } else if ($_GET["action"] === 'count') {
-        echo jsonResponse(R::count($_GET["parameter"]), $_GET["parameter"]);
-    } else if ($_GET['action'] === 'session') {
-        if (isset($_SESSION['login'])) {
-            echo jsonResponse('logged', $_SESSION['login']->email);
-        } else {
-            echo jsonResponse('not logged', 'no logged in user');
-        }
+    switch ($_GET["action"]) {
+        case 'loggedInUser':
+            echo jsonResponse($_SESSION['login']->email);
+            break;
+        case 'count':
+            echo jsonResponse(R::count($_GET["parameter"]), $_GET["parameter"]);
+            break;
+        case 'session':
+            if (isset($_SESSION['login'])) {
+                echo jsonResponse('logged', $_SESSION['login']->email);
+            } else {
+                echo jsonResponse('not logged', 'no logged in user');
+            }
+            break;
     }
 }
-
 
 function jsonResponse($result, $reason = "", $errors = array(), $parameters = array()) {
     return json_encode(array_merge(array(

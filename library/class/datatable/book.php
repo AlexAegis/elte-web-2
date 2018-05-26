@@ -7,10 +7,11 @@ $primaryKey = 'id';
 
 // when using join
 $columns = array(
-    array( 'db' => '`'.$table.'`.`author`', 'dt' => 0 ,'field' => 'author'),
-    array( 'db' => '`'.$table.'`.`title`',  'dt' => 1 , 'field' => 'title'),
-    array( 'db' => '`'.$joinTable.'`.name',  'dt' => 2, 'field' => 'name'),
-    array( 'db' => '`'.$table.'`.is_read',  'dt' => 3, 'field' => 'is_read','formatter' => function( $d, $row ) {
+    array( 'db' => '`'.$table.'`.`id`', 'dt' => 0 ,'field' => 'id'),
+    array( 'db' => '`'.$table.'`.`author`', 'dt' => 1 ,'field' => 'author'),
+    array( 'db' => '`'.$table.'`.`title`',  'dt' => 2 , 'field' => 'title'),
+    array( 'db' => '`'.$joinTable.'`.name',  'dt' => 3, 'field' => 'name'),
+    array( 'db' => '`'.$table.'`.is_read',  'dt' => 4, 'field' => 'is_read','formatter' => function( $d, $row ) {
         return $d;
     })
 );
