@@ -41,15 +41,9 @@ if (isset($_SESSION['login'])) { ?>
                 <label id="is_readLabel" for="is_read" class="control-label mr-4 col-2">Read</label>
 
                 <label>
-                    <input type="checkbox" checked="checked" />
-                    <span>Yellow</span>
-                </label>
-
-                <label class="fancy-checkbox">
                     <input id="is_read" name="is_read" type="checkbox" value="" class="form-control chk custom-checkbox col-6"/>
-                    <span>Item Three</span>
+                    <span></span>
                 </label>
-
 
                 <label id="is_readError" class="error mdl-color-text--red ml-1 col-2"></label>
             </div>
