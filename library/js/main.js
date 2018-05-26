@@ -14,10 +14,14 @@ function init(removeParams = false) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
 				case 'logged':
+					
 					if (getParam('page') === 'book') {
-						loadBookPage();
-					} else {
-						loadMainPage();
+						
+						navigateBookPage(getParam('id'));
+					} else if(getParam('page') === 'list') {
+						navigateListPage(getParam('number'));
+					}  else { // default landing page on login
+						navigateListPage();
 					}
 					break;
 				case 'not logged':
@@ -41,20 +45,48 @@ function init(removeParams = false) {
 function loadWelcomePage(callback) {
 	$('#user').load(window.location.pathname + '/content/user/login.php', callback);
 	$('#navigation').html('');
-	//$('#navigation').load(window.location.pathname + '/content/navigation.php');
 	$('#content').load(window.location.pathname + '/content/welcome.php', callback);
+	$('.navbar-collapse').collapse('hide');
 }
 
-function loadMainPage(callback) {
-	$('#user').load(window.location.pathname + '/content/user/logout.php', callback);
-	$('#navigation').load(window.location.pathname + '/content/navigation.php');
-	$('#content').load(window.location.pathname + '/content/main.php', callback);
+function loadListPage() {
+	$('#user').load(window.location.pathname + '/content/user/logout.php');
+	$('#navigation').load(window.location.pathname + '/content/navigation.php', () => {
+		$('#listPage').addClass('active');
+	});
+	$('#content').load(window.location.pathname + '/content/list.php');
+	$('.navbar-collapse').collapse('hide');
 }
 
-function loadBookPage() {
-	$('#content').load(
-		window.location.pathname + '/content/book.php'
-	);
+function loadBookPage(id) {
+	$('#user').load(window.location.pathname + '/content/user/logout.php');
+	$('#navigation').load(window.location.pathname + '/content/navigation.php', () => {
+		if(!id) {
+			$('#createPage').addClass('active');
+		}
+	});
+	$('#content').load(window.location.pathname + '/content/book.php');
+	
+	$('.navbar-collapse').collapse('hide');
+
+}
+
+function navigateBookPage(id) {
+	removeParam();
+	setParam("page", "book");
+	if(id != null) {
+		setParam("id", id);
+	}
+	loadBookPage(id);
+}
+
+function navigateListPage(number) {
+	removeParam();
+	setParam("page", "list");
+	if(number != null) {
+		setParam("number", number);
+	}
+	loadListPage();
 }
 
 function userController(data, action) {
@@ -66,8 +98,7 @@ function userController(data, action) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
 				case 'loginSuccess':
-					loadMainPage();
-					$('.navbar-collapse').collapse('hide');
+					navigateListPage();
 					break;
 				case 'loginError':
 					if(jsonResponse.errors.includes('invalidPassword')) {
@@ -121,7 +152,7 @@ function bookController(data, action) {
 		success: function(response) {
 			let jsonResponse = JSON.parse(response);
 			switch (jsonResponse.result) {
-				case 'loginSuccess':
+				case '':
 					
 					break;
 			}

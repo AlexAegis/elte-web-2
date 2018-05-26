@@ -21,3 +21,17 @@ if (isset($_GET['action'])) {
             break;
     }
 }
+
+if (isset($_POST['action'])) {
+    switch ($_POST['action']) {
+        case 'create':
+            $book = R::findOne('book', ' id = :id ', [':id' => $_POST['parameter']]);
+            $result = "createSuccess";
+            $errors = array();/*
+            if ($book == null) {
+                array_push($errors, "invalidId");
+            }
+            echo jsonResponse($result, $_GET['action'], $errors);*/
+            break;
+    }
+}

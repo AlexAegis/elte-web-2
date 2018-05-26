@@ -32,14 +32,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="navbar" class="collapse navbar-collapse mr-auto">
-                <div>
-                    <div id="navigation" class=""></div>
-                    <div >
-                        <div id="user"></div>
-                    </div>
-                </div>
-
+            <div id="navbar" class="collapse navbar-collapse ">
+                <div id="navigation" class="mr-auto"></div>
+                <div id="user"></div>
             </div>
         </nav>
         <main role="main">

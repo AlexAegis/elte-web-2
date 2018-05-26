@@ -114,3 +114,7 @@ table.dataTable  {
 .mdl-data-table__cell--non-numeric:hover {
     cursor:pointer;
 }
+
+.pointer {
+    cursor:pointer;
+}
