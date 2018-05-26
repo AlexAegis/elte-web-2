@@ -28,7 +28,7 @@
     <button id="login"
             type="submit"
             class="form-control btn btn-outline-success my-2 my-sm-0 ml-2"
-            onclick="$('.navbar-collapse').collapse('hide'); $('#mode').val('login');">
+            onclick="$('#mode').val('login');">
         Login
     </button>
     <button id="navigateRegistration"

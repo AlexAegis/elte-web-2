@@ -67,6 +67,7 @@ function userController(data, action) {
 			switch (jsonResponse.result) {
 				case 'loginSuccess':
 					loadMainPage();
+					$('.navbar-collapse').collapse('hide');
 					break;
 				case 'loginError':
 					if(jsonResponse.errors.includes('invalidPassword')) {
