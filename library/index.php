@@ -9,17 +9,19 @@
         <meta name="author" content="AlexAegis">
         <link rel="icon" href="resources/book.png">
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="resources/datatables/datatables.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/material/material.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/datatables/datatables.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/library.css">
 
         <script type="text/javascript" src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/utility.js"></script>
-        <script type="text/javascript" src="resources/datatables/datatables.min.js"></script>
+        <script type="text/javascript" src="resources/datatables/datatables.js"></script>
+        <script type="text/javascript" src="resources/material/material.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>

@@ -89,11 +89,18 @@ html, body {
                                   supported by Chrome and Opera */
 }
 
-
 .highlight {
     background-color: #1b3249;
 }
 
 .highlight:hover {
     background-color: #eeecdd;
+}
+
+table.dataTable  {
+    border-spacing: 0 !important;
+}
+
+.noBorderSpacing {
+    border-spacing: 0 !important;
 }
