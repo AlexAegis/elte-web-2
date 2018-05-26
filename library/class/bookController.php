@@ -32,12 +32,22 @@ if (isset($_POST['action'])) {
             }
 
             $errors = array();
+
+            if ($_POST['isbn'] != null && !ctype_digit($_POST['isbn'])) {
+                array_push($errors, error('isbn', 'Must contain only digits'));
+            }
+
+            if ($_POST['page'] != null && !ctype_digit($_POST['page'])) {
+                array_push($errors, error('page', 'Must contain only digits'));
+            }
+
             if ($_POST['author'] == null) {
                 array_push($errors, error('author'));
             }
             if ($_POST['title'] == null) {
                 array_push($errors, error('title'));
             }
+
             if($_POST['author'] != null
                 && $_POST['title'] != null
                 && (!isset($_POST['id']) || $_POST['id'] == '')
