@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/library/content/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/css/_library.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/css/_library.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/css/materialize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/css/materialize.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/resources/js/materialize.js" beforeDir="false" />
-    </list>
+    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -148,8 +141,8 @@
       <file leaf-file-name="book.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/content/book.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="910">
+              <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -459,14 +452,7 @@
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
       <workItem from="1527179974609" duration="18094000" />
-      <workItem from="1527333050513" duration="38329000" />
-    </task>
-    <task id="LOCAL-00063" summary="bootstrapified">
-      <created>1527031402292</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1527031402292</updated>
+      <workItem from="1527333050513" duration="38662000" />
     </task>
     <task id="LOCAL-00064" summary="nav control only seeable when the user logged in">
       <created>1527031839324</created>
@@ -804,11 +790,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527375003195</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="added fancy checkboxes">
+      <created>1527375248812</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1527375248813</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178429000" />
+    <option name="totallyTimeSpent" value="178762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
@@ -822,9 +815,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="9" visible="true" weight="0.15372671" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17574553" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.13399602" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -907,7 +900,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added ssp" />
     <MESSAGE value="added datatable for books" />
     <MESSAGE value="joining, better query" />
     <MESSAGE value="using static requireds for stability" />
@@ -932,7 +924,8 @@
     <MESSAGE value="fixed book creation" />
     <MESSAGE value="added book only number validation" />
     <MESSAGE value="rearranged resources and reformatted code" />
-    <option name="LAST_COMMIT_MESSAGE" value="rearranged resources and reformatted code" />
+    <MESSAGE value="added fancy checkboxes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added fancy checkboxes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,8 +1260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/content/book.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        <state relative-caret-position="910">
+          <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
         </state>
       </provider>
     </entry>
