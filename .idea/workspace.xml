@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/class/bookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/class/bookController.php" afterDir="false" />
-    </list>
+    <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_library.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_library.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/resources/js/_library.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+            <state relative-caret-position="529">
+              <caret line="134" column="24" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -71,7 +68,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SECOND">
               <first_editor relative-caret-position="126">
-                <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -80,7 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/class/bookController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="470">
@@ -238,8 +235,8 @@
         <option value="$PROJECT_DIR$/library/class/userController.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/library/class/sessionController.php" />
-        <option value="$PROJECT_DIR$/library/resources/js/_library.js" />
         <option value="$PROJECT_DIR$/library/class/bookController.php" />
+        <option value="$PROJECT_DIR$/library/resources/js/_library.js" />
       </list>
     </option>
   </component>
@@ -403,21 +400,7 @@
       <workItem from="1527179974609" duration="18094000" />
       <workItem from="1527333050513" duration="48441000" />
       <workItem from="1527385361203" duration="42000" />
-      <workItem from="1527385422519" duration="264000" />
-    </task>
-    <task id="LOCAL-00078" summary="refactored the responsing">
-      <created>1527110005034</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1527110005034</updated>
-    </task>
-    <task id="LOCAL-00079" summary="refactored the responsing">
-      <created>1527110498465</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1527110498465</updated>
+      <workItem from="1527385422519" duration="420000" />
     </task>
     <task id="LOCAL-00080" summary="display error">
       <created>1527111596026</created>
@@ -748,11 +731,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527385373915</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="added missing constraint from isbn number">
+      <created>1527385725106</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1527385725107</updated>
+    </task>
+    <task id="LOCAL-00128" summary="added multierror display">
+      <created>1527385837973</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1527385837973</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188847000" />
+    <option name="totallyTimeSpent" value="189003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="788" y="0" width="1778" height="1416" extended-state="0" />
@@ -851,8 +848,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed bbq" />
-    <MESSAGE value="fixed collapse on response, not on request" />
     <MESSAGE value="added navbuttons and highlighting" />
     <MESSAGE value="select autofill" />
     <MESSAGE value="added create book" />
@@ -876,7 +871,9 @@
     <MESSAGE value="refactored get into a jquery prototype" />
     <MESSAGE value="copied lib project to prepare for the exam" />
     <MESSAGE value="reintroduced relative paths in php requieds and fixed the set prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="reintroduced relative paths in php requieds and fixed the set prototype" />
+    <MESSAGE value="added missing constraint from isbn number" />
+    <MESSAGE value="added multierror display" />
+    <option name="LAST_COMMIT_MESSAGE" value="added multierror display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1189,18 +1186,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/resources/js/_library.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SECOND">
           <first_editor relative-caret-position="126">
-            <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -1212,6 +1202,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
           <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/resources/js/_library.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="134" column="24" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
         </state>
       </provider>
     </entry>

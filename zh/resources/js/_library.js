@@ -34,7 +34,6 @@ function init(removeParams = false) {
 			}
 		}
 	})
-	
 	$(document).click(function (event) {
 		let clickover = $(event.target)
 		let _opened = $('.navbar-collapse').hasClass('navbar-collapse in')
@@ -136,7 +135,7 @@ jQuery.fn.extend({
 							jsonResponse.errors.forEach(function (error) {
 								let field = form.find('[name=' + error.field + ']')
 								field.addClass('is-invalid')
-								field.next().html(error.reason)
+								field.next().append(error.reason + '<br/>')
 							})
 							break
 						case 'success':
