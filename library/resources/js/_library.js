@@ -118,30 +118,38 @@ function navigateRegistration() {
 	$('.navbar-collapse').collapse('hide')
 }
 
-function formController(data, controller, action, onSuccess = null) {
-	$.ajax({
-		type: 'POST',
-		url: window.location.pathname + 'class/' + controller + 'Controller.php',
-		data: data.serialize() + '&action=' + action,
-		success: function (response) {
-			let jsonResponse = JSON.parse(response)
-			switch (jsonResponse.result) {
-				case 'error':
-					jsonResponse.errors.forEach(function (error) {
-						let field = data.find('[name=' + error.field + ']')
-						field.addClass('is-invalid')
-						field.next().html(error.reason)
-					})
-					break
-				case 'success':
-					if (onSuccess !== null) {
-						onSuccess(jsonResponse)
+jQuery.fn.extend({
+	formController: function (controller, action, onSuccess = null) {
+		let form = this
+		form.submit(function (e) {
+			e.preventDefault()
+			form.find('input').removeClass('is-invalid')
+			form.find('.error').html('')
+			$.ajax({
+				type: 'POST',
+				url: window.location.pathname + 'class/' + controller + 'Controller.php',
+				data: form.serialize() + '&action=' + action,
+				success: function (response) {
+					let jsonResponse = JSON.parse(response)
+					switch (jsonResponse.result) {
+						case 'error':
+							jsonResponse.errors.forEach(function (error) {
+								let field = form.find('[name=' + error.field + ']')
+								field.addClass('is-invalid')
+								field.next().html(error.reason)
+							})
+							break
+						case 'success':
+							if (onSuccess !== null) {
+								onSuccess(jsonResponse)
+							}
+							break
 					}
-					break
-			}
-		}
-	})
-}
+				}
+			})
+		})
+	}
+})
 
 function logout() {
 	$.ajax({

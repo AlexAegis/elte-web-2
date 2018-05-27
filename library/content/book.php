@@ -100,30 +100,20 @@ if (isset($_SESSION['login'])) { ?>
 				$('#bookPageTitle').html('Create')
 				$('#submit').html('Create')
 			}
-			bookForm.submit(function (e) {
-				e.preventDefault()
-				bookForm.find('input').removeClass('is-invalid')
-				bookForm.find('.error').html('')
-				formController($(this), 'book', 'create', function (response) {
-					navigateListPage(response)
-				})
+
+			bookForm.formController('book', 'create', function (response) {
+				navigateListPage(response)
 			})
 
-			let categoryForm = $('#categoryModalForm')
-			categoryForm.submit(function (e) {
-				e.preventDefault()
-				categoryForm.find('input').removeClass('is-invalid')
-				categoryForm.find('.error').html('')
-				formController($(this), 'category', 'create', function (response) {
-					let select = $('#category')
-					$('#categoryModal').modal('hide')
-					select.html('')
-					get(select, 'category', 'retrieveAll', null, null, function () {
-						$('#category').val(response.id.toString())
-						refreshCategoryEditButton()
-					})
-				})
-			})
+            $('#categoryModalForm').formController('category', 'create', function (response) {
+                let select = $('#category')
+                $('#categoryModal').modal('hide')
+                select.html('')
+                get(select, 'category', 'retrieveAll', null, null, function () {
+                    $('#category').val(response.id.toString())
+                    refreshCategoryEditButton()
+                })
+            })
 		})
 
 		function fillCategoryModal() {

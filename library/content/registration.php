@@ -26,10 +26,7 @@
 	$(document).ready(function () {
 		$('#registrationForm').submit(function (e) {
 			e.preventDefault()
-            let form = $('#registrationForm');
-			form.find('input').removeClass('is-invalid')
-			form.find('.error').html('')
-			formController($(this), 'user', 'register', function (response) {
+			$('#registrationForm').formController('user', 'register', function (response) {
 				loadWelcomePage(() => {
 					$('#email').val(response.email)
 					$('#password').val(response.password)

@@ -38,13 +38,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-		$('#loginForm').submit(function (e) {
-			e.preventDefault()
-			$('#loginForm input').removeClass('is-invalid')
-			formController($(this), 'user', 'login', function (response) {
-				navigateListPage(response)
-			})
-		})
+        $('#loginForm').formController('user', 'login', function (response) {
+            navigateListPage(response)
+        })
 	})
-
 </script>
