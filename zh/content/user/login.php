@@ -30,6 +30,7 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('#loginForm').controller('user', 'login', function (response) {
+			setParam('number', '1')
 			navigateListPage(response)
 		})
 	})

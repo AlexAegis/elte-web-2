@@ -3,23 +3,23 @@ if (isset($_SESSION['login'])) { ?>
     <h1 id="bookPageTitle" class="display-3 mb-4">Book</h1>
     <div>
         <form id="book" method="post" class="form-inline my-2 my-lg-0 text-left">
-            <input id="id" name="id" class="hidden"/>
+            <input id="id" name="id" class="hidden"/><label for="id" class="hidden"></label>
             <div class="form-group row col-12">
                 <label id="authorLabel" for="author" class="control-label mr-4 col-2">Author</label>
                 <input id="author" name="author" type="text" value="" placeholder="Enter author"
                        class="form-control col-6"/>
-                <label id="authorError" class="error mdl-color-text--red ml-1 col-2"></label>
+                <label id="authorError" for="author" class="error mdl-color-text--red ml-1 col-2"></label>
             </div>
             <div class="form-group row col-12 mt-2">
                 <label id="titleLabel" for="title" class="control-label mr-4 col-2">Title</label>
                 <input id="title" name="title" type="text" value="" placeholder="Enter title"
                        class="form-control col-6"/>
-                <label id="titleError" class="error mdl-color-text--red ml-1 col-2"></label>
+                <label id="titleError" for="title" class="error mdl-color-text--red ml-1 col-2"></label>
             </div>
             <div class="form-group row col-12 mt-2">
                 <label id="pageLabel" for="page" class="control-label mr-4 col-2">Page</label>
                 <input id="page" name="page" type="text" value="" placeholder="Enter page" class="form-control col-6"/>
-                <label id="pageError" class="error mdl-color-text--red ml-1 col-2"></label>
+                <label id="pageError" for="page" class="error mdl-color-text--red ml-1 col-2"></label>
             </div>
             <div class="form-group row col-12 mt-2">
                 <label id="categoryLabel" for="category" class="control-label mr-4 col-2">Category</label>
@@ -94,7 +94,6 @@ if (isset($_SESSION['login'])) { ?>
 		$(document).ready(function () {
 			let bookForm = $('#book')
 			bookForm.set('book', 'retrieve', getParam('id'), null, null, function (response) {
-				console.log('"ASDAsda' + $('#category').val())
 				refreshCategoryEditButton()
 			})
 			$('#id').val(getParam('id'))

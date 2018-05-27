@@ -87,6 +87,7 @@ function navigateListPage(response) {
 	history.pushState({}, '', window.location.href)
 	//removeParam()
 	setParam('page', 'list')
+	setParam('number', '1')
 	if (response != null) {
 		if (response.page != null) {
 			setParam('number', response.page)

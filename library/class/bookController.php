@@ -87,10 +87,21 @@ if (isset($_POST['action'])) {
                         $bookPos++;
                     }
                 }
+                /*
+
+                                $offset = 0;
+                                $remainder = (($bookPos - 1) / 5) - (intval(($bookPos - 1) / 5) );
+                                $log = " |  remainder".$remainder;
+                                if ($bookPos > 0 && ($remainder > 0.55)) {
+                                    $offset = $offset + 1;
+                                    $log = " |  OFFSEWT ".$offset;
+                                }*/
+
                 $bookOrderedNumber = R::count('book', ' owner = :owner and id <= :id '
                     , [':owner' => $_SESSION['login']->id, ':id' => $book->id]);
-                $other['page'] = intdiv($bookPos + 1, 5) + 1; // default page size
+                $other['page'] = intdiv($bookPos, 5) + 1; // default page size
                 $other['id'] = $book->id;
+                //$other['log'] = $log;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
@@ -118,7 +129,7 @@ if (isset($_POST['action'])) {
                 }
                 $other['id'] = $book->id;
                 $other['prevId'] = $prevId;
-                $other['page'] = intdiv($bookPos + 1, 5) + 1 - $offset; // default page size
+                $other['page'] = intdiv($bookPos, 5) + 1 - $offset; // default page size
                 if ($other['page'] == 0) {
                     $other['page'] = 1;
                 }
