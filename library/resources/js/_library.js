@@ -230,6 +230,7 @@ jQuery.fn.extend({
 
 function removeBook(id) {
 	$('').controller('book', 'remove&id=' + id, function(response) {
+		removeParam('id')
 		navigateListPage(response);
 	})
 }
