@@ -9,6 +9,7 @@ if (isset($_SESSION['login'])) { ?>
             <th>title</th>
             <th>category</th>
             <th>read</th>
+            <th>remove</th>
         </tr>
         </thead>
         <tbody>
@@ -41,6 +42,11 @@ if (isset($_SESSION['login'])) { ?>
 					{
 						targets: [4],
 						searchable: false
+					},
+					{
+						targets: [5],
+						searchable: false,
+                        orderable: false
 					}
 				],
 				createdRow: function (row, data, index) {
@@ -50,11 +56,18 @@ if (isset($_SESSION['login'])) { ?>
 					if (getParam('id') && data[0] === getParam('id')) {
 						$(row).addClass('newRow')
 					}
-				}
+					$('td', row).eq(column).html('<a class="btn deleteButton"><i class="far fa-trash-alt"></i></a>');
+				},
+
 			})
-			$('#book tbody').on('click', 'tr', function () {
+			$('#book tbody').on('click', 'td:not(:last-child)', function () {
 				navigateBookPage(table.DataTable().row(this).data()[0])
 			})
+			$('#book tbody').on('click', 'tr .deleteButton', function () {
+				removeBook($('#book').DataTable().row($(this).parent()).data()[0])
+			})
+
+
 		})
     </script>
 <?php } else { ?>

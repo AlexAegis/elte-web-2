@@ -101,11 +101,11 @@ if (isset($_SESSION['login'])) { ?>
 				$('#submit').html('Create')
 			}
 
-			bookForm.formController('book', 'create', function (response) {
+			bookForm.controller('book', 'create', function (response) {
 				navigateListPage(response)
 			})
 
-            $('#categoryModalForm').formController('category', 'create', function (response) {
+            $('#categoryModalForm').controller('category', 'create', function (response) {
                 let select = $('#category')
                 $('#categoryModal').modal('hide')
                 select.html('')

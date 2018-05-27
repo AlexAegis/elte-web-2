@@ -118,7 +118,7 @@ function navigateRegistration() {
 }
 
 jQuery.fn.extend({
-	formController: function (controller, action, onSuccess = null) {
+	controller: function (controller, action, onSuccess = null) {
 		let form = this
 		form.submit(function (e) {
 			e.preventDefault()

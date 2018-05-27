@@ -91,8 +91,33 @@ if (isset($_POST['action'])) {
                     , [':owner' => $_SESSION['login']->id, ':id' => $book->id]);
                 $other['truePage'] = intdiv($bookPos + 1, 5); // default page size
                 $other['page'] = intdiv($bookPos + 1, 5) * 5; // default page size
+
                 $other['globPos'] = $bookPos + 1;
                 $other['id'] = $book->id;
+            }
+            echo jsonResponse($result, $_POST['action'], $errors, $other);
+            break;
+        case 'remove':
+            $result = 'error';
+            $errors = array();
+            $other = array();
+            if (isset($_POST['id']) && $_POST['id'] != '') {
+                $book = R::findOne('book', ' id = :id ', ['id' => $_POST['id']]);
+                $newBooks = R::find('book', 'owner = :owner order by title asc ', [':owner' => $_SESSION['login']->id]);
+                $bookPos = 0;
+                foreach ($newBooks as &$b) {
+                    if ($b->id == $book->id) {
+                        break;
+                    } else {
+                        $bookPos++;
+                    }
+                }
+                $other['id'] = $book->id;
+                $other['page'] = intdiv($bookPos + 1, 5) * 5; // default page size
+                R::trash($book);
+                $result = 'success';
+            } else {
+                array_push($errors, error('noId'));
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;

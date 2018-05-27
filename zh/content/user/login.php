@@ -38,7 +38,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-        $('#loginForm').formController('user', 'login', function (response) {
+        $('#loginForm').controller('user', 'login', function (response) {
             navigateListPage(response)
         })
 	})

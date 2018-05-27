@@ -26,7 +26,7 @@
 	$(document).ready(function () {
 		$('#registrationForm').submit(function (e) {
 			e.preventDefault()
-			$('#registrationForm').formController('user', 'register', function (response) {
+			$('#registrationForm').controller('user', 'register', function (response) {
 				loadWelcomePage(() => {
 					$('#email').val(response.email)
 					$('#password').val(response.password)

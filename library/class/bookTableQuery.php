@@ -13,7 +13,8 @@ $columns = array(
     array('db' => '`' . $joinTable . '`.name', 'dt' => 3, 'field' => 'name'),
     array('db' => '`' . $table . '`.is_read', 'dt' => 4, 'field' => 'is_read', 'formatter' => function ($d, $row) {
         return $d;
-    })
+    }),
+    array('db' => '`' . $table . '`.`id`', 'dt' => 5, 'field' => 'id'),
 );
 
 // When using regular just make joinquery and extrawhere null
