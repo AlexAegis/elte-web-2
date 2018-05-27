@@ -29,7 +29,7 @@
     <script type="text/javascript" src="resources/js/_library.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
     <div class="navbar-btn noselect" onclick="$('.navbar-collapse').collapse('hide'); init(true)">
         <a class="navbar-brand text-white text-center" role="link">Library</a>
     </div>
@@ -38,7 +38,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbar" class="collapse navbar-collapse ">
-        <div id="navigation" class="mr-auto"></div>
+        <div id="navigation" class="mr-0 mr-sm-auto"></div>
         <div id="user"></div>
     </div>
 </nav>

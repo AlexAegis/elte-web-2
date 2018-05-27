@@ -146,6 +146,10 @@ table.dataTable {
     color: red !important;
 }
 
+.labelBelow {
+    margin-top: -0.29em !important;
+}
+
 .newRow {
     -webkit-animation: selectFlash 2.5s; /* Safari and Chrome */
     -moz-animation: selectFlash 2.5s; /* Firefox */

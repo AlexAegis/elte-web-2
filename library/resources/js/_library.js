@@ -131,13 +131,24 @@ jQuery.fn.extend({
 					switch (jsonResponse.result) {
 						case 'error':
 							if(isForm) {
+								element.find('input').each(function () {
+									$(this).removeClass('is-invalid')
+									$(this).next().html('')
+								})
+								console.log(jsonResponse.errors)
 								jsonResponse.errors.forEach(function (error) {
-									let field = element.find('[name=' + error.field + ']')
-									field.addClass('is-invalid')
-									field.next().append(error.reason + '<br/>')
+									element.find('[name=' + error.field + ']').each(function () {
+										$(this).addClass('is-invalid')
+										$(this).next().append(error.reason + '<br/>')
+									})
 								})
 							} else {
-								console.log('unim error')
+								element.removeClass('is-invalid')
+								element.next().html('')
+								jsonResponse.errors.forEach(function (error) {
+									element.addClass('is-invalid')
+									element.next().append(error.reason + '<br/>')
+								})
 							}
 							break
 						case 'success':
@@ -149,22 +160,14 @@ jQuery.fn.extend({
 				}
 			})
 		}
-		
 		if(isForm) {
 			element.submit(function (e) {
 				e.preventDefault()
-				element.find('input').removeClass('is-invalid')
-				element.find('.error').html('')
 				doAjax(isForm);
 			})
 		} else {
 			doAjax(isForm);
 		}
-	
-		
-		
-		
-		
 	},
 	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, selectCallback = null) {
 		let element = this;
