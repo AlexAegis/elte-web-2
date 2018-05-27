@@ -32,6 +32,8 @@
 		$('#loginForm').controller('user', 'login', function (response) {
 			setParam('number', '1')
 			navigateListPage(response)
+		}, function () {
+			$('#navigateRegistration').focus()
 		})
 	})
 	function navReg() { // idk why i need this "alias"

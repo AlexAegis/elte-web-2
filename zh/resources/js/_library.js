@@ -121,7 +121,7 @@ function navigateRegistration() {
 }
 
 jQuery.fn.extend({
-	controller: function (controller, action, onSuccess = null) {
+	controller: function (controller, action, onSuccess = null, afterError = null) {
 		let element = this
 		let isForm = element.is('form');
 		let doAjax = function(isForm) {
@@ -152,6 +152,10 @@ jQuery.fn.extend({
 									element.addClass('is-invalid')
 									element.next().append(error.reason + '<br/>')
 								})
+							}
+							
+							if (afterError != null) {
+								afterError()
 							}
 							break
 						case 'success':
