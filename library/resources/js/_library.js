@@ -51,18 +51,18 @@ function loadWelcomePage(callback) {
 	$('.navbar-collapse').collapse('hide')
 }
 
-function loadListPage() {
+function loadListPage(callback) {
 	$('#user').load(window.location.pathname + '/content/user/logout.php')
-	$('#navigation').load(window.location.pathname + '/content/navigation.php', () => {
+	$('#navigation').load(window.location.pathname + '/content/navigation.php', function () {
 		$('#listPage').addClass('active')
 	})
-	$('#content').load(window.location.pathname + '/content/list.php')
+	$('#content').load(window.location.pathname + '/content/list.php', callback)
 	$('.navbar-collapse').collapse('hide')
 }
 
 function loadBookPage(id) {
 	$('#user').load(window.location.pathname + '/content/user/logout.php')
-	$('#navigation').load(window.location.pathname + '/content/navigation.php', () => {
+	$('#navigation').load(window.location.pathname + '/content/navigation.php', function () {
 		if (!id) {
 			$('#createPage').addClass('active')
 		}
@@ -85,13 +85,15 @@ function navigateBookPage(id) {
 
 function navigateListPage(response) {
 	history.pushState({}, '', window.location.href)
-	removeParam()
+	//removeParam()
 	setParam('page', 'list')
 	if (response != null) {
 		if (response.page != null) {
 			setParam('number', response.page)
 		}
-		if (response.id != null) {
+		if (response.prevId != null) {
+			setParam('prevId', response.prevId)
+		} else if (response.id !== null) {
 			setParam('id', response.id)
 		}
 	}
