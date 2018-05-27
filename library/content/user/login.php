@@ -55,7 +55,7 @@
 		$('#loginForm').submit(function (e) {
 			e.preventDefault()
 			$('#loginForm input').removeClass('is-invalid')
-			formController($(this), 'user', 'login', null, function (response) {
+			formController($(this), 'user', 'login', function (response) {
 				navigateListPage(response)
 			})
 		})

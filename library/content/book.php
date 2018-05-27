@@ -103,7 +103,7 @@ if (isset($_SESSION['login'])) { ?>
 				e.preventDefault()
 				bookForm.find('input').removeClass('is-invalid')
 				bookForm.find('.error').html('')
-				formController($(this), 'book', 'create', null, function (response) {
+				formController($(this), 'book', 'create', function (response) {
 					navigateListPage(response)
 				})
 			})
@@ -113,11 +113,11 @@ if (isset($_SESSION['login'])) { ?>
 				e.preventDefault()
 				categoryForm.find('input').removeClass('is-invalid')
 				categoryForm.find('.error').html('')
-				formController($(this), 'category', 'create', null, function (response) {
+				formController($(this), 'category', 'create', function (response) {
 					let select = $('#category')
 					$('#categoryModal').modal('hide')
 					select.html('')
-					get(select, 'category', 'retrieveAll', null, null, function () {
+					get(select, 'category', 'retrieveAll', null, function () {
 						select.val(response.id)
 					})
 				})

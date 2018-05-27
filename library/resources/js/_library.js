@@ -118,23 +118,11 @@ function navigateRegistration() {
 	$('.navbar-collapse').collapse('hide')
 }
 
-function userController(data, action) {
-	$.ajax({
-		type: 'POST',
-		url: window.location.pathname + 'class/userController.php',
-		data: data.serialize() + '&action=' + action,
-		success: function (response) {
-			let jsonResponse = JSON.parse(response)
-			
-		}
-	})
-}
-
-function formController(data, controller, action, param = null, onSuccess = null) {
+function formController(data, controller, action, onSuccess = null) {
 	$.ajax({
 		type: 'POST',
 		url: window.location.pathname + 'class/' + controller + 'Controller.php',
-		data: data.serialize() + '&action=' + action,// + (param === null ? null : ""),
+		data: data.serialize() + '&action=' + action,
 		success: function (response) {
 			let jsonResponse = JSON.parse(response)
 			switch (jsonResponse.result) {

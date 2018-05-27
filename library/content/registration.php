@@ -29,7 +29,7 @@
             let form = $('#registrationForm');
 			form.find('input').removeClass('is-invalid')
 			form.find('.error').html('')
-			formController($(this), 'user', 'register', null, function (response) {
+			formController($(this), 'user', 'register', function (response) {
 				loadWelcomePage(() => {
 					$('#email').val(response.email)
 					$('#password').val(response.password)
