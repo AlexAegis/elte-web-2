@@ -19,7 +19,6 @@ if (isset($_SESSION['login'])) { ?>
     <script>
 		$(document).ready(function () {
 			let table = $('#book')
-
 			table.dataTable({
 				pagingType: 'numbers',
 				lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
@@ -49,12 +48,28 @@ if (isset($_SESSION['login'])) { ?>
                         orderable: false
 					}
 				],
+				drawCallback: function (settings) {
+					console.log(settings)
+					setParam('number', (settings._iDisplayStart / settings._iDisplayLength) + 1) // reflects the selected page on the url
+					if (settings.iDraw > 1) {
+						let page = getParam('page')
+						let number = getParam('number')
+						console.log('page: ' + page + ' number: ' + number)
+						removeParam()
+						setParam('page', page)
+						setParam('number', number)
+						//removeParam('prevId') // is not working so this is a workaround
+					}
+				},
 				createdRow: function (row, data, index) {
 					let column = 4
 					let rowValue = data[column]
 					$('td', row).eq(column - 1).html('<div class="' + ((rowValue === null ? '0' : rowValue) === '1' ? 'far fa-check-circle' : 'far fa-circle') + '" ></div>') // added an offset because of the hidden column
 					if (getParam('id') && data[0] === getParam('id')) {
 						$(row).addClass('newRow')
+					}
+					if (getParam('prevId') && data[0] === getParam('prevId')) {
+						$(row).addClass('removedFromBelow')
 					}
 					$('td', row).eq(column).html('<a class="btn deleteButton"><i class="far fa-trash-alt"></i></a>');
 				},
@@ -66,8 +81,6 @@ if (isset($_SESSION['login'])) { ?>
 			$('#book tbody').on('click', 'tr .deleteButton', function () {
 				removeBook($('#book').DataTable().row($(this).parent()).data()[0])
 			})
-
-
 		})
     </script>
 <?php } else { ?>

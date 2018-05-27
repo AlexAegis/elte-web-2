@@ -150,6 +150,14 @@ table.dataTable {
     margin-top: -0.29em !important;
 }
 
+.removedFromBelow {
+    -webkit-animation: removeFlash 2.5s; /* Safari and Chrome */
+    -moz-animation: removeFlash 2.5s; /* Firefox */
+    -ms-animation: removeFlash 2.5s; /* Internet Explorer */
+    -o-animation: removeFlash 2.5s; /* Opera */
+    animation: removeFlash 2.5s;
+}
+
 .newRow {
     -webkit-animation: selectFlash 2.5s; /* Safari and Chrome */
     -moz-animation: selectFlash 2.5s; /* Firefox */
@@ -206,8 +214,6 @@ table.dataTable {
     }
 }
 
-​
-
 /* Opera */
 @-o-keyframes selectFlash {
     from {
@@ -219,6 +225,57 @@ table.dataTable {
         background-color: #e0e3e8;
     }
 }
+
+@keyframes removeFlash {
+    from {
+        border-bottom: 2px solid #ff433d;
+    }
+    to {
+        border: 2px solid #c5c7cc;
+    }
+}
+
+/* Firefox */
+@-moz-keyframes removeFlash {
+    from {
+        border-bottom: 2px solid #ff433d;
+    }
+    to {
+        border: 2px solid #c5c7cc;
+    }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes removeFlash {
+    from {
+        border-bottom: 2px solid #ff433d;
+    }
+    to {
+        border: 2px solid #c5c7cc;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes removeFlash {
+    from {
+        border-bottom: 2px solid #ff433d;
+    }
+    to {
+        border: 2px solid #c5c7cc;
+    }
+}
+
+/* Opera */
+@-o-keyframes removeFlash {
+    from {
+        border-bottom: 2px solid #ff433d;
+    }
+    to {
+        border: 2px solid #c5c7cc;
+    }
+}
+
+
 
 
 /* Checkboxes from Materialize

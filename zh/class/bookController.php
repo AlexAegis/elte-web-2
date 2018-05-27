@@ -102,15 +102,26 @@ if (isset($_POST['action'])) {
                 $book = R::findOne('book', ' id = :id ', ['id' => $_POST['id']]);
                 $newBooks = R::find('book', 'owner = :owner order by title asc ', [':owner' => $_SESSION['login']->id]);
                 $bookPos = 0;
+                $prevId = 0;
                 foreach ($newBooks as &$b) {
                     if ($b->id == $book->id) {
                         break;
                     } else {
+                        $prevId = $b->id;
                         $bookPos++;
                     }
                 }
+                $offset = 0;
+                $remainder = ((count($newBooks) - 1) / 5) - (intval((count($newBooks) - 1) / 5));
+                if ($bookPos == count($newBooks) - 1 && count($newBooks) > 0 && $remainder > 0.75 || $remainder < 0.15) {
+                    $offset = $offset + 1;
+                }
                 $other['id'] = $book->id;
-                $other['page'] = intdiv($bookPos + 1, 5) * 5; // default page size
+                $other['prevId'] = $prevId;
+                $other['page'] = intdiv($bookPos + 1, 5) + 1 - $offset; // default page size
+                if ($other['page'] == 0) {
+                    $other['page'] = 1;
+                }
                 R::trash($book);
                 $result = 'success';
             } else {

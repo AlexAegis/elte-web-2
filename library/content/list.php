@@ -49,6 +49,8 @@ if (isset($_SESSION['login'])) { ?>
 					}
 				],
 				drawCallback: function (settings) {
+					console.log(settings)
+					setParam('number', (settings._iDisplayStart / settings._iDisplayLength) + 1) // reflects the selected page on the url
 					if (settings.iDraw > 1) {
 						let page = getParam('page')
 						let number = getParam('number')

@@ -110,15 +110,18 @@ if (isset($_POST['action'])) {
                         $prevId = $b->id;
                         $bookPos++;
                     }
-                }/*
-                $offset = 0;
-                if($bookPos == count($newBooks) - 1 && intdiv($bookPos + 1, 5) == $bookPos / 5 && count($newBooks) != 0 ) {
-                    $offset = 1;
                 }
-*/
+                $offset = 0;
+                $remainder = ((count($newBooks) - 1) / 5) - (intval((count($newBooks) - 1) / 5));
+                if ($bookPos == count($newBooks) - 1 && count($newBooks) > 0 && $remainder > 0.75 || $remainder < 0.15) {
+                    $offset = $offset + 1;
+                }
                 $other['id'] = $book->id;
                 $other['prevId'] = $prevId;
-                $other['page'] = intdiv($bookPos + 1, 5) + 1;// - $offset ; // default page size
+                $other['page'] = intdiv($bookPos + 1, 5) + 1 - $offset; // default page size
+                if ($other['page'] == 0) {
+                    $other['page'] = 1;
+                }
                 R::trash($book);
                 $result = 'success';
             } else {
