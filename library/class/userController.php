@@ -49,19 +49,17 @@ if (isset($_POST['action'])) {
             if ($countUsersByName > 0) {
                 array_push($errors, error('name', 'Already taken'));
             }
-
             if ($_POST['email'] == null || $_POST['email'] == '') {
                 array_push($errors, error('email'));
+            } else if (!preg_match($emailRegex, $_POST['email'])) {
+                array_push($errors, error('email', 'Enter valid e-mail'));
             }
+
             if ($_POST['name'] == null || $_POST['name'] == '') {
                 array_push($errors, error('name'));
             }
             if ($_POST['password'] == null || $_POST['password'] == '') {
                 array_push($errors, error('password'));
-            }
-
-            if(!preg_match($emailRegex, $_POST['email'])) {
-                array_push($errors, error('email', 'Enter valid e-mail'));
             }
 
             if ($countUsersByEmail == 0 && $countUsersByName == 0) {
