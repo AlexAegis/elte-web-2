@@ -3,7 +3,7 @@ if (isset($_SESSION['login'])) { ?>
     <h1 id="bookPageTitle" class="display-3 mb-4">Book</h1>
     <div>
         <form id="book" method="post" class="form-inline my-2 my-lg-0 text-left">
-            <input id="id" name="id" class="hidden">
+            <input id="id" name="id" class="hidden"/>
             <div class="form-group row col-12">
                 <label id="authorLabel" for="author" class="control-label mr-4 col-2">Author</label>
                 <input id="author" name="author" type="text" value="" placeholder="Enter author"
@@ -49,8 +49,9 @@ if (isset($_SESSION['login'])) { ?>
 
                 <label id="is_readError" class="error mdl-color-text--red ml-1 col-2"></label>
             </div>
-            <div class="form-group row col-12 mt-5 offset-0 offset-sm-8">
-                <button id="submit" type="submit" class="form-control btn btn-outline-dark btn-lg mt-5">Create</button>
+            <div class="form-group row col-12 col-sm-12 mt-5 offset-0 offset-sm-6
+        ">
+                <button id="submit" type="submit" class="form-control btn btn-outline-dark btn-lg mt-5 btn btn-block">Create</button>
             </div>
 
         </form>
@@ -79,9 +80,9 @@ if (isset($_SESSION['login'])) { ?>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" formnovalidate>Close
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" formnovalidate>Close
                         </button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-success">Save</button>
                     </div>
                 </div>
             </div>
@@ -117,20 +118,18 @@ if (isset($_SESSION['login'])) { ?>
 					let select = $('#category')
 					$('#categoryModal').modal('hide')
 					select.html('')
-					get(select, 'category', 'retrieveAll', null, function () {
-						select.val(response.id)
+					get(select, 'category', 'retrieveAll', null, null, function () {
+						$('#category').val(response.id.toString())
+						refreshCategoryEditButton()
 					})
 				})
 			})
-
-			refreshCategoryEditButton()
 		})
 
 		function fillCategoryModal() {
 			let bookFormCategory = $('#category')
 			let categoryFormName = $('#categoryName')
 			$('#categoryModalLabel').html('Edit Category')
-
 			$('#categoryId').val(bookFormCategory.val())
 			categoryFormName.val(bookFormCategory.find('option:selected').text())
 			categoryFormName.focus()
@@ -143,10 +142,12 @@ if (isset($_SESSION['login'])) { ?>
 		}
 
 		function refreshCategoryEditButton() {
-			if ($('#category').val() === null || $('#category').val() === '') {
-				$('#editCategory').addClass('hidden')
+			let select = $('#category');
+			let editSelect = $('#editCategory');
+			if (select.val() === null || select.val() === '') {
+				editSelect.addClass('hidden')
 			} else {
-				$('#editCategory').removeClass('hidden')
+				editSelect.removeClass('hidden')
 			}
 		}
     </script>

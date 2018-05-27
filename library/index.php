@@ -44,7 +44,7 @@
 </nav>
 <main role="main">
     <div class="jumbotron">
-        <div id="content" class="container pt-4 pl-1 pr-1 pb-1">
+        <div id="content" class="container pt-sm-4 pt-4 pl-1 pr-1 pb-1">
 
         </div>
     </div>
