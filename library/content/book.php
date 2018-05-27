@@ -92,9 +92,11 @@ if (isset($_SESSION['login'])) { ?>
     </form>
     <script>
 		$(document).ready(function () {
-
 			let bookForm = $('#book')
-			bookForm.set('book', 'retrieve', getParam('id'))
+			bookForm.set('book', 'retrieve', getParam('id'), null, null, function (response) {
+				console.log('"ASDAsda' + $('#category').val())
+				refreshCategoryEditButton()
+			})
 			$('#id').val(getParam('id'))
 			if (getParam('id')) {
 				$('#bookPageTitle').html('Edit')
@@ -139,10 +141,8 @@ if (isset($_SESSION['login'])) { ?>
 			let select = $('#category');
 			let editSelect = $('#editCategory');
 			if (select.val() === null || select.val() === '') {
-				console.log('sethidden')
 				editSelect.addClass('hidden')
 			} else {
-				console.log('setNOThidden')
 				editSelect.removeClass('hidden')
 			}
 		}

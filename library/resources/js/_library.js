@@ -166,7 +166,7 @@ jQuery.fn.extend({
 		
 		
 	},
-	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null) {
+	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, selectCallback = null) {
 		let element = this;
 		return $.ajax({
 			type: 'GET',
@@ -190,6 +190,9 @@ jQuery.fn.extend({
 						input.html('');
 						input.set(input.attr('name'), 'retrieveAll', null, null, function () {
 							input.val(jsonResponse[input.attr('name')])
+							if (selectCallback != null) {
+								selectCallback(input)
+							}
 						})
 					})
 					element.find(':input:checkbox').each(function () {
