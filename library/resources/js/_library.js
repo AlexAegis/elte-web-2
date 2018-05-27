@@ -125,7 +125,7 @@ jQuery.fn.extend({
 			$.ajax({
 				type: 'POST',
 				url: window.location.pathname + 'class/' + controller + 'Controller.php',
-				data: (isForm ? element.serialize() + '&' : '') + 'action=' + action,
+				data: (isForm ? element.serialize() + '&' : 'value=' + element.val() + '&') + 'action=' + action,
 				success: function (response) {
 					let jsonResponse = JSON.parse(response)
 					switch (jsonResponse.result) {
@@ -187,6 +187,7 @@ jQuery.fn.extend({
 					})
 					element.find('select').each(function () {
 						let input = $(this)
+						input.html('');
 						input.set(input.attr('name'), 'retrieveAll', null, null, function () {
 							input.val(jsonResponse[input.attr('name')])
 						})
@@ -206,7 +207,7 @@ jQuery.fn.extend({
 					element.html(jsonResponse.result)
 				}
 				if (callback != null) {
-					callback()
+					callback(jsonResponse)
 				}
 			}
 		})
