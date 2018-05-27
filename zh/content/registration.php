@@ -14,7 +14,7 @@
         </div>
         <div class="form-group row col-12 mt-2">
             <label id="registrationPasswordLabel" for="registrationPassword" class="control-label mr-4 col-2">Password</label>
-            <input id="registrationPassword" name="password" type="text" value="" placeholder="Enter password" class="form-control col-6"/>
+            <input id="registrationPassword" name="password" type="password" value="" placeholder="Enter password" class="form-control col-6"/>
             <label id="registrationPasswordError" for="registrationPassword" class="error mdl-color-text--red ml-1 col-2"></label>
         </div>
     </div>
