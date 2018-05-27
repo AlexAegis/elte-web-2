@@ -12,18 +12,18 @@ if (isset($_POST['action'])) {
 
             if ($_POST['email'] == null || $_POST['email'] == '') {
                 array_push($errors, error('email'));
-            }
+            } else {
+                if (!preg_match($emailRegex, $_POST['email'])) {
+                    array_push($errors, error('email', 'Enter valid e-mail'));
+                }
 
-            if(!preg_match($emailRegex, $_POST['email'])) {
-                array_push($errors, error('email', 'Enter valid e-mail'));
+                if ($countUsersByEmail == 0) {
+                    array_push($errors, error('email', 'Not registered'));
+                }
             }
 
             if ($_POST['password'] == null || $_POST['password'] == '') {
                 array_push($errors, error('password'));
-            }
-
-            if ($countUsersByEmail == 0) {
-                array_push($errors, error('email', 'Not registered'));
             }
 
             if ($user == null) {
