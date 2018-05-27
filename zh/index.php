@@ -31,7 +31,7 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="navbar-btn noselect" onclick="$('.navbar-collapse').collapse('hide'); init(true)">
-        <a class="navbar-brand text-white text-center" role="link">ZH</a>
+        <a class="navbar-brand text-white text-center" role="link">Library</a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
             aria-expanded="false" aria-label="Toggle navigation">

@@ -1,5 +1,5 @@
-<?php require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
-require_once '/home/hallgatok/alexaegis/www/library/resources/php/ssp.rb.php';
+<?php require_once '../class/sessionController.php';
+require_once '../resources/php/ssp.rb.php';
 $table = 'book';
 $joinTable = 'category';
 

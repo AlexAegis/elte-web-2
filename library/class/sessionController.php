@@ -1,5 +1,5 @@
 <?php
-require_once '/home/hallgatok/alexaegis/www/library/resources/php/rb-mysql.php';
+require_once '../resources/php/rb-mysql.php';
 define('DB_KEY', 'library');
 try {
     if (!R::testConnection()) {

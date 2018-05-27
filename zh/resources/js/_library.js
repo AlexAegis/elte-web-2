@@ -170,7 +170,7 @@ jQuery.fn.extend({
 					})
 					element.find('select').each(function () {
 						let input = $(this)
-						get(input, input.attr('name'), 'retrieveAll', null, null, function () {
+						input.set(input.attr('name'), 'retrieveAll', null, null, function () {
 							input.val(jsonResponse[input.attr('name')])
 						})
 					})

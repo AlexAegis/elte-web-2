@@ -1,5 +1,5 @@
-<?php require_once '/home/hallgatok/alexaegis/www/library/resources/php/rb-mysql.php';
-require_once '/home/hallgatok/alexaegis/www/library/class/sessionController.php';
+<?php require_once '../resources/php/rb-mysql.php';
+require_once '../class/sessionController.php';
 
 // if your form for your object contains a select, always have a get with an action called the name of that select
 if (isset($_GET['action'])) {
