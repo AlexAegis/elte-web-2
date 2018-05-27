@@ -120,6 +120,7 @@ if (isset($_SESSION['login'])) { ?>
                 })
             })
 		})
+
 		function fillCategoryModal() {
 			let bookFormCategory = $('#category')
 			let categoryFormName = $('#categoryName')
@@ -148,21 +149,23 @@ if (isset($_SESSION['login'])) { ?>
 		}
 
 		function refreshCategoryRemoveButton(id) {
-			$('').set('category', 'canDelete', id, null, function(response) {
+			$('').set('category', 'canDelete', {category: id, book: getParam('id')}, null, function (response) {
 				let button = $('#categoryModalRemove');
 				button.removeClass('hidden')
+				button.removeClass('btn-outline-danger')
+				button.removeClass('btn-danger')
                 if(response.result === 'error') {
-	                button.text('Cannot delete, used elsewhere')
-                    button.attr("disabled", "disabled");
+	                button.html('<i class="fas fa-exclamation-triangle"></i> Other books use it')
+	                button.addClass('btn-outline-danger')
                 } else {
 	                button.text('Delete')
-	                button.removeAttr("disabled");
+	                button.addClass('btn-danger')
                 }
             })
         }
 
         function removeCurrentCategory() {
-	        $('#categoryId').controller('category', 'remove', function () {
+	        $('#categoryId').controller('category', 'remove', function (response) {
 		        $('#category').html('');
 		        $('#category').set('category', 'retrieveAll', null, null, function () {
 			        $('#category').val('')

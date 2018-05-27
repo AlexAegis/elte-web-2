@@ -118,5 +118,10 @@ if (isset($_POST['action'])) {
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
+        case 'removeCategory':
+            foreach ($_POST['books'] as &$b) {
+                echo $b->id;
+            }
+            break;
     }
 }

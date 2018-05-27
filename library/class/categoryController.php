@@ -17,11 +17,12 @@ if (isset($_GET['action'])) {
                 array('result' => $category->name));
             break;
         case 'canDelete':
-            $booksInCategory = array_values(R::find('book', ' category = :category ', ['category' => $_GET['parameter']]));
+            $booksInCategory = array_values(R::find('book', ' category = :category and id != :id'
+                , ['category' => $_GET['parameter']['category'], 'id' => $_GET['parameter']['book']]));
             $errors = array();
             $result = 'success';
             if (count($booksInCategory) > 0) {
-                array_push($errors, error("delete", "Some books still use this category"));
+                array_push($errors, error("delete", "Warning, other books use this category"));
                 $result = 'error';
             }
             echo jsonResponse($result, $_GET['action'], $errors,
@@ -67,6 +68,11 @@ if (isset($_POST['action'])) {
             $other = array();
             if (isset($_POST['value']) && $_POST['value'] !== '') {
                 $category = R::findOne('category', ' id = :id ', ['id' => $_POST['value']]);
+                $booksForCategory = R::find('book', 'category = :category', ['category' => $category->id]);
+                foreach ($booksForCategory as &$book) {
+                    $book->category = null;
+                    R::store($book);
+                }
                 R::trash($category);
                 $result = 'success';
                 $other['id'] = '';
