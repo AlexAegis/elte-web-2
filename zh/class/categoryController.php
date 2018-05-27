@@ -11,9 +11,21 @@ if (isset($_GET['action'])) {
                 array('options' => $categories));
             break;
         case 'name':
+            $errors = array();
             $category = R::findOne('category', ' id = id: ', [['id' => $_GET['id']]]);
             echo jsonResponse('success', $_GET['action'], $errors,
                 array('result' => $category->name));
+            break;
+        case 'canDelete':
+            $booksInCategory = array_values(R::find('book', ' category = :category ', ['category' => $_GET['parameter']]));
+            $errors = array();
+            $result = 'success';
+            if (count($booksInCategory) > 0) {
+                array_push($errors, error("delete", "Some books still use this category"));
+                $result = 'error';
+            }
+            echo jsonResponse($result, $_GET['action'], $errors,
+                array('books' => $booksInCategory));
             break;
     }
 }
@@ -49,6 +61,19 @@ if (isset($_POST['action'])) {
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
-
+        case 'remove':
+            $result = 'error';
+            $errors = array();
+            $other = array();
+            if (isset($_POST['value']) && $_POST['value'] !== '') {
+                $category = R::findOne('category', ' id = :id ', ['id' => $_POST['value']]);
+                R::trash($category);
+                $result = 'success';
+                $other['id'] = '';
+            } else {
+                array_push($errors, error('noId'));
+            }
+            echo jsonResponse($result, $_POST['action'], $errors, $other);
+            break;
     }
 }

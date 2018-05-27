@@ -80,6 +80,8 @@ if (isset($_SESSION['login'])) { ?>
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button id="categoryModalRemove" type="button" class="btn btn-outline-danger" data-dismiss="modal" onclick="removeCurrentCategory()" formnovalidate>Delete
+                        </button>
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" formnovalidate>Close
                         </button>
                         <button type="submit" class="btn btn-success">Save</button>
@@ -90,6 +92,7 @@ if (isset($_SESSION['login'])) { ?>
     </form>
     <script>
 		$(document).ready(function () {
+
 			let bookForm = $('#book')
 			bookForm.set('book', 'retrieve', getParam('id'))
 			$('#id').val(getParam('id'))
@@ -122,23 +125,51 @@ if (isset($_SESSION['login'])) { ?>
 			$('#categoryId').val(bookFormCategory.val())
 			categoryFormName.val(bookFormCategory.find('option:selected').text())
 			categoryFormName.focus()
+			refreshCategoryRemoveButton(bookFormCategory.val())
 		}
 
 		function emptyCategoryModal() {
 			$('#categoryModalLabel').html('Create Category')
 			$('#categoryId').val('')
 			$('#categoryName').val('')
+			$('#categoryModalRemove').addClass('hidden')
 		}
 
 		function refreshCategoryEditButton() {
 			let select = $('#category');
 			let editSelect = $('#editCategory');
 			if (select.val() === null || select.val() === '') {
+				console.log('sethidden')
 				editSelect.addClass('hidden')
 			} else {
+				console.log('setNOThidden')
 				editSelect.removeClass('hidden')
 			}
 		}
+
+		function refreshCategoryRemoveButton(id) {
+			$('').set('category', 'canDelete', id, null, function(response) {
+				let button = $('#categoryModalRemove');
+				button.removeClass('hidden')
+                if(response.result === 'error') {
+	                button.text('Cannot delete, used elsewhere')
+                    button.attr("disabled", "disabled");
+                } else {
+	                button.text('Delete')
+	                button.removeAttr("disabled");
+                }
+            })
+        }
+
+        function removeCurrentCategory() {
+	        $('#categoryId').controller('category', 'remove', function () {
+		        $('#category').html('');
+		        $('#category').set('category', 'retrieveAll', null, null, function () {
+			        $('#category').val('')
+			        refreshCategoryEditButton()
+		        })
+            })
+        }
     </script>
 <?php } else { ?>
     <p>Please log in to access this feature!</p>

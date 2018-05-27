@@ -77,6 +77,23 @@ html, body {
     transition: background-color 100ms linear;
 }
 
+.deleteButton .fa-trash-alt {
+    font-size: 1.5em;
+    color: rgba(103, 104, 107, 0.93);
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
+
+.deleteButton .fa-trash-alt:hover {
+    color: #d04543;
+    font-size: 1.55em;
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
+
+
 .navbar-btn:hover {
     background-color: #403e4b;
     -webkit-transition: background-color 100ms linear;

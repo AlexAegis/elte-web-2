@@ -119,24 +119,26 @@ function navigateRegistration() {
 
 jQuery.fn.extend({
 	controller: function (controller, action, onSuccess = null) {
-		let form = this
-		form.submit(function (e) {
-			e.preventDefault()
-			form.find('input').removeClass('is-invalid')
-			form.find('.error').html('')
+		let element = this
+		let isForm = element.is('form');
+		let doAjax = function(isForm) {
 			$.ajax({
 				type: 'POST',
 				url: window.location.pathname + 'class/' + controller + 'Controller.php',
-				data: form.serialize() + '&action=' + action,
+				data: (isForm ? element.serialize() + '&' : 'value=' + element.val() + '&') + 'action=' + action,
 				success: function (response) {
 					let jsonResponse = JSON.parse(response)
 					switch (jsonResponse.result) {
 						case 'error':
-							jsonResponse.errors.forEach(function (error) {
-								let field = form.find('[name=' + error.field + ']')
-								field.addClass('is-invalid')
-								field.next().append(error.reason + '<br/>')
-							})
+							if(isForm) {
+								jsonResponse.errors.forEach(function (error) {
+									let field = element.find('[name=' + error.field + ']')
+									field.addClass('is-invalid')
+									field.next().append(error.reason + '<br/>')
+								})
+							} else {
+								console.log('unim error')
+							}
 							break
 						case 'success':
 							if (onSuccess !== null) {
@@ -146,7 +148,23 @@ jQuery.fn.extend({
 					}
 				}
 			})
-		})
+		}
+		
+		if(isForm) {
+			element.submit(function (e) {
+				e.preventDefault()
+				element.find('input').removeClass('is-invalid')
+				element.find('.error').html('')
+				doAjax(isForm);
+			})
+		} else {
+			doAjax(isForm);
+		}
+	
+		
+		
+		
+		
 	},
 	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null) {
 		let element = this;
@@ -169,6 +187,7 @@ jQuery.fn.extend({
 					})
 					element.find('select').each(function () {
 						let input = $(this)
+						input.html('');
 						input.set(input.attr('name'), 'retrieveAll', null, null, function () {
 							input.val(jsonResponse[input.attr('name')])
 						})
@@ -188,7 +207,7 @@ jQuery.fn.extend({
 					element.html(jsonResponse.result)
 				}
 				if (callback != null) {
-					callback()
+					callback(jsonResponse)
 				}
 			}
 		})
@@ -196,7 +215,11 @@ jQuery.fn.extend({
 })
 
 
-
+function removeBook(id) {
+	$('').controller('book', 'remove&id=' + id, function(response) {
+		navigateListPage(response);
+	})
+}
 
 
 function logout() {
