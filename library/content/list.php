@@ -23,7 +23,7 @@ if (isset($_SESSION['login'])) { ?>
 			table.dataTable({
 				pagingType: 'numbers',
 				lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
-				displayStart: getParam('number') ? parseInt(getParam('number')) - 1 : 0,
+				displayStart: getParam('number') ? (parseInt(getParam('number')) - 1) * 5 : 1,
 				pageLength: 5,
 				processing: true,
 				serverSide: true,

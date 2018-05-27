@@ -89,7 +89,7 @@ if (isset($_POST['action'])) {
                 }
                 $bookOrderedNumber = R::count('book', ' owner = :owner and id <= :id '
                     , [':owner' => $_SESSION['login']->id, ':id' => $book->id]);
-                $other['page'] = intdiv($bookPos + 1, 5) * 5 + 1; // default page size
+                $other['page'] = intdiv($bookPos + 1, 5) + 1; // default page size
                 $other['id'] = $book->id;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);

@@ -33,7 +33,6 @@
 			navigateListPage(response)
 		})
 	})
-
 	function navReg() { // idk why i need this "alias"
 		navigateRegistration()
 	}
