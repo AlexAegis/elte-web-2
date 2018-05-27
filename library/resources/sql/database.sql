@@ -3,7 +3,7 @@ drop table if exists category;
 drop table if exists user;
 create table if not exists user (
   id int(10) primary key not null auto_increment comment 'primary key, needed for proper database control',
-  email nvarchar(60) unique key comment 'unique key, email, used as username',
+  email nvarchar(60) not null unique key comment 'unique key, email, used as username',
   password nvarchar(64) not null comment 'password, at least 6 char long stored with sha-256',
   name nvarchar(60) not null comment 'name of the user'
 ) comment 'Users of the application for the second web programming submission';

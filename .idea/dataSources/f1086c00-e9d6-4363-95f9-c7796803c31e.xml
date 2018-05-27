@@ -960,6 +960,7 @@ name</ColNames>
       <Position>2</Position>
       <Comment>unique key, email, used as username</Comment>
       <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>

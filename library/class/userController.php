@@ -14,6 +14,11 @@ if (isset($_POST['action'])) {
                 array_push($errors, error('email'));
             }
 
+            if(!preg_match('/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\]))$/iD'
+                , $_POST['email'])) {
+                array_push($errors, error('email', 'Enter valid e-mail'));
+            }
+
             if ($_POST['password'] == null || $_POST['password'] == '') {
                 array_push($errors, error('password'));
             }
@@ -39,7 +44,14 @@ if (isset($_POST['action'])) {
             $countUsersByEmail = R::count('user', ' email = :email ', [':email' => $_POST['email']]);
             $countUsersByName = R::count('user', ' name = :name ', [':name' => $_POST['name']]);
             $errors = array();
-            $result = 'registrationError';
+            $result = 'error';
+
+            if ($countUsersByEmail > 0) {
+                array_push($errors, error('email', 'Already taken'));
+            }
+            if ($countUsersByName > 0) {
+                array_push($errors, error('name', 'Already taken'));
+            }
 
             if ($_POST['email'] == null || $_POST['email'] == '') {
                 array_push($errors, error('email'));
@@ -47,14 +59,17 @@ if (isset($_POST['action'])) {
             if ($_POST['name'] == null || $_POST['name'] == '') {
                 array_push($errors, error('name'));
             }
-            if ($countUsersByEmail > 0) {
-                array_push($errors, error('email', 'Already taken'));
+            if ($_POST['password'] == null || $_POST['password'] == '') {
+                array_push($errors, error('password'));
             }
-            if ($countUsersByName > 0) {
-                array_push($errors, error('name', 'Already taken'));
+
+            if(!preg_match('/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\]))$/iD'
+                , $_POST['email'])) {
+                array_push($errors, error('email', 'Enter valid e-mail'));
             }
+
             if ($countUsersByEmail == 0 && $countUsersByName == 0) {
-                $result = 'registrationSuccess';
+                $result = 'success';
                 R::transaction(function () { // do it with or without the transaction, it works without it too
                     $user = R::dispense('user');
                     $user->email = $_POST['email'];
@@ -64,9 +79,6 @@ if (isset($_POST['action'])) {
                 });
             }
             echo jsonResponse($result, $_POST['action'], $errors, array('email' => $_POST['email'], 'password' => $_POST['password']));
-            break;
-        case 'registrationStart':
-            echo jsonResponse("navigateRegistration", $_POST['action']);
             break;
     }
 }

@@ -103,8 +103,7 @@ function navigateRegistration() {
 	history.pushState({}, '', window.location.href)
 	removeParam()
 	$('#content').load(window.location.pathname + '/content/registration.php', () => {
-		let dataArray = data.serializeArray()
-		let email = dataArray.filter(e => e.name === 'email').map(e => e.value)[0]
+		let email = $('#email').val()
 		let regName = $('#registrationName')
 		if (email.indexOf('@') > -1) {
 			$('#registrationEmail').val(email)
@@ -113,7 +112,8 @@ function navigateRegistration() {
 			regName.val(email)
 		}
 		regName.focus()
-		$('#registrationPassword').val(dataArray.filter(e => e.name === 'password').map(e => e.value)[0])
+		let pass = $('#password').val()
+		$('#registrationPassword').val(pass)
 	})
 	$('.navbar-collapse').collapse('hide')
 }
