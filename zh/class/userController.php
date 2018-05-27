@@ -27,7 +27,9 @@ if (isset($_POST['action'])) {
             }
 
             if ($user == null) {
-                array_push($errors,  error('password', 'Invalid password'));
+                if ($_POST['password'] != null && $_POST['password'] != '') {
+                    array_push($errors, error('password', 'Invalid password'));
+                }
             } else {
                 $result = "success";
                 session_regenerate_id();

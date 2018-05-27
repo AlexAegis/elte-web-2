@@ -24,14 +24,12 @@
 </form>
 <script>
 	$(document).ready(function () {
-		$('#registrationForm').submit(function (e) {
-			e.preventDefault()
-			$('#registrationForm').controller('user', 'register', function (response) {
-				loadWelcomePage(() => {
-					$('#email').val(response.email)
-					$('#password').val(response.password)
-					$('#login').focus()
-				})
+		$('#registrationForm').controller('user', 'register', function (response) {
+			loadWelcomePage(() => {
+				$('#email').val(response.email)
+				$('#password').val(response.password)
+				$('.navbar-collapse').collapse('show')
+				$('#login').focus()
 			})
 		})
 	})

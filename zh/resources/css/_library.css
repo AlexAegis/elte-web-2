@@ -146,6 +146,10 @@ table.dataTable {
     color: red !important;
 }
 
+.labelBelow {
+    margin-top: -0.29em !important;
+}
+
 .newRow {
     -webkit-animation: selectFlash 2.5s; /* Safari and Chrome */
     -moz-animation: selectFlash 2.5s; /* Firefox */
@@ -359,7 +363,7 @@ table.dataTable {
     width: 20px;
     background-color: transparent;
     border: 2px solid #5a5a5a;
-    top: 0px;
+    top: 0;
     z-index: 0;
 }
 
