@@ -91,7 +91,7 @@ if (isset($_SESSION['login'])) { ?>
     <script>
 		$(document).ready(function () {
 			let bookForm = $('#book')
-			get(bookForm, 'book', 'retrieve', getParam('id'))
+			bookForm.set('book', 'retrieve', getParam('id'))
 			$('#id').val(getParam('id'))
 			if (getParam('id')) {
 				$('#bookPageTitle').html('Edit')
@@ -109,13 +109,12 @@ if (isset($_SESSION['login'])) { ?>
                 let select = $('#category')
                 $('#categoryModal').modal('hide')
                 select.html('')
-                get(select, 'category', 'retrieveAll', null, null, function () {
+	            select.set('category', 'retrieveAll', null, null, function () {
                     $('#category').val(response.id.toString())
                     refreshCategoryEditButton()
                 })
             })
 		})
-
 		function fillCategoryModal() {
 			let bookFormCategory = $('#category')
 			let categoryFormName = $('#categoryName')

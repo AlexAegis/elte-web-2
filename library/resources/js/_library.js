@@ -148,8 +148,57 @@ jQuery.fn.extend({
 				}
 			})
 		})
+	},
+	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null) {
+		let element = this;
+		return $.ajax({
+			type: 'GET',
+			url: window.location.pathname + '/class/' + controller + 'Controller.php',
+			data: {
+				action: action,
+				parameter: parameter
+			},
+			success: function (response) {
+				let jsonResponse = JSON.parse(response)
+				if (modifyJson !== null) {
+					jsonResponse.result = modifyJson(jsonResponse)
+				}
+				if (element.is('form')) {
+					element.find(':input:not(:checkbox):not(:button)').each(function () {
+						let input = $(this)
+						input.val(jsonResponse[input.attr('name')])
+					})
+					element.find('select').each(function () {
+						let input = $(this)
+						get(input, input.attr('name'), 'retrieveAll', null, null, function () {
+							input.val(jsonResponse[input.attr('name')])
+						})
+					})
+					element.find(':input:checkbox').each(function () {
+						let input = $(this)
+						if (jsonResponse[input.attr('name')] === '1') {
+							input.prop('checked', true)
+						}
+					})
+				} else if (element.is('select')) {
+					element.append('<option value=""></option>') // noselectoption
+					jsonResponse.options.forEach(function (option) {
+						element.append('<option value=' + option.id + '>' + option.name + '</option>')
+					})
+				} else {
+					element.html(jsonResponse.result)
+				}
+				if (callback != null) {
+					callback()
+				}
+			}
+		})
 	}
 })
+
+
+
+
 
 function logout() {
 	$.ajax({

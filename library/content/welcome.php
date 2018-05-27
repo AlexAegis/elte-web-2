@@ -10,7 +10,7 @@ Number of users: <span id="userCount"></span>. Number of books in total: <span i
       target="_blank" role="button"><i class="fab fa-github mr-1"></i>/AlexAegis &raquo;</a></p>
 <script>
 	$(document).ready(function () {
-		get($('#userCount'), 'session', 'count', 'user')
-		get($('#bookCount'), 'session', 'count', 'book')
+		$('#userCount').set('session', 'count', 'user')
+		$('#bookCount').set('session', 'count', 'book')
 	})
 </script>

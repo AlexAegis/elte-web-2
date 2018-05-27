@@ -4,9 +4,10 @@
     <list default="true" id="0e67c099-ab1b-4550-8a15-043792cf37c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/content/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/content/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/content/user/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/user/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/content/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/content/welcome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/resources/js/_library.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/_library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/resources/js/_utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/resources/js/_utility.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,6 +70,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="welcome.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library/content/welcome.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="registration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/content/registration.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,11 +97,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_library.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_library.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/resources/js/_library.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
+            <state relative-caret-position="1164">
+              <caret line="150" column="6" lean-forward="true" selection-start-line="150" selection-start-column="6" selection-end-line="150" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -108,7 +127,7 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/content/user/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
+            <state relative-caret-position="764">
               <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
             </state>
           </provider>
@@ -117,8 +136,8 @@
       <file leaf-file-name="book.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/content/book.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+            <state relative-caret-position="734">
+              <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -126,17 +145,8 @@
       <file leaf-file-name="_utility.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/resources/js/_utility.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_library.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/resources/css/_library.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+            <state relative-caret-position="896">
+              <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -152,7 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Select-1.2</find>
       <find>json_encode</find>
       <find>join</find>
       <find>FROM `$table`</find>
@@ -182,6 +191,7 @@
       <find>createError</find>
       <find>navigateListPage</find>
       <find>formController</find>
+      <find>get(</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -225,16 +235,13 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f1086c00-e9d6-4363-95f9-c7796803c31e/console.sql" />
         <option value="$PROJECT_DIR$/library/css/library.css" />
         <option value="$PROJECT_DIR$/library/resources/database.sql" />
-        <option value="$PROJECT_DIR$/library/content/user/logout.php" />
         <option value="$PROJECT_DIR$/library/content/list.php" />
-        <option value="$PROJECT_DIR$/library/content/welcome.php" />
         <option value="$PROJECT_DIR$/library/js/main.js" />
         <option value="$PROJECT_DIR$/library/js/utility.js" />
         <option value="$PROJECT_DIR$/library/class/sessionController.php" />
         <option value="$PROJECT_DIR$/library/class/datatable/book.php" />
         <option value="$PROJECT_DIR$/library/README.md" />
         <option value="$PROJECT_DIR$/library/resources/css/materialize.css" />
-        <option value="$PROJECT_DIR$/library/resources/js/_utility.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/library/class/categoryController.php" />
         <option value="$PROJECT_DIR$/library/class/bookController.php" />
@@ -245,6 +252,9 @@
         <option value="$PROJECT_DIR$/library/index.php" />
         <option value="$PROJECT_DIR$/library/content/registration.php" />
         <option value="$PROJECT_DIR$/library/content/user/login.php" />
+        <option value="$PROJECT_DIR$/library/resources/js/_utility.js" />
+        <option value="$PROJECT_DIR$/library/content/user/logout.php" />
+        <option value="$PROJECT_DIR$/library/content/welcome.php" />
         <option value="$PROJECT_DIR$/library/content/book.php" />
         <option value="$PROJECT_DIR$/library/resources/js/_library.js" />
       </list>
@@ -449,14 +459,7 @@
       <workItem from="1527059625818" duration="7381000" />
       <workItem from="1527088292268" duration="23502000" />
       <workItem from="1527179974609" duration="18094000" />
-      <workItem from="1527333050513" duration="47184000" />
-    </task>
-    <task id="LOCAL-00073" summary="added transition to navbar button">
-      <created>1527088825112</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1527088825112</updated>
+      <workItem from="1527333050513" duration="47611000" />
     </task>
     <task id="LOCAL-00074" summary="added one more registration form">
       <created>1527091164323</created>
@@ -794,11 +797,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527382638802</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="refactored formcontroller into a jquery prototype">
+      <created>1527384110019</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1527384110019</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187284000" />
+    <option name="totallyTimeSpent" value="187711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="789" y="0" width="1777" height="1416" extended-state="0" />
@@ -812,7 +822,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="9" visible="true" weight="0.1546875" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0990099" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17472336" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.09609784" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296875" />
@@ -897,7 +907,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="switches in js" />
     <MESSAGE value="navbar fixed" />
     <MESSAGE value="bbq added" />
     <MESSAGE value="added form loading and book page, only GET" />
@@ -922,7 +931,8 @@
     <MESSAGE value="removed deprecated js controller and an argument from he general one" />
     <MESSAGE value="navbar height fixed" />
     <MESSAGE value="fixed modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed modal" />
+    <MESSAGE value="refactored formcontroller into a jquery prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored formcontroller into a jquery prototype" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1060,13 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/resources/icon/book.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1143,13 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1216,13 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/resources/js/_utility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/class/userController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1244,20 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/user/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/content/book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/content/registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -1265,10 +1240,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library/resources/js/_utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/user/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/user/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/resources/js/_library.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
+        <state relative-caret-position="1164">
+          <caret line="150" column="6" lean-forward="true" selection-start-line="150" selection-start-column="6" selection-end-line="150" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/content/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
