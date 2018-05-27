@@ -31,6 +31,11 @@ if (isset($_POST['action'])) {
                 $book = R::findOne('book', ' id = :id ', ['id' => $_POST['id']]);
             }
             $errors = array();
+
+            if ($_POST['isbn'] != null && strlen($_POST['isbn']) != 10 && strlen($_POST['isbn']) != 13) {
+                array_push($errors, error('isbn', 'Must be 10 or 13 digits long'));
+            }
+
             if ($_POST['isbn'] != null && !ctype_digit($_POST['isbn'])) {
                 array_push($errors, error('isbn', 'Must contain only digits'));
             }
