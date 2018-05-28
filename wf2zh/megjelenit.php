@@ -35,16 +35,13 @@
 <?php
  require_once '/home/hallgatok/alexaegis/www/wf2zh/resources/php/rb-mysql.php';
  require_once '/home/hallgatok/alexaegis/www/wf2zh/class/sessionController.php';
-
 $shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_GET['id'] ]);
-echo 'shape:'.$shape->id;
-echo ' get id: '.$_GET['id'];
 ?>
 
 
 <dl>
     <dt>Azonosító</dt>
-    <dd>200000000</dd>
+    <dd><?php echo $shape->id;?></dd>
 
     <dt>Név</dt>
     <dd><?php echo $shape['nev'];?></dd>
@@ -65,7 +62,15 @@ echo ' get id: '.$_GET['id'];
             </tr>
             <tr>
                 <td>
-                    <table class="vetulet" id="felul"></table>
+                    <table class="vetulet" id="felul">
+                    <?php parseFront($shape);
+
+
+                    
+                    ?>
+                    
+                    
+                    </table>
                 </td>
                 <td>
                     <div class="vetulet" id="oldal"></div>

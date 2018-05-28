@@ -24,3 +24,16 @@ function jsonResponse($result, $reason = "", $errors = array(), $parameters = ar
 function error($field, $reason = 'Mandatory') {
     return array("field" => $field, "reason" => $reason);
 }
+
+// alakzat: [[2,1,1],[2,0,0]] 
+
+// felül - 
+/**
+ * egymás alá ahol van = black
+ * 
+ */
+function parseFront($shape) {
+    $m = json_decode($shape->alakzat);
+
+    echo $m[0][0];
+}
