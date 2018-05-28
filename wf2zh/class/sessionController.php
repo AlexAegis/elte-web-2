@@ -49,14 +49,19 @@ if (isset($_POST['action'])) {
             if (count($errors) > 0) {
                 $result = "error";
             } else {
-                $shape['id'] = $_POST['id'];
-                //$shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
-                $shape['nev'] = $_POST['nev'];
-                $shape['szelesseg'] = $_POST['szelesseg'];
-                $shape['magassag'] = $_POST['magassag'];
-                $shape['kedvenc'] = isset($_POST['kedvenc']) ? '1' : '0';
-                $shape['alakzat'] = $_POST['alakzat'];
-                R::store($shape);
+    
+                R::transaction(function () {
+                    $shape['id'] = $_POST['id'];
+                    //$shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
+                    $shape['nev'] = $_POST['nev'];
+                    $shape['szelesseg'] = $_POST['szelesseg'];
+                    $shape['magassag'] = $_POST['magassag'];
+                    $shape['kedvenc'] = isset($_POST['kedvenc']) ? '1' : '0';
+                    $shape['alakzat'] = $_POST['alakzat'];
+                    R::store($shape);
+                });
+
+
                 $other['id'] = $shape->id;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
