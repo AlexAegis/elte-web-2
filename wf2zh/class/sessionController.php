@@ -60,10 +60,8 @@ if (isset($_POST['action'])) {
                     $shape['kedvenc'] = isset($_POST['kedvenc']) ? '1' : '0';
                     $shape['alakzat'] = $_POST['alakzat'];
                     R::store($shape);
+                    $other['id'] = $shape->id;
                 });
-
-
-                $other['id'] = $shape->id;
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
