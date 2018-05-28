@@ -1,7 +1,7 @@
 $(document).ready(init())
 
 function init(removeParams = false) {
-	
+
 }
 
 jQuery.fn.extend({
@@ -11,35 +11,14 @@ jQuery.fn.extend({
 		let doAjax = function(isForm) {
 			$.ajax({
 				type: 'POST',
-				url: window.location.pathname + 'class/' + controller + 'Controller.php',
+				url: '/hallgatok/alexaegis/wf2zh/' + 'class/' + controller + 'Controller.php',
 				data: (isForm ? element.serialize() + '&' : 'value=' + element.val() + '&') + 'action=' + action,
 				success: function (response) {
 					let jsonResponse = JSON.parse(response)
 					switch (jsonResponse.result) {
 						case 'error':
-							if(isForm) {
-								element.find('input').each(function () {
-									$(this).removeClass('is-invalid')
-									$(this).next().html('')
-								})
-								console.log(jsonResponse.errors)
-								jsonResponse.errors.forEach(function (error) {
-									element.find('[name=' + error.field + ']').each(function () {
-										$(this).addClass('is-invalid')
-										$(this).next().append(error.reason + '<br/>')
-									})
-								})
-							} else {
-								element.removeClass('is-invalid')
-								element.next().html('')
-								jsonResponse.errors.forEach(function (error) {
-									element.addClass('is-invalid')
-									element.next().append(error.reason + '<br/>')
-								})
-							}
-							
 							if (afterError != null) {
-								afterError()
+								afterError(jsonResponse)
 							}
 							break
 						case 'success':
