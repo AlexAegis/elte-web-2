@@ -15,21 +15,21 @@
 
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="wf2zh/resources/css/datatables.css"/>
-    <link rel="stylesheet" type="text/css" href="wf2zh/resources/css/material.min.css"/>
-    <link rel="stylesheet" type="text/css" href="wf2zh/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/datatables.css"/>
+    <link rel="stylesheet" type="text/css" href="./resources/css/material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="wf2zh/resources/css/_shape.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/_shape.css">
 
-    <script type="text/javascript" src="wf2zh/resources/js/modernizr-3.5.0.min.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/plugins.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/material.min.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/datatables.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/_utility.js"></script>
-    <script type="text/javascript" src="wf2zh/resources/js/_zh.js"></script>
+    <script type="text/javascript" src="./resources/js/modernizr-3.5.0.min.js"></script>
+    <script type="text/javascript" src="./resources/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./resources/js/plugins.js"></script>
+    <script type="text/javascript" src="./resources/js/material.min.js"></script>
+    <script type="text/javascript" src="./resources/js/datatables.js"></script>
+    <script type="text/javascript" src="./resources/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./resources/js/_utility.js"></script>
+    <script type="text/javascript" src="./resources/js/_zh.js"></script>
 </head>
 <body>
 <table id="table">
