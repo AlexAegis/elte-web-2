@@ -64,7 +64,11 @@ $(document).ready(function () {
         },
         function (response) {
             console.log("ERRS: " + response)
-                // err
+            $('#hibak').html('')
+
+            console.log(response.errors.map(e => e.reason))
+            $('#hibak').html(response.errors.map(e => e.reason))
+
                 
         })
 
