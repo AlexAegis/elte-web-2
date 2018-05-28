@@ -32,31 +32,15 @@
     <script type="text/javascript" src="wf2zh/resources/js/_zh.js"></script>
 </head>
 <body>
-<table id="table">
 <?php
  require_once '/home/hallgatok/alexaegis/www/wf2zh/resources/php/rb-mysql.php';
  require_once '/home/hallgatok/alexaegis/www/wf2zh/class/sessionController.php';
 
-$shapes = R::findAll('alakzatok');
-echo '<thead>';
-echo '<th>Név</th>';
-echo '<th>Méret</th>';
-echo '<th>Kedvenc</th>';
-echo '<th>Funkciók</th>';
-echo '</thead>';
-echo '<tbody>';
-foreach ($shapes as &$shape) {
-    echo '<tr>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['szelesseg'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.($shape['kedvenc']=='1' ? '♥' : '♡').'</td>';
-    echo '<td data-id="'.$shape->id.'">'.'<a href="../megjelenit.php?id='.$shape->id.'">Megjelenít<a></td>';
-    echo '</tr>';
-}
-echo '</tbody>';
+$shape = R::find('alakzatok', ' id = :id ', [ id => $_GET['id'] ]);
+echo 'shape:'.$shape->id;
+echo ' get id: '.$_GET['id'];
 ?>
 
-</table>
-lola
+lolb
 </body>
 </html>
