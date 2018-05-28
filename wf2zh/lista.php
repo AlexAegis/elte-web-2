@@ -47,16 +47,16 @@ echo '</thead>';
 echo '<tbody>';
 foreach ($shapes as &$shape) {
     echo '<tr>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['név'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['szélesség'].'</td>';
+    echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
+    echo '<td data-id="'.$shape->id.'">'.$shape['szelesseg'].'</td>';
     echo '<td data-id="'.$shape->id.'">'.$shape['kedvenc'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['név'].'</td>';
+    echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
     echo '</tr>';
 }
 echo '</tbody>';
 ?>
 
 </table>
-lol
+lola
 </body>
 </html>
