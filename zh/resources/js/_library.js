@@ -123,7 +123,7 @@ function navigateRegistration() {
 jQuery.fn.extend({
 	controller: function (controller, action, onSuccess = null, afterError = null) {
 		let element = this
-		let isForm = element.is('form');
+		let isForm = element.is('form')
 		let doAjax = function(isForm) {
 			$.ajax({
 				type: 'POST',
@@ -170,10 +170,10 @@ jQuery.fn.extend({
 		if(isForm) {
 			element.submit(function (e) {
 				e.preventDefault()
-				doAjax(isForm);
+				doAjax(isForm)
 			})
 		} else {
-			doAjax(isForm);
+			doAjax(isForm)
 		}
 	},
 	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, selectCallback = null) {
