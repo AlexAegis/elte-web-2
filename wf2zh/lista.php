@@ -34,8 +34,8 @@
 <body>
 <table id="table">
 <?php
- require_once '../resources/php/rb-mysql.php';
- require_once '../class/sessionController.php';
+ require_once '/resources/php/rb-mysql.php';
+ require_once '/class/sessionController.php';
 
 $shapes = R::findAll('alakzatok');
 echo '<th>';
