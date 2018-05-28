@@ -39,7 +39,7 @@ if (isset($_POST['action'])) {
 
             if ($_POST['alakzat'] != null && $_POST['alakzat'] != "") {
                 array_push($errors, error('alakzat', 'Az alakzat kötelező'));
-            } else if(isJson($_POST['alakzat']))) {
+            } else if(isJson($_POST['alakzat'])) {
                 array_push($errors, error('alakzat', 'Az alakzat rossz formátumú'));
             }
 
