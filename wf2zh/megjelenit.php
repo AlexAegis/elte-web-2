@@ -36,7 +36,7 @@
  require_once '/home/hallgatok/alexaegis/www/wf2zh/resources/php/rb-mysql.php';
  require_once '/home/hallgatok/alexaegis/www/wf2zh/class/sessionController.php';
 
-$shape = R::find('alakzatok', ' id = :id ', [ id => $_GET['id'] ]);
+$shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_GET['id'] ]);
 echo 'shape:'.$shape->id;
 echo ' get id: '.$_GET['id'];
 ?>
