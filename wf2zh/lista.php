@@ -55,7 +55,7 @@ echo '<tbody>';
 foreach ($shapes as &$shape) {
     echo '<tr>';
     echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['szelesseg'].'</td>';
+    echo '<td data-id="'.$shape->id.'">'.$shape['szelesseg'].' x '.$shape['magassag'].'</td>';
     echo '<td data-id="'.$shape->id.'">'.($shape['kedvenc']=='1' ? '♥' : '♡').'</td>';
     echo '<td data-id="'.$shape->id.'">'.'<a href="./megjelenit.php?id='.$shape->id.'">Megjelenít<a></td>';
     echo '</tr>';
@@ -64,6 +64,5 @@ echo '</tbody>';
 ?>
 
 </table>
-lola
 </body>
 </html>

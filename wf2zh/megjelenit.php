@@ -41,6 +41,44 @@ echo 'shape:'.$shape->id;
 echo ' get id: '.$_GET['id'];
 ?>
 
+
+<dl>
+    <dt>Azonosító</dt>
+    <dd>200000000</dd>
+
+    <dt>Név</dt>
+    <dd><?php echo $shape['nev'];?></dd>
+
+    <dt>Méret</dt>
+    <dd><?php echo $shape['szelesseg'].' x '.$shape['magassag']; ?></dd>
+
+    <dt>Kedvenc</dt>
+    <dd><?php echo ($shape['kedvenc']=='1' ? '♥' : '♡'); ?></dd>
+
+    <dt>Vetületek</dt>
+    <dd>
+        <table>
+            <tr>
+                <th>Felülnézet</th>
+                <th>Oldalnézet</th>
+                <th>Elölnézet</th>
+            </tr>
+            <tr>
+                <td>
+                    <table class="vetulet" id="felul"></table>
+                </td>
+                <td>
+                    <div class="vetulet" id="oldal"></div>
+                </td>
+                <td>
+                    <div class="vetulet" id="elol"></div>
+                </td>
+            </tr>
+        </table>
+    </dd>
+</dl>
+
+
 lolb
 </body>
 </html>
