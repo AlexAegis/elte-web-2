@@ -40,7 +40,7 @@
  
  $shapes = array();
 if(isset($_GET['kedvenc'])) {
-    $shapes = R::findAll('alakzatok', ' kedvenc = :fav ', [ 'fav' => $_GET['kedvenc'] == 'true' ? '1' : '0');
+    $shapes = R::findAll('alakzatok', ' kedvenc = :fav ', [ 'fav' => ($_GET['kedvenc'] == 'true' ? '1' : '0')]);
 } else {
     $shapes = R::findAll('alakzatok');
 }
