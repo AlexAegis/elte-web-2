@@ -1,4 +1,4 @@
-<?php //header('Location: http://webprogramozas.inf.elte.hu/hallgatok/alexaegis/wf2zh/');
+<?php 
 ?>
 
 <!doctype html>
