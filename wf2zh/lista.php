@@ -38,12 +38,12 @@
  require_once '/home/hallgatok/alexaegis/www/wf2zh/class/sessionController.php';
 
 $shapes = R::findAll('alakzatok');
-echo '<th>';
-echo '<td>Név</td>';
-echo '<td>Méret</td>';
-echo '<td>Kedvenc</td>';
-echo '<td>Funkciók</td>';
-echo '</th>\n';
+echo '<thead>';
+echo '<th>Név</th>';
+echo '<th>Méret</th>';
+echo '<th>Kedvenc</th>';
+echo '<th>Funkciók</th>';
+echo '</thead>';
 echo '<tbody>';
 foreach ($shapes as &$shape) {
     echo '<tr>';
