@@ -53,7 +53,7 @@ function parseFront($shape) {
     foreach ($json as &$row) {
         $result = $result.'<tr>';
         foreach ($row as &$val) {
-            $result = $result.'<td class="'.(intval($val) > 0 ? 'black' : '').'"><td>';
+            $result = $result.'<td class="'.($val > 0 ? 'black' : '').'"><td>';
         }
         $result = $result.'</tr>';
     }
