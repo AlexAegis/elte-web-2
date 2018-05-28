@@ -50,8 +50,16 @@ if (isset($_POST['action'])) {
                 $result = "error";
             } else {
                 R::begin();
+
+
+                R::exec('insert into alakzatok(id, nev,szelesseg, magassag, kedvenc, alakzat) values('.$_POST['id'].','.$_POST['nev'].','.$_POST['szelesseg'].','.$_POST['magassag'].','.( isset($_POST['kedvenc']) ? '1' : '0').','.$_POST['alakzat'].')');
+
+
+
+                   
+                    R::begin();
+
                     $shape = R::dispense('alakzatok');
-                    $shape['id'] = intval($_POST['id']);
                     //$shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
                     $shape['nev'] = $_POST['nev'];
                     $shape['szelesseg'] = $_POST['szelesseg'];
@@ -60,7 +68,8 @@ if (isset($_POST['action'])) {
                     $shape['alakzat'] = $_POST['alakzat'];
                     R::store($shape);
                     R::commit();
-                    $other['id'] = $shape['id'];
+                   // $shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_POST['id'] ]);
+                    $other['id'] = $shape->id;
              
                     
             }
@@ -85,7 +94,7 @@ function error($field, $reason = 'Mandatory') {
 }
 
 function isJson($string) {
-    json_decode($string);
+    json_decode($string, true);
     return (json_last_error() == JSON_ERROR_NONE);
 }
 
