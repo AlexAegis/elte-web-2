@@ -1,7 +1,7 @@
 $(document).ready(init())
 
 function init(removeParams = false) {
-
+	$('#table').put('')
 }
 
 jQuery.fn.extend({
