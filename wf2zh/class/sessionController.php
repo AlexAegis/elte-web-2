@@ -31,9 +31,31 @@ function error($field, $reason = 'Mandatory') {
 /**
  * egymás alá ahol van = black
  * 
+1           alma        2           2           igen       [[1,3],[0,2]]
+2           korte       3           3           nem       [[1,2,1],[0,0,3],[4,0,1]]
+200000000   szilva      3           2           nem        [[2,1,1],[2,0,0]] '
+
+
+                    '    <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class=""></td>
+                    <td class=""></td>
+                </tr>
  */
 function parseFront($shape) {
-    $m = json_decode($shape->alakzat);
-
-    echo $m[0][0];
+    $json = json_decode($shape->alakzat);
+    $result = '';
+    foreach ($json as &$row) {
+        $result = $result.'<tr>';
+        foreach ($row as &$val) {
+            $result = $result.'<td class="'.(intval($val) > 0 ? 'black' : '').'"><td>';
+        }
+        $result = $result.'</tr>';
+    }
+    echo $result;
 }

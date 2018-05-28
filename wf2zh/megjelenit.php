@@ -63,13 +63,7 @@ $shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_GET['id'] ]);
             <tr>
                 <td>
                     <table class="vetulet" id="felul">
-                    <?php parseFront($shape);
-
-
-                    
-                    ?>
-                    
-                    
+                    <?php parseFront($shape);?>        
                     </table>
                 </td>
                 <td>
