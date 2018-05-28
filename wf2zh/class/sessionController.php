@@ -50,12 +50,11 @@ if (isset($_POST['action'])) {
                 $result = "error";
             } else {
                 R::begin();
+                $sql = 'insert into alakzatok(id, nev,szelesseg, magassag, kedvenc, alakzat) values('.$_POST['id'].','.$_POST['nev'].','.$_POST['szelesseg'].','.$_POST['magassag'].','.( isset($_POST['kedvenc']) ? '1' : '0').','.$_POST['alakzat'].')';
+                $other['sql'] = $sql; 
+                R::exec($sql);
 
-
-                R::exec('insert into alakzatok(id, nev,szelesseg, magassag, kedvenc, alakzat) values('.$_POST['id'].','.$_POST['nev'].','.$_POST['szelesseg'].','.$_POST['magassag'].','.( isset($_POST['kedvenc']) ? '1' : '0').','.$_POST['alakzat'].')');
-
-
-
+                R::commit();
                    
                     R::begin();
 
