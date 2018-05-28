@@ -49,7 +49,7 @@ foreach ($shapes as &$shape) {
     echo '<tr>';
     echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
     echo '<td data-id="'.$shape->id.'">'.$shape['szelesseg'].'</td>';
-    echo '<td data-id="'.$shape->id.'">'.$shape['kedvenc'].'</td>';
+    echo '<td data-id="'.$shape->id.'">'.($shape['kedvenc']=='1' ? ♥ : ♡).'</td>';
     echo '<td data-id="'.$shape->id.'">'.$shape['nev'].'</td>';
     echo '</tr>';
 }
