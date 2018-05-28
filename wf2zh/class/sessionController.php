@@ -50,10 +50,9 @@ if (isset($_POST['action'])) {
                 $result = "error";
             } else {
     
-                R::transaction(function () {
                     $shape = R::dispense('alakzatok');
-                    $shape['id'] = $_POST['id'];
-                    //$shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
+                    //$shape['id'] = $_POST['id'];
+                    $shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
                     $shape['nev'] = $_POST['nev'];
                     $shape['szelesseg'] = $_POST['szelesseg'];
                     $shape['magassag'] = $_POST['magassag'];
@@ -61,7 +60,6 @@ if (isset($_POST['action'])) {
                     $shape['alakzat'] = $_POST['alakzat'];
                     R::store($shape);
                     $other['id'] = $shape->id;
-                });
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
