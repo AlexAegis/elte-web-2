@@ -22,23 +22,23 @@ if (isset($_POST['action'])) {
             }*/
             $errors = array();
 
-            if ($_POST['nev'] != null && $_POST['nev'] != "") {
+            if ($_POST['nev'] == null || $_POST['nev'] == "") {
                 array_push($errors, error('nev', 'A név kötelező'));
             }
 
-            if ($_POST['magassag'] != null && $_POST['magassag'] != "") {
+            if ($_POST['magassag'] == null || $_POST['magassag'] == "") {
                 array_push($errors, error('magassag', 'A magasság kötelező'));
             } else if( !ctype_digit($_POST['magassag'])) {
                 array_push($errors, error('magassag', 'A magasság nem szám'));
             }
             
-            if ($_POST['szelesseg'] != null && $_POST['szelesseg'] != "") {
+            if ($_POST['szelesseg'] == null || $_POST['szelesseg'] == "") {
                 array_push($errors, error('szelesseg', 'A szélesség kötelező'));
             } else if( !ctype_digit($_POST['szelesseg'])) {
                 array_push($errors, error('szelesseg', 'A szélesség nem szám'));
             }
 
-            if ($_POST['alakzat'] != null && $_POST['alakzat'] != "") {
+            if ($_POST['alakzat'] == null || $_POST['alakzat'] == "") {
                 array_push($errors, error('alakzat', 'Az alakzat kötelező'));
             } else if(isJson($_POST['alakzat'])) {
                 array_push($errors, error('alakzat', 'Az alakzat rossz formátumú'));
