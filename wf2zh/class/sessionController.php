@@ -49,15 +49,16 @@ if (isset($_POST['action'])) {
             if (count($errors) > 0) {
                 $result = "error";
             } else {
-                R::begin();
-                $sql = 'insert into alakzatok(id, nev,szelesseg, magassag, kedvenc, alakzat) values('.$_POST['id'].','.$_POST['nev'].','.$_POST['szelesseg'].','.$_POST['magassag'].','.( isset($_POST['kedvenc']) ? '1' : '0').','.'"'.$_POST['alakzat'].'")';
-                $other['sql'] = $sql; 
-                echo $sql;
-                R::exec($sql);
 
+                if (isset($_POST['id']) && $_POST['id'] != '') {
+                    R::begin();
+                    $sql = 'insert into alakzatok(id, nev,szelesseg, magassag, kedvenc, alakzat) values('.$_POST['id'].','.$_POST['nev'].','.$_POST['szelesseg'].','.$_POST['magassag'].','.( isset($_POST['kedvenc']) ? '1' : '0').','.'"'.$_POST['alakzat'].'")';
+                    $other['sql'] = $sql; 
+                    R::exec($sql);
+                    R::commit();
+                    $other['id'] = $_POST['id'];
+                } else {
 
-                R::commit();
-                   
                     R::begin();
 
                     $shape = R::dispense('alakzatok');
@@ -69,8 +70,10 @@ if (isset($_POST['action'])) {
                     $shape['alakzat'] = $_POST['alakzat'];
                     R::store($shape);
                     R::commit();
-                   // $shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_POST['id'] ]);
                     $other['id'] = $shape->id;
+                }
+
+
              
                     
             }
