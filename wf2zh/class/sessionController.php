@@ -12,6 +12,58 @@ try {
 session_start();
 
 
+if (isset($_POST['action'])) {
+    switch ($_POST['action']) {
+        case 'create':
+            $shape = R::dispense('alakzat');/*
+            if (isset($_POST['id']) && $_POST['id'] != '') {
+                $shape = R::findOne('alakzat', ' id = :id ', ['id' => $_POST['id']]);
+            }*/
+            $errors = array();
+
+            if ($_POST['nev'] != null && $_POST['nev'] != "") {
+                array_push($errors, error('nev', 'A név kötelező'));
+            }
+
+            if ($_POST['magassag'] != null && $_POST['magassag'] != "") {
+                array_push($errors, error('magassag', 'A magasság kötelező'));
+            } else if( !ctype_digit($_POST['magassag'])) {
+                array_push($errors, error('magassag', 'A magasság nem szám'));
+            }
+            
+            if ($_POST['szelesseg'] != null && $_POST['szelesseg'] != "") {
+                array_push($errors, error('szelesseg', 'A szélesség kötelező'));
+            } else if( !ctype_digit($_POST['szelesseg'])) {
+                array_push($errors, error('szelesseg', 'A szélesség nem szám'));
+            }
+
+            if ($_POST['alakzat'] != null && $_POST['alakzat'] != "") {
+                array_push($errors, error('alakzat', 'Az alakzat kötelező'));
+            } else if(isJson($_POST['alakzat']))) {
+                array_push($errors, error('alakzat', 'Az alakzat rossz formátumú'));
+            }
+
+            $result = "success";
+            $other = array();
+            if (count($errors) > 0) {
+                $result = "error";
+            } else {
+                $shape->id = (isset($_POST['id']) && $_POST['id'] != "" ? $_POST['id'] : null);
+                $shape['nev'] = $_POST['nev'];
+                $shape['szelesseg'] = $_POST['szelesseg'];
+                $shape['magassag'] = $_POST['magassag'];
+                $shape['kedvenc'] = isset($_POST['kedvenc']) ? '1' : '0';
+                $shape['alakzat'] = $_POST['alakzat'];
+                R::store($shape);
+                $other['id'] = $shape->id;
+            }
+            echo jsonResponse($result, $_POST['action'], $errors, $other);
+            break;
+        case 'remove':
+            break;
+    }
+}
+
 
 function jsonResponse($result, $reason = "", $errors = array(), $parameters = array()) {
     return json_encode(array_merge(array(
@@ -25,29 +77,55 @@ function error($field, $reason = 'Mandatory') {
     return array("field" => $field, "reason" => $reason);
 }
 
-// alakzat: [[2,1,1],[2,0,0]] 
+function isJson($string) {
+    json_decode($string);
+    return (json_last_error() == JSON_ERROR_NONE);
+}
+
+// alakzat: [[2,1,1],
+//           [2,0,0]] 
+
+
+//            o
+//            o,o,o
+
+//            o,o
+//            o,o
 
 // felül - 
 /**
  * egymás alá ahol van = black
  * 
-1           alma        2           2           igen       [[1,3],[0,2]]
-2           korte       3           3           nem       [[1,2,1],[0,0,3],[4,0,1]]
-200000000   szilva      3           2           nem        [[2,1,1],[2,0,0]] '
-
-
-                    '    <tr>
-                    <td class="black"></td>
-                    <td class="black"></td>
-                    <td class="black"></td>
-                </tr>
-                <tr>
-                    <td class="black"></td>
-                    <td class=""></td>
-                    <td class=""></td>
-                </tr>
  */
+
+function parseTop($shape) {
+    $json = json_decode($shape->alakzat);
+    $result = '';
+    foreach ($json as &$row) {
+        $result = $result.'<tr>';
+        foreach ($row as &$val) {
+            $result = $result.'<td class="'.($val > 0 ? 'black' : '').'"></td>';
+        }
+        $result = $result.'</tr>';
+    }
+    echo $result;
+}
+
 function parseFront($shape) {
+    $json = json_decode($shape->alakzat);
+    $result = '';
+    foreach ($json as &$row) {
+        $result = $result.'<tr>';
+        foreach ($row as &$val) {
+            $result = $result.'<td class="'.($val > 0 ? 'black' : '').'"></td>';
+        }
+        $result = $result.'</tr>';
+    }
+    echo $result;
+}
+
+
+function parseSide($shape) {
     $json = json_decode($shape->alakzat);
     $result = '';
     foreach ($json as &$row) {
