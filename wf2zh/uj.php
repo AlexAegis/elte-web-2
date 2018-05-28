@@ -24,13 +24,13 @@
 <form id="shape" method="post">
 <label id="hibak"></label><br/><br/>
 <label id="idLabel" for="id">Id:</label>
-<input id="id" name="id" type="number"/><br/>
+<input id="id" name="id" type="text"/><br/>
 <label id="nevLabel" for="nev">Név:</label>
 <input id="nev" name="nev" type="text"/><br/>
 <label id="magassagLabel" for="magassag">Magasság:</label>
-<input id="magassag" name="magassag" type="number"/><button id="generate" type="button">Generál</button><br/>
+<input id="magassag" name="magassag" type="text"/><button id="generate" type="button">Generál</button><br/>
 <label id="szelessegLabel" for="szelesseg">Szélesség:</label>
-<input id="szelesseg" name="szelesseg" type="number"/><br/>
+<input id="szelesseg" name="szelesseg" type="text"/><br/>
 <label id="kedvencLabel" for="kedvenc">Kedvenc:</label>
 <input id="kedvenc" name="kedvenc" type="checkbox"/><br/>
 <label id="alakzatLabel" for="alakzat">Kedvenc:</label>
