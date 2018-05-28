@@ -51,8 +51,8 @@ if (isset($_POST['action'])) {
             } else {
                 R::begin();
                     $shape = R::dispense('alakzatok');
-                    //$shape['id'] = $_POST['id'];
-                    $shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
+                    $shape['id'] = $_POST['id'];
+                    //$shape['id'] = ((isset($_POST['id']) && $_POST['id'] != "" && ctype_digit($_POST['id'])) ? $_POST['id'] : null);
                     $shape['nev'] = $_POST['nev'];
                     $shape['szelesseg'] = $_POST['szelesseg'];
                     $shape['magassag'] = $_POST['magassag'];
