@@ -33,7 +33,7 @@
 <input id="szelesseg" name="szelesseg" type="text"/><br/>
 <label id="kedvencLabel" for="kedvenc">Kedvenc:</label>
 <input id="kedvenc" name="kedvenc" type="checkbox"/><br/>
-<label id="alakzatLabel" for="alakzat">Kedvenc:</label>
+<label id="alakzatLabel" for="alakzat">Alakzat:</label>
 <input id="alakzat" name="alakzat" type="textarea"/><br/>
 <button id="submit" type="submit">Ment</button>
 
