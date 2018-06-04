@@ -123,7 +123,7 @@ function navigateRegistration() {
 jQuery.fn.extend({
 	controller: function (controller, action, onSuccess = null, afterError = null) {
 		let element = this
-		let isForm = element.is('form');
+		let isForm = element.is('form')
 		let doAjax = function(isForm) {
 			$.ajax({
 				type: 'POST',
@@ -133,27 +133,6 @@ jQuery.fn.extend({
 					let jsonResponse = JSON.parse(response)
 					switch (jsonResponse.result) {
 						case 'error':
-							if(isForm) {
-								element.find('input').each(function () {
-									$(this).removeClass('is-invalid')
-									$(this).next().html('')
-								})
-								console.log(jsonResponse.errors)
-								jsonResponse.errors.forEach(function (error) {
-									element.find('[name=' + error.field + ']').each(function () {
-										$(this).addClass('is-invalid')
-										$(this).next().append(error.reason + '<br/>')
-									})
-								})
-							} else {
-								element.removeClass('is-invalid')
-								element.next().html('')
-								jsonResponse.errors.forEach(function (error) {
-									element.addClass('is-invalid')
-									element.next().append(error.reason + '<br/>')
-								})
-							}
-							
 							if (afterError != null) {
 								afterError()
 							}
@@ -170,10 +149,10 @@ jQuery.fn.extend({
 		if(isForm) {
 			element.submit(function (e) {
 				e.preventDefault()
-				doAjax(isForm);
+				doAjax(isForm)
 			})
 		} else {
-			doAjax(isForm);
+			doAjax(isForm)
 		}
 	},
 	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, selectCallback = null) {
