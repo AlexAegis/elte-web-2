@@ -1,7 +1,7 @@
 $(document).ready(init())
 
 function init(removeParams = false) {
-
+	console.log('asd');
 }
 
 jQuery.fn.extend({
@@ -11,7 +11,7 @@ jQuery.fn.extend({
 		let doAjax = function(isForm) {
 			$.ajax({
 				type: 'POST',
-				url: '../php/' + controller + 'Controller.php',
+				url: './' + controller + 'Controller.php',
 				data: (isForm ? element.serialize() + '&' : 'value=' + element.val() + '&') + 'action=' + action,
 				success: function (response) {
 					let jsonResponse = JSON.parse(response)
@@ -39,11 +39,11 @@ jQuery.fn.extend({
 			doAjax(isForm);
 		}
 	},
-	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, selectCallback = null) {
+	set: function (controller = 'session', action, parameter = null, modifyJson = null, callback = null, elementCallback = null) {
 		let element = this;
 		return $.ajax({
 			type: 'GET',
-			url: '../../php/' + controller + 'Controller.php',
+			url: './' + controller + 'Controller.php',
 			data: {
 				action: action,
 				parameter: parameter
@@ -63,8 +63,8 @@ jQuery.fn.extend({
 						input.html('');
 						input.set(input.attr('name'), 'retrieveAll', null, null, function () {
 							input.val(jsonResponse[input.attr('name')])
-							if (selectCallback != null) {
-								selectCallback(input)
+							if (elementCallback != null) {
+								elementCallback(input)
 							}
 						})
 					})
@@ -79,6 +79,23 @@ jQuery.fn.extend({
 					jsonResponse.options.forEach(function (option) {
 						element.append('<option value=' + option.id + '>' + option.name + '</option>')
 					})
+				} else if (element.is('table')) {
+					let thead = $('<thead>')
+					jsonResponse.header.forEach(e => {
+						let th = $('<th>')
+						th.html(e)
+						thead.append(th)
+					});
+					element.append(thead)
+
+					let tbody = $('<tbody>')
+					jsonResponse.body.forEach(e => {						
+						if (elementCallback != null) {
+							tbody.append(elementCallback(e))
+						}
+					});
+					element.append(tbody)
+				
 				} else {
 					element.html(jsonResponse.result)
 				}

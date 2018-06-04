@@ -1,6 +1,3 @@
-<?php 
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,8 +18,9 @@
     <script type="text/javascript" src="./resources/js/_zh.js"></script>
 </head>
 <body>
-<form id="shape" method="post">
 <label id="hibak"></label><br/><br/>
+<form id="shape" method="post" type="submit">
+
 <label id="idLabel" for="id">Id:</label>
 <input id="id" name="id" type="text"/><br/>
 <label id="nevLabel" for="nev">Név:</label>
@@ -34,44 +32,26 @@
 <label id="kedvencLabel" for="kedvenc">Kedvenc:</label>
 <input id="kedvenc" name="kedvenc" type="checkbox"/><br/>
 <label id="alakzatLabel" for="alakzat">Alakzat:</label>
-<input id="alakzat" name="alakzat" type="textarea"/><br/>
-<button id="submit" type="submit">Ment</button>
-
+<textarea id="alakzat" name="alakzat" type="text"></textarea><br/>
+<button id="submit" type="submit">Ment</input>
 </form>
-
-
-
 <script>
 $(document).ready(function () {
-    let form = $('#shape')/*
-    if(getParam('id') !== undefined) {
-        form.set('session', 'retrieve', getParam('id'), null, null, 
+    let form = $('#shape')
+    
+    form.controller('shape', 'create', 
         function (response) {
-            console.log("SUCC " + response)
-			// succ	
-        },
-        function (response) {
-            console.log("ERRS: " + response)
-                // err
-                
-        })
-    }*/
-
-    form.controller('session', 'create', 
-        function (response) {
-            console.log("SUCC " + response)
-			// succ	
-        },
-        function (response) {
-            console.log("ERRS: " + response)
             $('#hibak').html('')
-
+            console.log("SUCC " + response)
+            window.location.replace("lista.php");
+			// succ	
+        },
+        function (response) {
+            console.log("ERRS: " + response)
+           
             console.log(response.errors.map(e => e.reason))
             $('#hibak').html(response.errors.map(e => e.reason))
-
-                
         })
-
 })
 
 </script>

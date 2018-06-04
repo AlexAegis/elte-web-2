@@ -21,8 +21,7 @@
 </head>
 <body>
 <?php
- require_once '/home/hallgatok/alexaegis/www/wf2zh/resources/php/rb-mysql.php';
- require_once '/home/hallgatok/alexaegis/www/wf2zh/class/sessionController.php';
+ require_once 'resources/php/shapeController.php';
 $shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_GET['id'] ]);
 ?>
 
