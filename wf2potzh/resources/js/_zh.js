@@ -1,7 +1,7 @@
 $(document).ready(init())
 
 function init(removeParams = false) {
-	console.log('asd');
+	
 }
 
 jQuery.fn.extend({

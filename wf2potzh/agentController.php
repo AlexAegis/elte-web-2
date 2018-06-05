@@ -14,6 +14,32 @@ session_start();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
+        case 'retrieve':
+            $agent = R::findOne('ugynokok', ' id = :id ', [':id' => $_GET['parameter']]);
+            $result = "success";
+            $errors = array();
+            if ($agent == null) {
+                array_push($errors, "invalidId");
+            }
+            echo jsonResponse($result, $_GET['action'], $errors, array(
+                'id' => $agent != null ? $agent->id : null,
+                'szelesseg' => $agent != null ? $agent->szelesseg : null,
+                'hosszusag' => $agent != null ? $agent->hosszusag : null,
+                'aktiv' => $agent != null ? $agent->aktiv : null,
+                'projekt' => $agent != null ? $agent->projekt : null,
+                'feladat' => $agent != null ? $agent->feladat : null));
+            break;
+        case 'retrieveName':
+            $agent = R::findOne('ugynokok', ' id = :id ', [':id' => $_GET['parameter']]);
+            $result = "success";
+            $errors = array();
+            if ($agent == null) {
+                array_push($errors, "invalidId");
+            }
+            echo jsonResponse($agent != null ? $agent->nev : null, $_GET['action'], $errors, array(
+                'id' => $agent != null ? $agent->id : null,
+                'name' => $agent != null ? $agent->nev : null));
+            break;
         case 'list':
             $result = 'success';
             $errors = array();
@@ -54,21 +80,11 @@ if (isset($_POST['action'])) {
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;
         case 'create':
-            $shape = R::dispense('alakzat');/*
+            $agent = R::dispense('ugynokok');
             if (isset($_POST['id']) && $_POST['id'] != '') {
-                $shape = R::findOne('alakzat', ' id = :id ', ['id' => $_POST['id']]);
-            }*/
+                $agent = R::findOne('ugynokok', ' id = :id ', ['id' => $_POST['id']]);
+            }
             $errors = array();
-
-            if ($_POST['nev'] == null || $_POST['nev'] == "") {
-                array_push($errors, error('nev', 'A név kötelező'));
-            }
-
-            if ($_POST['magassag'] == null || $_POST['magassag'] == "") {
-                array_push($errors, error('magassag', 'A magasság kötelező'));
-            } else if( !ctype_digit($_POST['magassag'])) {
-                array_push($errors, error('magassag', 'A magasság nem szám'));
-            }
             
             if ($_POST['szelesseg'] == null || $_POST['szelesseg'] == "") {
                 array_push($errors, error('szelesseg', 'A szélesség kötelező'));
@@ -76,10 +92,18 @@ if (isset($_POST['action'])) {
                 array_push($errors, error('szelesseg', 'A szélesség nem szám'));
             }
 
-            if ($_POST['alakzat'] == null || $_POST['alakzat'] == "") {
-                array_push($errors, error('alakzat', 'Az alakzat kötelező'));
-            } else if(!isJson($_POST['alakzat'])) {
-                array_push($errors, error('alakzat', 'Az alakzat rossz formátumú'));
+            if ($_POST['hosszusag'] == null || $_POST['hosszusag'] == "") {
+                array_push($errors, error('hosszusag', 'A hosszúság kötelező'));
+            } else if( !ctype_digit($_POST['hosszusag'])) {
+                array_push($errors, error('hosszusag', 'A hosszúság nem szám'));
+            }
+            
+            if ($_POST['projekt'] == null || $_POST['projekt'] == "") {
+                array_push($errors, error('projekt', 'A projekt kötelező'));
+            }
+
+            if ($_POST['feladat'] == null || $_POST['feladat'] == "") {
+                array_push($errors, error('feladat', 'A feladat kötelező'));
             }
 
             $result = "success";
@@ -87,6 +111,15 @@ if (isset($_POST['action'])) {
             if (count($errors) > 0) {
                 $result = "error";
             } else {
+                $agent->szelesseg = $_POST['szelesseg'];
+                $agent->hosszusag = $_POST['hosszusag'];
+                $agent->aktiv = isset($_POST['aktiv']) ? '1' : '0';
+                $agent->projekt = $_POST['projekt'];
+                $agent->feladat = $_POST['feladat'];
+                R::store($agent);
+                $other['id'] = $agent->id;
+
+/*
                 $pdo = R::getPDO();
 
                 if (isset($_POST['id']) && $_POST['id'] != '') { // id set, update or insert
@@ -127,7 +160,7 @@ if (isset($_POST['action'])) {
 
                     $other['id'] = $pdo->lastInsertId();
                 }           
-                    
+                    */
             }
             echo jsonResponse($result, $_POST['action'], $errors, $other);
             break;

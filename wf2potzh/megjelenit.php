@@ -1,6 +1,3 @@
-<?php 
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,22 +6,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="wf2zh application">
+    <meta name="description" content="wf2potzh application">
     <meta name="author" content="AlexAegis">
-    <link rel="icon" href="./resources/icon/book.png">
 
-    <link rel="stylesheet" type="text/css" href="./resources/css/_shape.css">
+    <link rel="stylesheet" type="text/css" href="http://webprogramozas.inf.elte.hu/webfejl2/gyak/style.css">
 
     <script type="text/javascript" src="./resources/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./resources/js/_utility.js"></script>
     <script type="text/javascript" src="./resources/js/_zh.js"></script>
 </head>
 <body>
-<?php
- require_once 'resources/php/shapeController.php';
-$shape = R::findOne('alakzatok', ' id = :id ', [ 'id' => $_GET['id'] ]);
-?>
-
 
 <dl>
     <dt>Azonosító</dt>
