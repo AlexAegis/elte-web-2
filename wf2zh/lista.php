@@ -18,7 +18,6 @@
 </head>
 <body>
 
-
 <table id="table">
 </table>
 <a href="uj.php">Új alakzat</a>
