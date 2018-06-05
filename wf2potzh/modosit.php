@@ -46,6 +46,7 @@ $(document).ready(function () {
             window.location.replace("lista.php");
         },
         function (response) {
+            //window.location.replace("modosit.php?id=" + e.id);
             $('#hibak').html(response.errors.map(e => e.reason))
         })
 })

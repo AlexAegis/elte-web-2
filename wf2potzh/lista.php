@@ -21,6 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <input id="szuro" name="szuro" type="text"/>
             <h2>Aktív ügynökök</h2>
             <!-- Aktív ügynökök táblázata -->
             <table id="activeTable" class="table table-sm aktiv">
@@ -59,39 +60,91 @@
 $(document).ready($('#activeTable').set('agent', 'list', {active: true, header: ['Név', 'Koordináták', 'Projekt', 'Feladat', ''], headerClass: 'thead-dark'}, null, null, agentFiller))
 $(document).ready($('#inactiveTable').set('agent', 'list', {active: false, header: ['Név', 'Koordináták', 'Projekt', 'Feladat', ''], headerClass: 'thead-dark'}, null, null, agentFiller))
 $(document).ready($('#map').set('agent', 'map'))
-$(document).ready(clearSelection())
+$(document).ready(function () {
+    clearSelection()
+    resetStatus()
+})
+$('#szuro').on('keyup', function (e) {
+    let rows = $( $('#activeTable').children()[1]).children().add($( $('#inactiveTable').children()[1]).children())
+    for (let index = 0; index < rows.length; index++) {
+        const element = rows[index];
+        $(element).removeClass('table-warning')
+        
+    }
+    if($('#szuro').val() !== null && $('#szuro').val() !== '') {
+        for (let index = 0; index < rows.length; index++) {
+            const element = rows[index];          
+            if($(element).children()[2].innerHTML.toLowerCase().search($('#szuro').val().toLowerCase()) != -1) {
+                $(element).addClass('table-warning')
+            }
+        }
+    }
+
+})
+
 let selection = null
 $(document).on('keydown', function(event) {
     let rows = $( $('#activeTable').children()[1]).children().add($( $('#inactiveTable').children()[1]).children())
+    switch(event.key) {
+        case 'ArrowDown':
+            event.preventDefault()
+            resetStatus()
+            if(selection === null) {
+                selection = 0
+            } else {
+                $(rows[selection]).removeClass('table-active')
+                $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
+                selection = (selection + 1) % rows.length;
+            }
+            $(rows[selection]).addClass('table-active')
+            $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').addClass('aktiv')
+            break;
+        case 'ArrowUp':
+            event.preventDefault()
+            resetStatus()
+            if(selection === null) {
+            } else if (selection === 0) {
+                $(rows[selection]).removeClass('table-active')
+                $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
+                selection = null
+            } else {
+                $(rows[selection]).removeClass('table-active')
+                $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
+                selection = (selection - 1);
+            }
+            $(rows[selection]).addClass('table-active')
+            $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').addClass('aktiv')
+            break;
+        case 'Enter':
+            event.preventDefault()
+            if(selection !== null) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://webprogramozas.inf.elte.hu/webfejl2/gyak/allapot.php',
+                    data: {id: $(rows[selection]).attr('data-id')},
+                    success: function (response) {
+                        let jsonResponse = JSON.parse(response)
+                        $('ul.allapot').show()
+                        $('li.pulzus>span').html(jsonResponse.pulzus)
+                        $('li.vernyomas>span').html(jsonResponse.vernyomas)
+                        $('li.faradtsag>span').html(jsonResponse.faradtsag)
+                    }
+                })
+            } else {
+                resetStatus()
+            }
+            
+            break;
 
-    if(event.key === "ArrowDown") {
-        event.preventDefault()
-        if(selection === null) {
-            selection = 0
-        } else {
-            $(rows[selection]).removeClass('table-active')
-            $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
-            selection = (selection + 1) % rows.length;
-        }
-        $(rows[selection]).addClass('table-active')
-        $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').addClass('aktiv')
-    } else if(event.key === "ArrowUp") {
-        event.preventDefault()
-        if(selection === null) {
-        } else if (selection === 0) {
-            $(rows[selection]).removeClass('table-active')
-            $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
-            selection = null
-        } else {
-            $(rows[selection]).removeClass('table-active')
-            $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').removeClass('aktiv')
-            selection = (selection - 1);
-        }
-        $(rows[selection]).addClass('table-active')
-        $('span[data-id=' + $(rows[selection]).attr('data-id') + ']').addClass('aktiv')
     }
 })
 
+function resetStatus() {
+    $('ul.allapot').hide()/*
+    $('li.pulzus>span').html('-')
+    $('li.vernyomas>span').html('-')
+    $('li.faradtsag>span').html('-')*/
+}
 function clearSelection() {
     let rows = $( $('#activeTable').children()[1]).children().add($( $('#inactiveTable').children()[1]).children())
     for(row in rows) {
