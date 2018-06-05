@@ -81,9 +81,13 @@ function agentFiller(e) {
         tr.append(td4)
 
         let td5 = $('<td>')
-        td5.append('<a>' + (e.aktiv === '1' ? 'On' : 'Off') + '</a>')
+        td5.append('<a href="" onclick="activate(' + e.id + ')">' + (e.aktiv === '1' ? 'Off' : 'On') + '</a>')
         tr.append(td5)
 		return tr
+}
+
+function activate(id) {
+    $('').controller('agent', 'active&id=' + id)
 }
 </script>
 </body>

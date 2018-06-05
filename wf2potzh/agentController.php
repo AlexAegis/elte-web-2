@@ -37,13 +37,6 @@ if (isset($_GET['action'])) {
 
             $agents = R::find('ugynokok');
             $other['agents'] = array_values($agents);
-/*
-            if(isset($_GET['parameter']['id'])) {
-                $agent = R::findOne('ugynokok', 'id = :id', ['id' => $_GET['parameter']['id']]);
-                $other['id'] = $agent['id'];
-                $other['szelesseg'] = $agent['szelesseg'];
-                $other['hosszusag'] = $agent['hosszusag'];
-            }*/
             echo jsonResponse($result, $_GET['action'], $errors, $other);
             break;
     }
@@ -51,6 +44,15 @@ if (isset($_GET['action'])) {
 
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
+        case 'active':
+            $result = 'success';
+            $errors = array();
+            $other = array();
+            $agent = R::findOne('ugynokok', 'id = :id', ['id' => $_POST['id']]);
+            $agent['aktiv'] = $agent['aktiv'] == '1' ? '0' : '1';
+            R::store($agent);
+            echo jsonResponse($result, $_POST['action'], $errors, $other);
+            break;
         case 'create':
             $shape = R::dispense('alakzat');/*
             if (isset($_POST['id']) && $_POST['id'] != '') {
