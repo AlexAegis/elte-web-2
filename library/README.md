@@ -1,10 +1,10 @@
-PHP beadandó – Könyvespolc
+[PHP beadandó – Könyvespolc](http://webprogramozas.inf.elte.hu/hallgatok/alexaegis/library/)
 ==========================
 
 Libraries
 ---------
 
-Datatables, Bootstrap, Material Design (For datatable design), Materialize (For checkbox design), jQuery
+Datatables, Bootstrap, Material Design (For datatable design), Materialize (For checkbox design), jQuery,
 RedBeans
 
 Feladatleírás
